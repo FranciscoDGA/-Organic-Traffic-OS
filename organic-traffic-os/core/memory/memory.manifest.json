@@ -1,0 +1,6 @@
+{
+  "name": "Memory Engine",
+  "version": "1.0.0",
+  "description": "Motor de memoria por workspace",
+  "features": ["memory_records", "learning", "context", "ranking"]
+}

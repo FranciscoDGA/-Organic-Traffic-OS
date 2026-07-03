@@ -112,6 +112,7 @@ const menuSections = [
       { label: 'Scheduler & Jobs',      path: '/organic-os/scheduler',                        icon: '📅' },
       { label: 'Event Bus',             path: '/organic-os/events',                           icon: '📡' },
       { label: 'Knowledge Graph',       path: '/organic-os/knowledge-graph',                  icon: '🔗' },
+      { label: 'Memory Engine',         path: '/organic-os/memory',                          icon: '🧠' },
     ]
   },
   {

@@ -1,0 +1,11 @@
+{
+  "name": "Memory Engine Report",
+  "version": "1.0.0",
+  "template": {
+    "workspace": "",
+    "totalRecords": 0,
+    "byType": {},
+    "byCategory": {},
+    "avgConfidence": 0
+  }
+}
