@@ -1,0 +1,6 @@
+{
+  "name": "Context Intelligence Engine",
+  "version": "1.0.0",
+  "description": "Motor de contexto por workspace",
+  "features": ["context_packages", "ranking", "compression", "validation"]
+}
