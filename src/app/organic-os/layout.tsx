@@ -111,6 +111,7 @@ const menuSections = [
       { label: 'Runtime Engine (ORE)',  path: '/organic-os/runtime',                          icon: '⚡' },
       { label: 'Scheduler & Jobs',      path: '/organic-os/scheduler',                        icon: '📅' },
       { label: 'Event Bus',             path: '/organic-os/events',                           icon: '📡' },
+      { label: 'Knowledge Graph',       path: '/organic-os/knowledge-graph',                  icon: '🔗' },
     ]
   },
   {

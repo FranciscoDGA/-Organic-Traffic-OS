@@ -1,0 +1,6 @@
+{
+  "name": "Knowledge Graph Engine",
+  "version": "1.0.0",
+  "description": "Grafo de conhecimento por workspace",
+  "features": ["graph_nodes", "graph_edges", "queries", "visualization"]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Knowledge Graph Report",
+  "version": "1.0.0",
+  "template": {
+    "workspace": "",
+    "totalNodes": 0,
+    "totalEdges": 0,
+    "nodesByType": {},
+    "edgesByRelation": {},
+    "orphans": 0,
+    "validation": { "valid": true, "errors": [], "warnings": [] }
+  }
+}
