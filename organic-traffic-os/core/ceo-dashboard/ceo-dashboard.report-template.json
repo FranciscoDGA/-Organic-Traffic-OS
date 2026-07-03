@@ -1,0 +1,11 @@
+{
+  "name": "CEO Dashboard Report",
+  "version": "1.0.0",
+  "template": {
+    "totalWorkspaces": 0,
+    "healthScore": 0,
+    "alerts": [],
+    "actions": [],
+    "summary": {}
+  }
+}

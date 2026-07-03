@@ -95,6 +95,13 @@ const menuSections = [
     ]
   },
   {
+    label: "Executive",
+    subtitle: "Visao Estrategica",
+    items: [
+      { label: 'CEO Dashboard',        path: '/organic-os/ceo',                                icon: '👔' },
+    ]
+  },
+  {
     label: "Integrations",
     subtitle: "Visão Consolidada",
     items: [
