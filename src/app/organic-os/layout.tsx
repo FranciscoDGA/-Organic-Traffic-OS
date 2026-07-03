@@ -115,6 +115,7 @@ const menuSections = [
       { label: 'Memory Engine',         path: '/organic-os/memory',                          icon: '🧠' },
       { label: 'Context Intelligence',  path: '/organic-os/context',                         icon: '🎯' },
       { label: 'Execution Intelligence', path: '/organic-os/execution',                      icon: '⚡' },
+      { label: 'Auto Learning',         path: '/organic-os/auto-learning',                   icon: '📚' },
     ]
   },
   {

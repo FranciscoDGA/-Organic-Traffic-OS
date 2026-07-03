@@ -1,0 +1,12 @@
+{
+  "name": "Auto Learning Report",
+  "version": "1.0.0",
+  "template": {
+    "workspace": "",
+    "totalLessons": 0,
+    "successPatterns": 0,
+    "failurePatterns": 0,
+    "avgConfidence": 0,
+    "recommendations": []
+  }
+}

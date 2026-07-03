@@ -1,0 +1,6 @@
+{
+  "name": "Auto Learning Engine",
+  "version": "1.0.0",
+  "description": "Motor de aprendizado automatico por workspace",
+  "features": ["pattern_detection", "lesson_building", "recommendations"]
+}
