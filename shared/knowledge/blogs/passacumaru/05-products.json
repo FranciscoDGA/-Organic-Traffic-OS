@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ebook_banca_ivin",
+    "nome": "E-book Desvendando a Banca IVIN",
+    "descricao": "Guia definitivo com as principais pegadinhas e histórico de questões da banca IVIN.",
+    "categoria": "E-books",
+    "status": "ativo",
+    "cta_padrao": "Quer gabaritar as questões da IVIN? Baixe nosso E-book Desvendando a Banca IVIN agora mesmo."
+  },
+  {
+    "id": "assinatura_premium",
+    "nome": "Assinatura PassaCumaru Premium",
+    "descricao": "Acesso ilimitado a todos os resumos, mapas mentais e plataforma de simulados focados em prefeituras.",
+    "categoria": "Assinaturas",
+    "status": "ativo",
+    "cta_padrao": "Chega de perder tempo com material genérico. Assine o PassaCumaru Premium e estude exatamente o que cai na sua prova municipal."
+  },
+  {
+    "id": "curso_reta_final",
+    "nome": "Curso Reta Final - Prefeituras",
+    "descricao": "Aulas objetivas focadas nos tópicos que despencam nas semanas que antecedem a prova.",
+    "categoria": "Cursos",
+    "status": "ativo",
+    "cta_padrao": "Sua prova está chegando? Garanta os pontos decisivos com o Curso Reta Final Prefeituras."
+  },
+  {
+    "id": "mentoria_vip",
+    "nome": "Mentoria Vip PassaCumaru",
+    "descricao": "Acompanhamento individual para montar cronograma e focar nos pontos fracos.",
+    "categoria": "Mentorias",
+    "status": "ativo",
+    "cta_padrao": "Sente-se perdido nos estudos? Agende uma sessão com nossos especialistas na Mentoria Vip."
+  },
+  {
+    "id": "simulado_gratuito",
+    "nome": "Simulado Nacional de Prefeituras",
+    "descricao": "Simulado mensal gratuito para testar o nível de conhecimento contra milhares de concorrentes.",
+    "categoria": "Simulados",
+    "status": "ativo",
+    "cta_padrao": "Teste seus conhecimentos gratuitamente no nosso próximo Simulado Nacional de Prefeituras."
+  },
+  {
+    "id": "edital_verticalizado",
+    "nome": "Edital Verticalizado",
+    "descricao": "Planilha gratuita para acompanhar o progresso em cada tópico do edital.",
+    "categoria": "Materiais gratuitos",
+    "status": "ativo",
+    "cta_padrao": "Baixe agora mesmo a planilha gratuita do Edital Verticalizado e não se perca nos estudos."
+  }
+]

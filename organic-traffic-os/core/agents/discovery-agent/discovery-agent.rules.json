@@ -1,0 +1,27 @@
+{
+  "priorizar": [
+    "Conteúdo com alta intenção educacional (como estudar, o que é, como funciona)",
+    "Concursos municipais e estaduais (prefeituras, câmaras, autarquias)",
+    "Temas ligados à banca IVIN e bancas regionais",
+    "Lacunas no inventário atual (temas sem cobertura)",
+    "Perguntas recorrentes de candidatos (FAQ, dúvidas frequentes)",
+    "Conteúdos com potencial de captura de lead (e-book, checklist, simulado)",
+    "Conteúdos evergreen com baixa concorrência e alta intenção",
+    "Guias para candidatos iniciantes"
+  ],
+  "evitar": [
+    "Temas duplicados já presentes no inventário",
+    "Temas fora do nicho de concursos públicos municipais",
+    "Promessa de aprovação ou garantia de resultado",
+    "Dados sem fonte verificável",
+    "Conteúdo sensacionalista ou clickbait",
+    "Cargos ou editais não confirmados"
+  ],
+  "scoring": {
+    "intencao_alta": 30,
+    "lacuna_inventario": 25,
+    "potencial_lead": 20,
+    "evergreen": 15,
+    "nicho_especifico": 10
+  }
+}

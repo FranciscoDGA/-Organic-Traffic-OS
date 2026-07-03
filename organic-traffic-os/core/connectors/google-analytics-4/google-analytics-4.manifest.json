@@ -1,0 +1,32 @@
+{
+  "id": "google-analytics-4",
+  "name": "Google Analytics 4",
+  "version": "1.0.0",
+  "provider": "google",
+  "category": "web-analytics",
+  "authentication": "oauth2",
+  "status": "active",
+  "description": "Connector para integração com Google Analytics 4. Obtém dados reais de comportamento dos usuários: sessões, visualizações, engajamento, eventos e conversões.",
+  "supported_resources": ["properties", "pages", "sessions", "users", "events", "conversions", "traffic_sources", "engagement"],
+  "rate_limits": {
+    "requests_per_minute": 60,
+    "requests_per_day": 100000,
+    "max_row_limit": 100000,
+    "concurrent_requests": 10
+  },
+  "required_scopes": [
+    "https://www.googleapis.com/auth/analytics.readonly"
+  ],
+  "oauth": {
+    "authorize_url": "https://accounts.google.com/o/oauth2/v2/auth",
+    "token_url": "https://oauth2.googleapis.com/token",
+    "scope": "https://www.googleapis.com/auth/analytics.readonly",
+    "access_type": "offline",
+    "prompt": "consent"
+  },
+  "env_vars": {
+    "client_id": "GA4_CLIENT_ID",
+    "client_secret": "GA4_CLIENT_SECRET",
+    "redirect_uri": "GA4_REDIRECT_URI"
+  }
+}

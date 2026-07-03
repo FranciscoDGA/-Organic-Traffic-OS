@@ -1,0 +1,16 @@
+{
+  "connector": "google-trends",
+  "version": "1.0.0",
+  "status": {},
+  "terms": [],
+  "interest_over_time": [],
+  "interest_by_region": [],
+  "related_queries": [],
+  "related_topics": [],
+  "comparison": {},
+  "seasonality": {},
+  "sync_result": {},
+  "cache_meta": {},
+  "logs": [],
+  "created_at": ""
+}

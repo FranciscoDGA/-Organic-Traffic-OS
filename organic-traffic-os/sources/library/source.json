@@ -1,0 +1,14 @@
+{
+  "id": "uuid",
+  "nome": "string",
+  "tipo": "string",
+  "url": "string",
+  "dominio": "string",
+  "categoria": "string",
+  "idioma": "string",
+  "pais": "string",
+  "status": "active",
+  "ultima_verificacao": "date",
+  "autoridade": 0,
+  "observacoes": "string"
+}

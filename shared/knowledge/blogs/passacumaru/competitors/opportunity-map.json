@@ -1,0 +1,18 @@
+[
+  {
+    "tema": "Análise detalhada do perfil da Banca IVIN (Pegadinhas)",
+    "concorrentes_que_cobrem": ["comp-002"],
+    "passacumaru_cobre": true,
+    "prioridade": "Alta",
+    "potencial": "Alto",
+    "observacoes": "O Estratégia não possui um artigo específico 'Perfil da Banca IVIN', apenas questões espalhadas. Oportunidade gigante para nós dominarmos."
+  },
+  {
+    "tema": "Como passar no concurso da Prefeitura X (Focado em bancas pequenas)",
+    "concorrentes_que_cobrem": ["comp-003"],
+    "passacumaru_cobre": false,
+    "prioridade": "Muito Alta",
+    "potencial": "Muito Alto",
+    "observacoes": "O portal Concursos no Brasil posta apenas o resumo do edital. Se fizermos guias de estudo hiper-locais para prefeituras onde a IVIN atua, roubamos o tráfego de longo prazo."
+  }
+]

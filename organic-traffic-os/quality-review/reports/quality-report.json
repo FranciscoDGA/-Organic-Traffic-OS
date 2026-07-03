@@ -1,0 +1,9 @@
+{
+  "id": "uuid",
+  "draft_id": "uuid",
+  "score_geral": 0,
+  "status": "approved | rejected | needs_review",
+  "observacoes": ["string"],
+  "recomendacoes": ["string"],
+  "data": "date"
+}

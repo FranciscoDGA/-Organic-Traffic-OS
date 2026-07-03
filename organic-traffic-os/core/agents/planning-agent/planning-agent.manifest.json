@@ -1,0 +1,14 @@
+{
+  "id": "planning-agent",
+  "name": "Planning Agent",
+  "version": "1.0.0",
+  "layer": "agents",
+  "category": "planning",
+  "description": "Agente autônomo responsável por transformar oportunidades editoriais em plano de execução completo, com backlog priorizado, calendário editorial e roadmap de produção.",
+  "inputs": ["DiscoveryReport", "blog_id", "start_date", "weeks"],
+  "outputs": ["BacklogItem[]", "CalendarEntry[]", "Roadmap", "PlanningSummary"],
+  "required_engines": ["opportunity-engine", "editorial-engine"],
+  "required_workflows": ["editorial-workflow"],
+  "dependencies": { "agents": ["discovery-agent"], "layers": ["knowledge", "engines"] },
+  "status": "active"
+}

@@ -1,0 +1,10 @@
+{
+  "id": "quality-reviewer",
+  "name": "Quality Reviewer",
+  "responsibilities": [
+    "Conferir checklist",
+    "Aprovar",
+    "Reprovar",
+    "Solicitar revisão"
+  ]
+}

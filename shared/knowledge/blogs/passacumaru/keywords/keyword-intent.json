@@ -1,0 +1,18 @@
+[
+  {
+    "keyword_id": "kw-001",
+    "intent": "Navegacional"
+  },
+  {
+    "keyword_id": "kw-002",
+    "intent": "Informacional"
+  },
+  {
+    "keyword_id": "kw-003",
+    "intent": "Comercial / Transacional"
+  },
+  {
+    "keyword_id": "kw-004",
+    "intent": "Informacional"
+  }
+]

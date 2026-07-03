@@ -1,0 +1,24 @@
+{
+  "id": "google-trends",
+  "name": "Google Trends",
+  "version": "1.0.0",
+  "provider": "google",
+  "category": "trends-analytics",
+  "authentication": "none",
+  "status": "active",
+  "description": "Connector para Google Trends. Identifica tendências, crescimento de interesse, sazonalidade, termos relacionados e oportunidades emergentes. Utiliza Mock Adapter (API oficial do Google Trends não disponível).",
+  "supported_resources": ["interest_over_time", "interest_by_region", "related_queries", "related_topics", "comparison", "seasonality"],
+  "rate_limits": {
+    "requests_per_minute": 10,
+    "max_terms_per_request": 5,
+    "max_comparison_terms": 5
+  },
+  "limitations": {
+    "api_available": false,
+    "adapter_type": "mock",
+    "notes": "Google Trends não possui API oficial. Dados simulados baseados em padrões reais de busca. Para produção, considerar SerpAPI ou similar."
+  },
+  "env_vars": {
+    "mode": "GT_MODE"
+  }
+}

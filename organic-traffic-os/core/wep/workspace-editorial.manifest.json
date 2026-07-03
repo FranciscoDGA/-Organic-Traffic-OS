@@ -1,0 +1,7 @@
+{
+  "name": "Workspace Editorial Profile",
+  "version": "1.0.0",
+  "description": "Perfil editorial, estrategico e operacional dos Workspaces",
+  "workspaces": ["passacumaru", "qualoseguro", "utilprobrasil", "tabuometro", "aiagencyos"],
+  "features": ["editorial_profile", "personas", "categories", "tone_of_voice", "rules", "monetization"]
+}

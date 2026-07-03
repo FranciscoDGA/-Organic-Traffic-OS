@@ -1,0 +1,10 @@
+[
+  {
+    "tema": "Raio-X da Prova de Português da Banca IVIN",
+    "prioridade": "Muito Alta",
+    "cluster": "cluster-banca-ivin",
+    "motivo": "Baixa concorrência mapeada na Sprint 04 e alta intenção de busca.",
+    "potencial": "Trafego garantido e venda de E-book",
+    "status": "Aprovada para Redação"
+  }
+]

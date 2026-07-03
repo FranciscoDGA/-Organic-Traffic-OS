@@ -1,0 +1,1 @@
+export interface WorkflowExecutor { executeSteps(steps: string[]): Promise<void>; }

@@ -1,0 +1,35 @@
+{
+  "name": "RSS & Sitemap Connector",
+  "version": "1.0.0",
+  "description": "Discovers and normalizes content from RSS, Atom feeds, sitemaps, and robots.txt",
+  "type": "connector",
+  "domain": "content-discovery",
+  "actions": ["connect", "disconnect", "sync", "status", "urls"],
+  "auth_required": false,
+  "auth_type": "none",
+  "rate_limit": {
+    "requests_per_minute": 30,
+    "concurrent": 3
+  },
+  "capabilities": [
+    "rss_feed_parsing",
+    "atom_feed_parsing",
+    "sitemap_xml_parsing",
+    "sitemap_index_parsing",
+    "robots_txt_parsing",
+    "feed_discovery",
+    "url_normalization",
+    "content_classification"
+  ],
+  "limitations": [
+    "Read-only: no write access to feeds or sitemaps",
+    "Depends on public availability of feeds and sitemaps",
+    "Some sites may block automated requests",
+    "Large sitemaps may require paginated fetching",
+    "No authentication required for public feeds"
+  ],
+  "dependencies": [],
+  "environment_variables": [],
+  "created_at": "2026-07-02",
+  "updated_at": "2026-07-02"
+}

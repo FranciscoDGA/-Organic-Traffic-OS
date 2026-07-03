@@ -1,0 +1,55 @@
+{
+  "report_type": "semantic_intelligence",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "title": "Overall Scores",
+      "fields": ["overall_scores"]
+    },
+    {
+      "title": "Content Analysis",
+      "fields": ["total_items", "total_entities", "total_topics", "total_questions"]
+    },
+    {
+      "title": "Entities",
+      "fields": ["entities"]
+    },
+    {
+      "title": "Topics",
+      "fields": ["topics"]
+    },
+    {
+      "title": "Questions",
+      "fields": ["questions"]
+    },
+    {
+      "title": "Semantic Gaps",
+      "fields": ["gaps"]
+    },
+    {
+      "title": "Recommendations",
+      "fields": ["recommendations"]
+    },
+    {
+      "title": "Logs",
+      "fields": ["logs"]
+    }
+  ],
+  "visualizations": [
+    {
+      "type": "score_gauges",
+      "title": "Semantic Scores",
+      "data_keys": ["coverage", "entity_coverage", "topic_depth", "question_answering", "topical_authority", "completeness"]
+    },
+    {
+      "type": "gaps_by_type",
+      "title": "Gaps by Type",
+      "data_key": "gaps"
+    },
+    {
+      "type": "recommendations_by_priority",
+      "title": "Recommendations by Priority",
+      "data_key": "recommendations"
+    }
+  ]
+}

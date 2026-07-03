@@ -1,0 +1,6 @@
+{
+  "name": "Production Readiness & Go-Live Center",
+  "version": "1.0.0",
+  "description": "Validacao de prontidao para Producao",
+  "features": ["readiness_score", "validation", "go_live_plan", "rollback_plan"]
+}

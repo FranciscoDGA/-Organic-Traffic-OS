@@ -1,0 +1,4 @@
+[
+  { "nome": "SEO", "obrigatorio": true },
+  { "nome": "Marketing Digital", "obrigatorio": false }
+]

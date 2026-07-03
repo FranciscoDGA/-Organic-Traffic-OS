@@ -1,0 +1,16 @@
+{
+  "id": "uuid",
+  "titulo": "string",
+  "brief_id": "uuid",
+  "blueprint_id": "uuid",
+  "research_pack_id": "uuid",
+  "strategy_id": "uuid",
+  "versao": "v1.0",
+  "status": "draft_created",
+  "modelo_ia": "gpt-4o",
+  "provedor_ia": "openai",
+  "tokens_entrada": 0,
+  "tokens_saida": 0,
+  "tempo_execucao": 0,
+  "criado_em": "date"
+}

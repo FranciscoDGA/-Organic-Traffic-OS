@@ -1,0 +1,21 @@
+{
+  "tom_de_voz": "Autoridade amiga. Somos especialistas no assunto, mas conversamos de igual para igual.",
+  "linguagem": "Clara, objetiva e persuasiva. Sem enrolação acadêmica.",
+  "nivel_tecnico": "Variável conforme a pauta, mas o padrão é intermediário (foco em facilitar o difícil).",
+  "uso_de_exemplos": "Obrigatório. Todo conceito difícil deve vir acompanhado de um exemplo prático de concurso.",
+  "uso_de_tabelas": "Altamente recomendado para comparar editais, leis ou cronogramas.",
+  "uso_de_listas": "Obrigatório para quebrar blocos de texto longos e facilitar a leitura dinâmica (skimming).",
+  "uso_de_faq": "Obrigatório no final de cada artigo Pilar para capturar rich snippets do Google.",
+  "uso_de_cta": "Sempre presente. Inserir no primeiro terço do texto e no final do artigo.",
+  "boas_praticas": [
+    "Sempre iniciar com uma promessa forte na introdução.",
+    "Usar negrito nas palavras-chave e em termos importantes.",
+    "Manter parágrafos curtos (máximo 4 linhas)."
+  ],
+  "conteudos_proibidos": [
+    "Fake news sobre editais (só publique se for oficial).",
+    "Prometer que a aprovação é fácil ou garantida.",
+    "Falar mal de outras bancas de forma desrespeitosa.",
+    "Discursos extremistas ou políticos que fujam da neutralidade do concurso."
+  ]
+}

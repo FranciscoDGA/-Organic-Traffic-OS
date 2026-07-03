@@ -1,0 +1,10 @@
+{
+  "report_type": "scheduler_sprint_43",
+  "title": "Sprint 43 — Scheduler & Jobs Engine V1",
+  "sections": [
+    { "id": "overview", "title": "Visao Geral", "type": "text" },
+    { "id": "jobs", "title": "Jobs", "type": "table", "columns": ["Nome", "Tipo", "Status", "Proxima Execucao"] },
+    { "id": "history", "title": "Historico", "type": "table", "columns": ["Job", "Tipo", "Status", "Duracao"] },
+    { "id": "stats", "title": "Estatisticas", "type": "gauge", "metrics": ["total", "active", "paused", "failed"] }
+  ]
+}

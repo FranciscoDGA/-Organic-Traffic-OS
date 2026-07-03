@@ -1,0 +1,6 @@
+{
+  "name": "Organic Business Intelligence",
+  "version": "1.0.0",
+  "description": "Consolidacao de metricas e decisoes estrategicas",
+  "features": ["global_kpis", "workspace_metrics", "alerts", "insights", "executive_dashboard"]
+}

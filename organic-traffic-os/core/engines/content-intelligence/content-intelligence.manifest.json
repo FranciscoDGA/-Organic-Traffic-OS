@@ -1,0 +1,45 @@
+{
+  "name": "Content Intelligence Engine",
+  "version": "1.0.0",
+  "type": "engine",
+  "domain": "intelligence",
+  "description": "Transforms normalized data into editorial decisions, scores, and recommendations",
+  "inputs": [
+    "gsc_connector_data",
+    "ga4_connector_data",
+    "bing_connector_data",
+    "trends_connector_data",
+    "rss_connector_data",
+    "knowledge_core",
+    "inventory_data",
+    "performance_history"
+  ],
+  "outputs": [
+    "content_scores",
+    "recommendations",
+    "opportunities",
+    "risks",
+    "intelligence_report"
+  ],
+  "capabilities": [
+    "analyze_content",
+    "calculate_scores",
+    "detect_opportunities",
+    "detect_weak_content",
+    "detect_evergreen",
+    "detect_content_decay",
+    "generate_recommendations",
+    "health_assessment"
+  ],
+  "scoring": {
+    "health": "0-100 composite score",
+    "opportunity": "0-100 opportunity potential",
+    "risk": "0-100 risk level",
+    "freshness": "0-100 content freshness",
+    "authority": "0-100 topic authority",
+    "potential": "0-100 traffic potential",
+    "growth": "0-100 growth trajectory"
+  },
+  "created_at": "2026-07-02",
+  "updated_at": "2026-07-02"
+}

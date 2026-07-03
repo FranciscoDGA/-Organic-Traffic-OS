@@ -1,0 +1,86 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {
+      "id": "declining_traffic",
+      "name": "Tráfego em declínio",
+      "condition": "traffic_trend.direction == 'down' && traffic_trend.strength > 40",
+      "action": "refresh",
+      "priority": "high",
+      "message": "Tráfego em declínio acentuado — atualizar conteúdo urgentemente"
+    },
+    {
+      "id": "position_dropping",
+      "name": "Posição caindo",
+      "condition": "position_trend.direction == 'up' && position_trend.strength > 30",
+      "action": "protect",
+      "priority": "high",
+      "message": "Posição está caindo — proteger com atualização e links internos"
+    },
+    {
+      "id": "high_growth",
+      "name": "Alto crescimento",
+      "condition": "growth_rate > 20",
+      "action": "invest",
+      "priority": "medium",
+      "message": "Conteúdo em alto crescimento — investir mais em expansão"
+    },
+    {
+      "id": "stale_content",
+      "name": "Conteúdo desatualizado",
+      "condition": "age_days > 180 && refresh_probability > 50",
+      "action": "refresh",
+      "priority": "high",
+      "message": "Conteúdo desatualizado com alta probabilidade de necessitar refresh"
+    },
+    {
+      "id": "high_risk_decay",
+      "name": "Risco alto de decaimento",
+      "condition": "risk_probability > 70",
+      "action": "protect",
+      "priority": "critical",
+      "message": "Risco alto de decaimento — ação preventiva urgente"
+    },
+    {
+      "id": "stable_performer",
+      "name": "Performa estável",
+      "condition": "traffic_trend.direction == 'stable' && clicks > 50",
+      "action": "monitor",
+      "priority": "low",
+      "message": "Conteúdo estável — monitorar para manter performance"
+    },
+    {
+      "id": "expansion_opportunity",
+      "name": "Oportunidade de expansão",
+      "condition": "growth_rate > 10 && cluster_items < 5",
+      "action": "expand",
+      "priority": "medium",
+      "message": "Crescimento com cluster pequeno — expandir cluster"
+    },
+    {
+      "id": "retire_candidate",
+      "name": "Candidato a descontinuar",
+      "condition": "clicks < 5 && age_days > 365 && position > 50",
+      "action": "retire",
+      "priority": "low",
+      "message": "Conteúdo com baixo tráfego e velho — considerar descontinuação"
+    }
+  ],
+  "scenario_weights": {
+    "conservative": {
+      "traffic_multiplier": 0.7,
+      "ranking_improvement": 0.5,
+      "confidence_adjustment": -10
+    },
+    "probable": {
+      "traffic_multiplier": 1.0,
+      "ranking_improvement": 1.0,
+      "confidence_adjustment": 0
+    },
+    "optimistic": {
+      "traffic_multiplier": 1.4,
+      "ranking_improvement": 1.5,
+      "confidence_adjustment": -15
+    }
+  }
+}

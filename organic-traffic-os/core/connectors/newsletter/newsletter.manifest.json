@@ -1,0 +1,43 @@
+{
+  "name": "Newsletter Connector",
+  "version": "1.0.0",
+  "description": "Transforms content into email/newsletter campaigns with provider adapters",
+  "type": "connector",
+  "domain": "email-marketing",
+  "providers": ["brevo", "mailchimp", "resend", "convertkit", "mock"],
+  "actions": ["connect", "disconnect", "sync", "status", "createDraft", "updateDraft", "audiences", "campaigns"],
+  "auth_required": true,
+  "auth_type": "api_key",
+  "rate_limit": {
+    "requests_per_minute": 30,
+    "concurrent": 3
+  },
+  "capabilities": [
+    "list_audiences",
+    "list_campaigns",
+    "create_draft_campaign",
+    "update_draft_campaign",
+    "generate_email_versions",
+    "provider_adapters"
+  ],
+  "limitations": [
+    "Real email sending is BLOCKED in this version",
+    "Draft creation only — no auto-send",
+    "Requires API key for real providers",
+    "Mock adapter for development/testing",
+    "Scheduling not yet implemented"
+  ],
+  "security": [
+    "Real sending is blocked by default",
+    "Credentials stored only in environment variables",
+    "Campaigns require subject, preheader, body, and CTA",
+    "All actions are logged",
+    "No auto-send without explicit confirmation"
+  ],
+  "environment_variables": [
+    "NEWSLETTER_PROVIDER",
+    "NEWSLETTER_API_KEY"
+  ],
+  "created_at": "2026-07-02",
+  "updated_at": "2026-07-02"
+}

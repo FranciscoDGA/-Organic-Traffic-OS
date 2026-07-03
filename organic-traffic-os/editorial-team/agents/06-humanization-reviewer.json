@@ -1,0 +1,9 @@
+{
+  "id": "humanization-reviewer",
+  "name": "Humanization Reviewer",
+  "responsibilities": [
+    "Validar naturalidade",
+    "Validar clareza",
+    "Validar tom de voz"
+  ]
+}

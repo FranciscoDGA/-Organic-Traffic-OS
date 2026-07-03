@@ -1,0 +1,14 @@
+[
+  {
+    "id": "ent-banca-ivin",
+    "tipo": "Banca",
+    "nome": "IVIN - Instituto Vicente Nelson",
+    "descricao": "Banca organizadora focada em prefeituras das regiões Norte e Nordeste."
+  },
+  {
+    "id": "ent-lei-organica",
+    "tipo": "Lei",
+    "nome": "Lei Orgânica do Município",
+    "descricao": "É a 'Constituição' de um município. Muito cobrada em concursos de prefeitura."
+  }
+]

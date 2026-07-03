@@ -1,0 +1,17 @@
+{
+  "id": "writer-agent",
+  "name": "Writer Agent",
+  "version": "1.0.0",
+  "layer": "agents",
+  "category": "generation",
+  "description": "Gera a primeira versão do conteúdo (rascunho) baseada no Evidence Pack e no Research Pack.",
+  "inputs": ["EvidencePack", "ResearchPack", "blog_id", "mode"],
+  "outputs": ["DraftPack", "WriterReport"],
+  "required_services": ["fact-agent", "research-agent"],
+  "required_workflows": ["editorial-workflow"],
+  "dependencies": {
+    "agents": ["fact-agent"],
+    "layers": ["engines"]
+  },
+  "status": "active"
+}

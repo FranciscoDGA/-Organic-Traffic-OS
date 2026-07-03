@@ -1,0 +1,34 @@
+[
+  {
+    "competitor_id": "comp-001",
+    "autoridade_percebida": "Muito Alta",
+    "especialidades": ["Concursos Federais", "Notícias de última hora", "Cursos em PDF"],
+    "formato_conteudo": "Artigos longos, aulas em vídeo ao vivo",
+    "tom_de_voz": "Autoritário, Urgente, Profissional",
+    "qualidade_visual": "Alta",
+    "nivel_tecnico": "Alto",
+    "monetizacao": "Venda de assinaturas e cursos avulsos",
+    "produtos": ["Assinatura Básica", "Assinatura Premium"],
+    "servicos": ["Coaching", "Correção de redação"],
+    "redes_sociais": {"instagram": true, "facebook": true, "twitter": true},
+    "canal_youtube": true,
+    "newsletter": true,
+    "observacoes": "Muito difícil competir em palavras-chave genéricas. A estratégia contra eles deve ser foco hiper-local."
+  },
+  {
+    "competitor_id": "comp-002",
+    "autoridade_percebida": "Alta",
+    "especialidades": ["Banco de questões", "Filtros por banca"],
+    "formato_conteudo": "Listas de questões, fóruns da comunidade",
+    "tom_de_voz": "Prático, Direto",
+    "qualidade_visual": "Média",
+    "nivel_tecnico": "Médio",
+    "monetizacao": "Assinatura Freemium",
+    "produtos": ["Assinatura de Questões"],
+    "servicos": [],
+    "redes_sociais": {"instagram": true},
+    "canal_youtube": true,
+    "newsletter": false,
+    "observacoes": "As páginas de disciplinas indexam muito bem."
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "id": "uuid",
+  "draft_id": "uuid",
+  "versao": "v2.0",
+  "score_antes": 0,
+  "score_depois": 0,
+  "alteracoes": ["string"],
+  "status": "refined | rejected",
+  "observacoes": ["string"]
+}

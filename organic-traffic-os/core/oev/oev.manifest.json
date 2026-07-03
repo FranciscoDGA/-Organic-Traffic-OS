@@ -1,0 +1,7 @@
+{
+  "name": "Organic End-to-End Validation",
+  "version": "1.0.0",
+  "description": "Validacao do ciclo completo de operacoes",
+  "modules": 18,
+  "features": ["full_cycle_validation", "timeline", "report", "replay"]
+}

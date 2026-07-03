@@ -1,0 +1,9 @@
+[
+  {
+    "fonte_id": "uuid",
+    "fato_id": "uuid",
+    "brief_id": "uuid",
+    "blueprint_id": "uuid",
+    "research_pack_id": "uuid"
+  }
+]

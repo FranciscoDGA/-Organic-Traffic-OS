@@ -1,0 +1,28 @@
+[
+  {
+    "competitor_id": "comp-001",
+    "categorias_trabalhadas": ["Notícias", "Artigos de Especialistas", "Dicas de Estudo"],
+    "frequencia_publicacao": "Alta (10+ posts/dia)",
+    "tipos_conteudo": ["Informativo", "Educacional", "Vendas"],
+    "uso_faq": true,
+    "uso_tabelas": true,
+    "uso_imagens": true,
+    "uso_videos": true,
+    "uso_ebooks": false,
+    "uso_simulados": true,
+    "uso_cta": true
+  },
+  {
+    "competitor_id": "comp-003",
+    "categorias_trabalhadas": ["Editais Abertos", "Previstos"],
+    "frequencia_publicacao": "Média (5 posts/dia)",
+    "tipos_conteudo": ["Informativo - Templates de Edital"],
+    "uso_faq": false,
+    "uso_tabelas": true,
+    "uso_imagens": false,
+    "uso_videos": false,
+    "uso_ebooks": false,
+    "uso_simulados": false,
+    "uso_cta": false
+  }
+]

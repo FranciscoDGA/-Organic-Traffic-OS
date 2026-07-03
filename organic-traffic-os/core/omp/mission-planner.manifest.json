@@ -1,0 +1,24 @@
+{
+  "name": "Organic Mission Planner",
+  "version": "1.0.0",
+  "description": "Planejamento de missoes estrategicas do Organic Traffic OS",
+  "components": {
+    "strategySelector": "Selecao automatica de estrategia baseada no tipo de conteudo e workspace",
+    "workflowSelector": "Selecao do workflow compativel com a estrategia",
+    "resourcePlanner": "Planejamento de agentes, workers e recursos",
+    "priorityEngine": "Avaliacao de prioridade baseada em impacto e objetivos",
+    "executionPlan": "Geracao do plano de execucao completo"
+  },
+  "strategies": {
+    "evergreen": "Artigo Evergreen (45min, $0.12)",
+    "update": "Atualizacao (25min, $0.06)",
+    "review": "Review Comparativo (50min, $0.15)",
+    "pillar": "Pagina Pilar (60min, $0.20)",
+    "faq": "FAQ Completa (30min, $0.08)",
+    "ebook": "E-book (120min, $0.35)",
+    "newsletter": "Newsletter (20min, $0.05)",
+    "landing": "Landing Page (35min, $0.10)",
+    "campaign": "Campanha Integrada (90min, $0.30)",
+    "case-study": "Estudo de Caso (55min, $0.18)"
+  }
+}

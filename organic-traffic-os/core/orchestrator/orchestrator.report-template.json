@@ -1,0 +1,34 @@
+{
+  "report_type": "orchestrator",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "title": "Status",
+      "fields": ["status"]
+    },
+    {
+      "title": "Recent Executions",
+      "fields": ["recent_executions"]
+    },
+    {
+      "title": "Workflows Registered",
+      "fields": ["workflows_registered"]
+    },
+    {
+      "title": "Logs",
+      "fields": ["logs"]
+    }
+  ],
+  "visualizations": [
+    {
+      "type": "status_dashboard",
+      "title": "Orchestrator Status",
+      "data_keys": ["is_running", "total_executions", "successful_executions", "failed_executions"]
+    },
+    {
+      "type": "execution_timeline",
+      "title": "Recent Executions",
+      "data_key": "recent_executions"
+    }
+  ]
+}

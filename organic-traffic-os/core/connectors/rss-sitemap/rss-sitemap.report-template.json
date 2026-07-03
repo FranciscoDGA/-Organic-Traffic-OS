@@ -1,0 +1,38 @@
+{
+  "report_type": "rss_sitemap_sync",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "title": "Domain Analyzed",
+      "fields": ["domain", "feed_url", "feed_format"]
+    },
+    {
+      "title": "Discovery Results",
+      "fields": ["sitemaps_found", "robots_found", "total_urls"]
+    },
+    {
+      "title": "Content Breakdown",
+      "fields": ["posts", "pages", "categories", "tags"]
+    },
+    {
+      "title": "URLs",
+      "fields": ["urls"]
+    },
+    {
+      "title": "Errors & Warnings",
+      "fields": ["errors", "warnings"]
+    }
+  ],
+  "visualizations": [
+    {
+      "type": "url_type_distribution",
+      "title": "URL Type Distribution",
+      "data_keys": ["posts", "pages", "categories", "tags"]
+    },
+    {
+      "type": "source_distribution",
+      "title": "Source Distribution (RSS vs Sitemap)",
+      "data_key": "urls"
+    }
+  ]
+}

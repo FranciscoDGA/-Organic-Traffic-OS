@@ -1,0 +1,27 @@
+{
+  "agent": "monitoring-agent",
+  "blog_id": "",
+  "report": {
+    "id": "",
+    "content_id": "",
+    "trend": "",
+    "health_score": {
+      "performance": 0,
+      "atualidade": 0,
+      "qualidade": 0,
+      "engajamento": 0,
+      "visibilidade": 0,
+      "conversao": 0,
+      "tendencia": 0,
+      "pontuacao_final": 0
+    },
+    "recommendations": [],
+    "discovery_suggestions": [],
+    "refresh_suggestions": [],
+    "created_at": ""
+  },
+  "success": false,
+  "message": "",
+  "logs": [],
+  "warnings": []
+}

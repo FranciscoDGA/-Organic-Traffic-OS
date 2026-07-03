@@ -1,0 +1,17 @@
+[
+  { "module": "Knowledge Core", "status": "Stable", "last_test": "2026-07-02", "time_ms": 120, "result": "Passed" },
+  { "module": "Inventory", "status": "Stable", "last_test": "2026-07-02", "time_ms": 95, "result": "Passed" },
+  { "module": "Competitors", "status": "Stable", "last_test": "2026-07-02", "time_ms": 110, "result": "Passed" },
+  { "module": "SERP", "status": "Stable", "last_test": "2026-07-02", "time_ms": 200, "result": "Passed" },
+  { "module": "Keywords", "status": "Stable", "last_test": "2026-07-02", "time_ms": 80, "result": "Passed" },
+  { "module": "Collectors", "status": "Stable", "last_test": "2026-07-02", "time_ms": 130, "result": "Passed" },
+  { "module": "Opportunity", "status": "Stable", "last_test": "2026-07-02", "time_ms": 90, "result": "Passed" },
+  { "module": "Editorial Planner", "status": "Stable", "last_test": "2026-07-02", "time_ms": 150, "result": "Passed" },
+  { "module": "Brief Engine", "status": "Stable", "last_test": "2026-07-02", "time_ms": 105, "result": "Passed" },
+  { "module": "Content Architect", "status": "Stable", "last_test": "2026-07-02", "time_ms": 140, "result": "Passed" },
+  { "module": "Research Composer", "status": "Stable", "last_test": "2026-07-02", "time_ms": 180, "result": "Passed" },
+  { "module": "Fact Engine", "status": "Stable", "last_test": "2026-07-02", "time_ms": 160, "result": "Passed" },
+  { "module": "Source Engine", "status": "Stable", "last_test": "2026-07-02", "time_ms": 115, "result": "Passed" },
+  { "module": "Workflow Orchestrator", "status": "Stable", "last_test": "2026-07-02", "time_ms": 90, "result": "Passed" },
+  { "module": "Dashboard UI", "status": "Stable", "last_test": "2026-07-02", "time_ms": 300, "result": "Passed" }
+]

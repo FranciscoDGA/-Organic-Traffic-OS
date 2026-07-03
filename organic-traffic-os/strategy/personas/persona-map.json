@@ -1,0 +1,11 @@
+[
+  {
+    "id": "persona-1",
+    "persona": "Marketing Manager",
+    "objetivos": ["Aumentar leads", "Reduzir CAC"],
+    "dores": ["Orçamento apertado", "Falta de tempo"],
+    "objecoes": ["É muito caro", "Vai dar trabalho para implementar"],
+    "desejos": ["Automação", "Crescimento orgânico"],
+    "nivel_conhecimento": "intermediario"
+  }
+]

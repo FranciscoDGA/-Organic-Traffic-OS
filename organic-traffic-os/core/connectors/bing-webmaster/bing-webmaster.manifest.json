@@ -1,0 +1,24 @@
+{
+  "id": "bing-webmaster",
+  "name": "Bing Webmaster Tools",
+  "version": "1.0.0",
+  "provider": "microsoft",
+  "category": "search-analytics",
+  "authentication": "api_key",
+  "status": "active",
+  "description": "Connector para Bing Webmaster Tools. Obtém dados de busca, rastreamento, indexação e desempenho orgânico vindos do Bing.",
+  "supported_resources": ["sites", "queries", "pages", "crawl_errors", "indexing_status"],
+  "rate_limits": {
+    "requests_per_minute": 60,
+    "queries_per_day": 1000000
+  },
+  "required_scopes": [],
+  "limitations": {
+    "api_available": true,
+    "mock_fallback": true,
+    "notes": "Bing Webmaster API disponível via API Key. Dados mock usados como fallback quando API indisponível."
+  },
+  "env_vars": {
+    "api_key": "BING_API_KEY"
+  }
+}

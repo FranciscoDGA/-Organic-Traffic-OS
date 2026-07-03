@@ -1,0 +1,8 @@
+[
+  { "regra": "Priorizar fontes oficiais" },
+  { "regra": "Evitar fontes duplicadas" },
+  { "regra": "Nunca excluir histórico" },
+  { "regra": "Registrar mudanças de URL" },
+  { "regra": "Registrar indisponibilidade" },
+  { "regra": "Permitir múltiplas fontes para um mesmo fato" }
+]

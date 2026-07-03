@@ -1,0 +1,6 @@
+{
+  "name": "Organic Operations Center",
+  "version": "1.0.0",
+  "description": "Centro operacional em tempo real",
+  "features": ["health_monitoring", "alerts", "incidents", "observability"]
+}

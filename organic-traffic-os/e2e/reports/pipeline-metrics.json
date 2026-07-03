@@ -1,0 +1,8 @@
+{
+  "tempo_medio": 1800,
+  "tempo_por_engine": { "DraftWriter": 4500, "QualityReview": 2100 },
+  "consumo_de_ia": 42500,
+  "quantidade_de_etapas": 23,
+  "falhas": 0,
+  "warnings": 2
+}

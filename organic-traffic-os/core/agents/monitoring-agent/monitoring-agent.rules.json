@@ -1,0 +1,43 @@
+{
+  "trend_thresholds": {
+    "alta_visualizacoes": 5000,
+    "queda_posicao_media": 10,
+    "crescimento_percentual": 20,
+    "decadencia_percentual": -30,
+    "mudanca_brusca_percentual": 50,
+    "perda_ranking_posicao": 15,
+    "ganho_autoridade_posicao": 3
+  },
+  "health_weights": {
+    "performance": 0.20,
+    "atualidade": 0.15,
+    "qualidade": 0.15,
+    "engajamento": 0.15,
+    "visibilidade": 0.15,
+    "conversao": 0.10,
+    "tendencia": 0.10
+  },
+  "recommendation_triggers": {
+    "atualizar_artigo": { "atualidade_max": 80 },
+    "criar_satelite": { "trend_min": "alta" },
+    "melhorar_cta": { "conversao_max": 80 },
+    "criar_faq": { "engajamento_max": 60 },
+    "adicionar_imagem": { "tempo_medio_max": 120 },
+    "adicionar_video": { "tempo_medio_max": 90 },
+    "expandir_cluster": { "trend_min": "crescimento" },
+    "arquivar": { "trend": "decadencia", "atualidade_max": 40 }
+  },
+  "feedback_loop": {
+    "enabled": true,
+    "target_agent": "discovery-agent",
+    "auto_dispatch": true,
+    "origin_label": "monitoring_feedback"
+  },
+  "logging": {
+    "level": "info",
+    "include_metrics": true,
+    "include_recommendations": true,
+    "include_trends": true,
+    "include_warnings": true
+  }
+}

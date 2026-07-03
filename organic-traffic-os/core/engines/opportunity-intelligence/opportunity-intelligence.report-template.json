@@ -1,0 +1,59 @@
+{
+  "report_type": "opportunity_intelligence",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "title": "Overall Scores",
+      "fields": ["overall_scores"]
+    },
+    {
+      "title": "Quick Wins",
+      "fields": ["quick_wins"]
+    },
+    {
+      "title": "Strategic Opportunities",
+      "fields": ["strategic_opportunities"]
+    },
+    {
+      "title": "Refresh Opportunities",
+      "fields": ["refresh_opportunities"]
+    },
+    {
+      "title": "Cluster Opportunities",
+      "fields": ["cluster_opportunities"]
+    },
+    {
+      "title": "Conversion Opportunities",
+      "fields": ["conversion_opportunities"]
+    },
+    {
+      "title": "Ranked Opportunities",
+      "fields": ["ranked_opportunities"]
+    },
+    {
+      "title": "Recommendations",
+      "fields": ["recommendations"]
+    },
+    {
+      "title": "Logs",
+      "fields": ["logs"]
+    }
+  ],
+  "visualizations": [
+    {
+      "type": "score_gauges",
+      "title": "Opportunity Scores",
+      "data_keys": ["opportunity", "traffic_potential", "difficulty", "monetization", "freshness", "authority_fit", "content_gap", "strategic_priority"]
+    },
+    {
+      "type": "opportunities_by_type",
+      "title": "Opportunities by Type",
+      "data_key": "all_opportunities"
+    },
+    {
+      "type": "quick_wins_list",
+      "title": "Quick Wins",
+      "data_key": "quick_wins"
+    }
+  ]
+}

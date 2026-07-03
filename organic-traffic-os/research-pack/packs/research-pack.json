@@ -1,0 +1,15 @@
+{
+  "id": "uuid",
+  "brief_id": "uuid",
+  "blueprint_id": "uuid",
+  "titulo": "string",
+  "objetivo": "string",
+  "contexto": "string",
+  "entidades": [],
+  "perguntas": [],
+  "topicos": [],
+  "fontes": [],
+  "observacoes": "string",
+  "status": "draft",
+  "versao": "1.0"
+}

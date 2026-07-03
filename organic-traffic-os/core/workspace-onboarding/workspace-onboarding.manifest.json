@@ -1,0 +1,7 @@
+{
+  "name": "Workspace Onboarding & Configuration Center",
+  "version": "1.0.0",
+  "description": "Centro de cadastro, configuracao e ativacao de Workspaces",
+  "workspaces": ["passacumaru", "qualoseguro", "utilprobrasil", "tabuometro", "aiagencyos"],
+  "features": ["editorial_profile", "publisher_config", "kpi_tracking", "policy_management", "activation"]
+}

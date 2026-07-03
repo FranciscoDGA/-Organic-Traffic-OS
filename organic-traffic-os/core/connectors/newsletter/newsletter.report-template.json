@@ -1,0 +1,34 @@
+{
+  "report_type": "newsletter_connector",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "title": "Connection Status",
+      "fields": ["connected", "provider", "last_sync"]
+    },
+    {
+      "title": "Audiences",
+      "fields": ["audiences", "total_audiences"]
+    },
+    {
+      "title": "Campaigns",
+      "fields": ["campaigns", "total_campaigns"]
+    },
+    {
+      "title": "Errors & Logs",
+      "fields": ["errors", "warnings", "logs"]
+    }
+  ],
+  "visualizations": [
+    {
+      "type": "campaigns_by_status",
+      "title": "Campaigns by Status",
+      "data_key": "campaigns"
+    },
+    {
+      "type": "audience_sizes",
+      "title": "Audience Sizes",
+      "data_key": "audiences"
+    }
+  ]
+}

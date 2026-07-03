@@ -1,0 +1,27 @@
+{
+  "name": "scheduler",
+  "version": "1.0.0",
+  "description": "Scheduler & Jobs Engine for Organic Traffic OS",
+  "sprint": 43,
+  "epic": 6,
+  "job_types": [
+    "connector_sync",
+    "workflow_run",
+    "agent_run",
+    "monitoring_run",
+    "report_generation",
+    "content_refresh",
+    "publishing_prepare"
+  ],
+  "schedule_types": ["cron", "interval", "once", "manual"],
+  "features": [
+    "create_job",
+    "list_jobs",
+    "pause_job",
+    "resume_job",
+    "cancel_job",
+    "run_now",
+    "history",
+    "validation"
+  ]
+}

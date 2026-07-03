@@ -1,0 +1,41 @@
+{
+  "name": "organic-traffic-os",
+  "version": "1.0.0",
+  "sprint": "I-01",
+  "description": "Production Bootstrap Foundation",
+  "environments": {
+    "development": {
+      "domain": "dev.organic.aiagencyos.com.br",
+      "vercelProject": "organic-traffic-os-dev",
+      "supabaseProject": "organic-traffic-os-dev"
+    },
+    "staging": {
+      "domain": "staging.organic.aiagencyos.com.br",
+      "vercelProject": "organic-traffic-os-staging",
+      "supabaseProject": "organic-traffic-os-staging"
+    },
+    "production": {
+      "domain": "organic.aiagencyos.com.br",
+      "vercelProject": "organic-traffic-os",
+      "supabaseProject": "organic-traffic-os"
+    }
+  },
+  "database": {
+    "schemas": [
+      "core", "workspaces", "missions", "agents", "runtime",
+      "publisher", "campaigns", "knowledge", "memory", "playbooks",
+      "business", "analytics", "audit", "system", "security",
+      "logs", "settings", "users"
+    ]
+  },
+  "storage": {
+    "buckets": [
+      "articles", "images", "reports", "playbooks", "knowledge",
+      "logs", "backups", "exports", "imports", "temporary"
+    ]
+  },
+  "healthCheck": {
+    "endpoints": ["/api/health", "/api/ready", "/api/version"],
+    "intervalMs": 30000
+  }
+}

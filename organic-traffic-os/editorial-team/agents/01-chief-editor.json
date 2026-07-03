@@ -1,0 +1,10 @@
+{
+  "id": "chief-editor",
+  "name": "Chief Editor",
+  "responsibilities": [
+    "Receber Brief",
+    "Aprovar Blueprint",
+    "Iniciar produção",
+    "Controlar fluxo"
+  ]
+}

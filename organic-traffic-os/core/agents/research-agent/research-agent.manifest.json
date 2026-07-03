@@ -1,0 +1,15 @@
+{
+  "id": "research-agent",
+  "name": "Research Agent",
+  "version": "1.0.0",
+  "layer": "agents",
+  "category": "research",
+  "description": "Monta Research Packs completos (entidades, perguntas, fontes, fatos) para cada item aprovado pelo Planning Agent.",
+  "inputs": ["BacklogItem", "blog_id", "mode"],
+  "outputs": ["ResearchPack", "EntityMap", "QuestionMap", "ReferenceList", "ResearchSummary"],
+  "required_connectors": ["mock-connector", "manual-connector"],
+  "required_engines": ["knowledge-engine", "inventory-engine", "serp-engine"],
+  "required_workflows": ["research-workflow"],
+  "dependencies": { "agents": ["planning-agent"], "layers": ["connectors", "knowledge", "engines"] },
+  "status": "active"
+}

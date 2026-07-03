@@ -1,0 +1,17 @@
+{
+  "id": "review-agent",
+  "name": "Review Agent",
+  "version": "1.0.0",
+  "layer": "agents",
+  "category": "quality_assurance",
+  "description": "Realiza a revisão editorial completa do rascunho, avaliando aderência ao brief e qualidade textual.",
+  "inputs": ["DraftPack", "EvidencePack", "ResearchPack", "blog_id", "mode"],
+  "outputs": ["ReviewReport", "ReviewAgentOutput"],
+  "required_services": ["writer-agent", "fact-agent", "research-agent"],
+  "required_workflows": ["editorial-workflow"],
+  "dependencies": {
+    "agents": ["writer-agent"],
+    "layers": ["engines"]
+  },
+  "status": "active"
+}

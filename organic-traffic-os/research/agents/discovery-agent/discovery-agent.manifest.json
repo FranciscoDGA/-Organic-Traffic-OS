@@ -1,0 +1,26 @@
+{
+  "id": "discovery-agent",
+  "name": "Discovery Agent",
+  "category": "discovery",
+  "version": "1.0",
+  "default_provider": "gemini",
+  "capabilities": ["opportunities_discovery", "serp_analysis"],
+  "input_schema": {
+    "blog_id": "string",
+    "topic": "string",
+    "mode": "string",
+    "limit": "number"
+  },
+  "output_schema": {
+    "agent": "string",
+    "blog_id": "string",
+    "topic": "string",
+    "opportunities": "array",
+    "summary": "object",
+    "warnings": "array",
+    "created_at": "string"
+  },
+  "dependencies": ["Google Search Console", "GA4"],
+  "priority": "high",
+  "timeout_ms": 30000
+}

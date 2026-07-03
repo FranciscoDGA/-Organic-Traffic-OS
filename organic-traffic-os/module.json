@@ -1,0 +1,9 @@
+{
+  "name": "organic-traffic-os",
+  "version": "1.0",
+  "dependencies": [],
+  "agents": ["discovery-agent"],
+  "workflows": ["organic_content_pipeline_v1"],
+  "routes": ["/organic-os", "/organic-os/agents/discovery"],
+  "permissions": ["knowledge_read", "serp_read", "inventory_read"]
+}

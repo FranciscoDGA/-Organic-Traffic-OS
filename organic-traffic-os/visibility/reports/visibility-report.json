@@ -1,0 +1,10 @@
+{
+  "id": "uuid",
+  "draft_id": "uuid",
+  "seo_score": 0,
+  "ai_visibility_score": 0,
+  "schema_score": 0,
+  "snippet_score": 0,
+  "overall_score": 0,
+  "recomendacoes": ["string"]
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "id": "blog-uuid-aqui",
+    "nome": "Nome do Blog Exemplo",
+    "dominio": "https://exemplo.com",
+    "nicho": "Concursos Públicos",
+    "publico_alvo": "Jovens adultos e recém-formados buscando estabilidade.",
+    "objetivo_principal": "Captar leads para cursos online.",
+    "monetizacao": "Venda de cursos e apostilas",
+    "tom_de_voz": "Motivacional, claro e direto.",
+    "categorias_principais": ["Notícias de Editais", "Dicas de Estudo", "Provas Anteriores"],
+    "produtos_servicos_promovidos": ["Mentoria Vip", "Apostila Básica"],
+    "status": "ativo"
+  }
+]

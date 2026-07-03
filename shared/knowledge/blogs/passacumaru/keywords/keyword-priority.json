@@ -1,0 +1,20 @@
+[
+  {
+    "keyword_id": "kw-001",
+    "impacto": "Alto",
+    "esforco": "Alto",
+    "potencial": "Alto",
+    "urgencia": "Média",
+    "competicao": "Alta",
+    "valor_estrategico": "Pilar Principal"
+  },
+  {
+    "keyword_id": "kw-002",
+    "impacto": "Muito Alto",
+    "esforco": "Médio",
+    "potencial": "Muito Alto",
+    "urgencia": "Alta",
+    "competicao": "Baixa",
+    "valor_estrategico": "Atração de Tráfego de Fundo de Funil"
+  }
+]

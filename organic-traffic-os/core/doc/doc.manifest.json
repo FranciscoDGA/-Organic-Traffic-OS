@@ -1,0 +1,6 @@
+{
+  "name": "Daily Operations Center",
+  "version": "1.0.0",
+  "description": "Ciclo operacional diario automatizado",
+  "features": ["daily_missions", "briefing", "calendar", "prioritization", "workspace_checks"]
+}

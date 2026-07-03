@@ -1,0 +1,11 @@
+{
+  "id": "uuid",
+  "descricao": "string",
+  "categoria": "string",
+  "origem": "string",
+  "tipo": "string",
+  "nivel_confianca": 0,
+  "status": "pending",
+  "ultima_validacao": "date",
+  "observacoes": "string"
+}

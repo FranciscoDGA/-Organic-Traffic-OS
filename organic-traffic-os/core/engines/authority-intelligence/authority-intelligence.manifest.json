@@ -1,0 +1,48 @@
+{
+  "name": "Authority Intelligence Engine",
+  "version": "1.0.0",
+  "type": "engine",
+  "domain": "intelligence",
+  "description": "Mede, analisa e fortalece a autoridade temática do site",
+  "inputs": [
+    "knowledge_core",
+    "inventory_data",
+    "content_intelligence",
+    "semantic_intelligence",
+    "keywords_data",
+    "clusters_data",
+    "internal_links",
+    "sources_data",
+    "performance_data",
+    "publishing_packages"
+  ],
+  "outputs": [
+    "authority_scores",
+    "cluster_authority_report",
+    "entity_authority_report",
+    "internal_link_report",
+    "pillar_gap_report",
+    "authority_recommendations",
+    "intelligence_report"
+  ],
+  "capabilities": [
+    "analyze_authority",
+    "calculate_topical_authority",
+    "calculate_cluster_authority",
+    "calculate_entity_authority",
+    "detect_pillar_gaps",
+    "analyze_internal_links",
+    "generate_recommendations"
+  ],
+  "scoring": {
+    "topical": "0-100 topical authority",
+    "cluster": "0-100 cluster authority",
+    "entity": "0-100 entity authority",
+    "internal_linking": "0-100 internal linking quality",
+    "pillar_coverage": "0-100 pillar page coverage",
+    "source": "0-100 source diversity",
+    "overall": "0-100 overall authority"
+  },
+  "created_at": "2026-07-02",
+  "updated_at": "2026-07-02"
+}

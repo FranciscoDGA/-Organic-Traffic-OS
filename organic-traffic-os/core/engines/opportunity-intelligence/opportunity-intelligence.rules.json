@@ -1,0 +1,95 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {
+      "id": "high_impressions_low_ctr",
+      "name": "Alta impressão, CTR baixo",
+      "condition": "impressions > 1000 && ctr < 2 && position > 5",
+      "type": "cta_improvement",
+      "priority": "high",
+      "message": "Muitas impressões mas CTR baixo — otimizar title, meta e CTA"
+    },
+    {
+      "id": "trending_topic_no_content",
+      "name": "Tópico em alta sem conteúdo",
+      "condition": "trends_interest > 70 && !has_content",
+      "type": "new_content",
+      "priority": "critical",
+      "message": "Tópico em tendência sem cobertura — criar conteúdo urgente"
+    },
+    {
+      "id": "cluster_expansion_opportunity",
+      "name": "Oportunidade de expansão de cluster",
+      "condition": "cluster_authority > 50 && cluster_items < 5",
+      "type": "cluster_expansion",
+      "priority": "high",
+      "message": "Cluster com autoridade mas poucos artigos — expandir"
+    },
+    {
+      "id": "pillar_page_needed",
+      "name": "Página pilar necessária",
+      "condition": "cluster_items >= 4 && !has_pillar",
+      "type": "pillar_page",
+      "priority": "critical",
+      "message": "Cluster grande sem pilar — criar pilar para consolidar"
+    },
+    {
+      "id": "stale_content_refresh",
+      "name": "Conteúdo desatualizado",
+      "condition": "age_days > 180 && clicks > 10",
+      "type": "update",
+      "priority": "high",
+      "message": "Conteúdo com tráfego mas desatualizado — atualizar"
+    },
+    {
+      "id": "question_unanswered",
+      "name": "Pergunta sem resposta",
+      "condition": "question_count > 3 && answer_coverage < 40",
+      "type": "faq",
+      "priority": "high",
+      "message": "Perguntas do público sem resposta — criar FAQ"
+    },
+    {
+      "id": "quick_win_keyword",
+      "name": "Quick win keyword",
+      "condition": "position > 5 && position <= 20 && impressions > 500",
+      "type": "new_content",
+      "priority": "high",
+      "message": "Keyword na página 2 com volume — otimizar para page 1"
+    },
+    {
+      "id": "entity_gap",
+      "name": "Lacuna de entidade",
+      "condition": "entity_count < 2 && topic_relevance > 50",
+      "type": "new_content",
+      "priority": "medium",
+      "message": "Tópico relevante com poucas entidades — criar conteúdo focado"
+    },
+    {
+      "id": "conversion_opportunity",
+      "name": "Oportunidade de conversão",
+      "condition": "commercial_intent && !has_cta",
+      "type": "landing",
+      "priority": "high",
+      "message": "Keyword comercial sem CTA — criar landing page"
+    },
+    {
+      "id": "simulado_opportunity",
+      "name": "Oportunidade de simulado",
+      "condition": "topic_type == 'educacao' && question_count > 5",
+      "type": "simulado",
+      "priority": "medium",
+      "message": "Tópico educacional com muitas perguntas — criar simulado"
+    }
+  ],
+  "scoring_weights": {
+    "opportunity": {
+      "traffic_potential": 0.25,
+      "content_gap": 0.2,
+      "authority_fit": 0.15,
+      "freshness": 0.15,
+      "monetization": 0.15,
+      "difficulty_inverse": 0.1
+    }
+  }
+}

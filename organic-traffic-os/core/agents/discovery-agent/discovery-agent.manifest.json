@@ -1,0 +1,45 @@
+{
+  "id": "discovery-agent",
+  "name": "Discovery Agent",
+  "version": "1.0.0",
+  "layer": "agents",
+  "category": "discovery",
+  "description": "Agente autônomo responsável por descobrir e priorizar oportunidades editoriais com base no inventário, keywords e dados de performance existentes.",
+  "inputs": {
+    "blog_id": "string",
+    "topic": "string",
+    "mode": "manual|mock|pipeline",
+    "limit": "number"
+  },
+  "outputs": {
+    "opportunities": "DiscoveryOpportunity[]",
+    "summary": "DiscoverySummary",
+    "warnings": "string[]"
+  },
+  "dependencies": {
+    "layers": [
+      "knowledge",
+      "engines",
+      "connectors"
+    ],
+    "engines": [
+      "inventory",
+      "keywords",
+      "opportunities",
+      "performance"
+    ]
+  },
+  "required_knowledge": [
+    "blog-context",
+    "niche-rules"
+  ],
+  "required_engines": [
+    "opportunity-engine",
+    "keyword-engine"
+  ],
+  "required_connectors": [
+    "mock-connector",
+    "manual-connector"
+  ],
+  "status": "active"
+}

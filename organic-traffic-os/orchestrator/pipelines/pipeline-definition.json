@@ -1,0 +1,18 @@
+{
+  "id": "main-content-pipeline",
+  "name": "Pipeline Principal de Conteúdo",
+  "steps": [
+    "Knowledge",
+    "Inventory",
+    "Competitors",
+    "SERP",
+    "Keywords",
+    "Opportunity",
+    "Editorial Planner",
+    "Brief",
+    "Blueprint",
+    "Research Pack",
+    "Fact Engine",
+    "Source Engine"
+  ]
+}

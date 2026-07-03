@@ -1,0 +1,8 @@
+{
+  "name": "AI Intelligence Layer",
+  "version": "1.0.0",
+  "description": "Gerenciamento centralizado de provedores de IA",
+  "providers": ["openai", "anthropic", "gemini"],
+  "taskProfiles": 12,
+  "features": ["model_selection", "fallback", "cost_tracking", "health_check", "cache"]
+}

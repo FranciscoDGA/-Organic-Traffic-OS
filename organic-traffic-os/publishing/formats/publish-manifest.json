@@ -1,0 +1,8 @@
+{
+  "content_id": "uuid",
+  "versao": "1.0",
+  "destino": "WordPress | Next.js | Headless CMS",
+  "renderer": "HTML | Markdown | JSON",
+  "status": "prepared",
+  "checksum": "hash_sha256"
+}

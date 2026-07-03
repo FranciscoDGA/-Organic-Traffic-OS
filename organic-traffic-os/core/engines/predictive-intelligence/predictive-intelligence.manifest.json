@@ -1,0 +1,54 @@
+{
+  "name": "Predictive Intelligence Engine",
+  "version": "1.0.0",
+  "type": "engine",
+  "domain": "intelligence",
+  "description": "Transforma dados históricos em previsões estruturadas e cenários futuros",
+  "inputs": [
+    "content_history",
+    "performance_data",
+    "gsc_connector_data",
+    "ga4_connector_data",
+    "trends_connector_data",
+    "publishing_history",
+    "monitoring_reports",
+    "knowledge_core",
+    "inventory_data",
+    "content_intelligence",
+    "semantic_intelligence",
+    "authority_intelligence",
+    "opportunity_intelligence"
+  ],
+  "outputs": [
+    "traffic_forecast",
+    "ranking_forecast",
+    "growth_forecast",
+    "risk_forecast",
+    "refresh_forecast",
+    "scenarios",
+    "prediction_recommendations",
+    "intelligence_report"
+  ],
+  "capabilities": [
+    "analyze_historical_data",
+    "calculate_trend",
+    "predict_traffic",
+    "predict_ranking",
+    "predict_growth",
+    "predict_refresh",
+    "calculate_confidence",
+    "generate_scenarios",
+    "generate_forecast"
+  ],
+  "scoring": {
+    "confidence": "0-100 prediction confidence",
+    "growth_potential": "0-100 growth potential",
+    "content_longevity": "0-100 content longevity",
+    "refresh_probability": "0-100 refresh probability",
+    "traffic_forecast": "0-100 traffic forecast accuracy",
+    "strategic_value": "0-100 strategic value",
+    "overall": "0-100 overall prediction score"
+  },
+  "created_at": "2026-07-02",
+  "updated_at": "2026-07-02"
+}

@@ -1,0 +1,16 @@
+{
+  "estrutura_padrao": {
+    "h1": "Obrigatório, único por página e deve conter a Keyword exata.",
+    "h2": "Ao menos 3 H2 no artigo. O primeiro H2 deve atacar a resposta principal da intenção de busca.",
+    "h3": "Usar para quebrar os H2 longos ou para itens de lista (ex: lista de requisitos do edital).",
+    "introducao": "Máximo de 3 parágrafos curtos. Usar método APP (Agree, Promise, Preview) ou semelhante.",
+    "desenvolvimento": "Uso obrigatório de parágrafos curtos, bullet points, e tabelas comparativas quando possível.",
+    "resumo": "Uma conclusão de 1 a 2 parágrafos reforçando os pontos principais.",
+    "faq": "Sempre no final do artigo. Mínimo de 3 perguntas frequentes baseadas no 'As Pessoas Também Perguntam' do Google.",
+    "cta": "Posicionado no meio (soft CTA) e no final (hard CTA) do artigo, linkando para um produto ou material gratuito."
+  },
+  "contagem_palavras": {
+    "minima": 1000,
+    "maxima": 3500
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "id": "visibility-agent",
+  "name": "Visibility Agent",
+  "version": "1.0.0",
+  "layer": "agents",
+  "category": "optimization",
+  "description": "Otimiza conteúdos para mecanismos de busca tradicionais e sistemas de IA.",
+  "inputs": ["DraftPack", "ReviewReport", "EvidencePack", "blog_id", "mode"],
+  "outputs": ["VisibilityReport", "VisibilityAgentOutput"],
+  "required_services": ["review-agent", "writer-agent", "fact-agent", "research-agent"],
+  "required_workflows": ["editorial-workflow"],
+  "dependencies": {
+    "agents": ["review-agent"],
+    "layers": ["engines"]
+  },
+  "status": "active"
+}

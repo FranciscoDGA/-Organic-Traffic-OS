@@ -1,0 +1,39 @@
+{
+  "name": "Orchestrator Engine",
+  "version": "1.0.0",
+  "type": "engine",
+  "domain": "orchestration",
+  "description": "Coordena toda a execução do Organic Traffic OS, controlando workflows, dependências e histórico",
+  "inputs": [
+    "workflow_request",
+    "execution_context",
+    "connector_results",
+    "engine_results",
+    "agent_results"
+  ],
+  "outputs": [
+    "execution_result",
+    "execution_log",
+    "workflow_status",
+    "orchestrator_report"
+  ],
+  "capabilities": [
+    "start_workflow",
+    "stop_workflow",
+    "validate_workflow",
+    "resolve_dependencies",
+    "execute_step",
+    "register_workflow",
+    "get_status",
+    "get_history"
+  ],
+  "workflows": [
+    "full-seo-cycle",
+    "content-creation",
+    "data-collection",
+    "intelligence-analysis",
+    "publish-pipeline"
+  ],
+  "created_at": "2026-07-02",
+  "updated_at": "2026-07-02"
+}

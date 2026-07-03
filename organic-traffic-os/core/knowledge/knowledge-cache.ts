@@ -1,0 +1,1 @@
+export interface KnowledgeCache { get(key: string): any; set(key: string, val: any): void; }

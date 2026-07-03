@@ -1,0 +1,59 @@
+{
+  "report_type": "authority_intelligence",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "title": "Overall Scores",
+      "fields": ["overall_scores"]
+    },
+    {
+      "title": "Content Analysis",
+      "fields": ["total_items", "total_clusters", "total_entities", "total_internal_links", "total_pillar_pages"]
+    },
+    {
+      "title": "Clusters",
+      "fields": ["clusters"]
+    },
+    {
+      "title": "Entity Authority",
+      "fields": ["entity_authority"]
+    },
+    {
+      "title": "Pillar Pages",
+      "fields": ["pillar_pages"]
+    },
+    {
+      "title": "Pillar Gaps",
+      "fields": ["pillar_gaps"]
+    },
+    {
+      "title": "Weak Clusters",
+      "fields": ["weak_clusters"]
+    },
+    {
+      "title": "Recommendations",
+      "fields": ["recommendations"]
+    },
+    {
+      "title": "Logs",
+      "fields": ["logs"]
+    }
+  ],
+  "visualizations": [
+    {
+      "type": "score_gauges",
+      "title": "Authority Scores",
+      "data_keys": ["topical", "cluster", "entity", "internal_linking", "pillar_coverage", "source", "overall"]
+    },
+    {
+      "type": "clusters_by_strength",
+      "title": "Clusters by Strength",
+      "data_key": "clusters"
+    },
+    {
+      "type": "recommendations_by_type",
+      "title": "Recommendations by Type",
+      "data_key": "recommendations"
+    }
+  ]
+}

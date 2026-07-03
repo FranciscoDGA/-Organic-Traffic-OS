@@ -1,0 +1,14 @@
+{
+  "connector": "bing-webmaster",
+  "version": "1.0.0",
+  "status": {},
+  "sites": [],
+  "queries": [],
+  "pages": [],
+  "crawl_errors": [],
+  "indexing_status": [],
+  "sync_result": {},
+  "cache_meta": {},
+  "logs": [],
+  "created_at": ""
+}

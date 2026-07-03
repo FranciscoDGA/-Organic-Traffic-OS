@@ -1,0 +1,19 @@
+{
+  "prioritize": [
+    "conteúdos com alta intenção educacional",
+    "conteúdos ligados a concursos municipais",
+    "temas relacionados à banca IVIN",
+    "lacunas encontradas no inventário",
+    "perguntas recorrentes",
+    "conteúdos com potencial de gerar assinatura, e-book ou lead",
+    "conteúdos evergreen",
+    "conteúdos úteis para candidatos iniciantes"
+  ],
+  "avoid": [
+    "tema duplicado",
+    "tema fora do nicho",
+    "promessa de aprovação",
+    "dados sem fonte",
+    "conteúdo sensacionalista"
+  ]
+}

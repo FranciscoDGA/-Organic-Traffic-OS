@@ -1,0 +1,18 @@
+[
+  {
+    "agent_id": "chief-editor",
+    "entradas_obrigatorias": ["Brief", "Blueprint"],
+    "saidas_obrigatorias": ["ApprovalSignal"],
+    "dependencias": ["Fact Engine", "Source Engine"],
+    "erros_possiveis": ["Blueprint Inválido", "Falta de Fatos"],
+    "tempo_esperado_ms": 5000
+  },
+  {
+    "agent_id": "content-writer",
+    "entradas_obrigatorias": ["Validated Blueprint", "Research Pack"],
+    "saidas_obrigatorias": ["Draft"],
+    "dependencias": ["SEO Reviewer", "Outline Reviewer"],
+    "erros_possiveis": ["Alucinação", "Fora do Tom"],
+    "tempo_esperado_ms": 30000
+  }
+]

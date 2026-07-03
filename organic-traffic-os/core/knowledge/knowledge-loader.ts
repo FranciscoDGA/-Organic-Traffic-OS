@@ -1,0 +1,1 @@
+export interface KnowledgeLoader { load(path: string): Promise<any>; }

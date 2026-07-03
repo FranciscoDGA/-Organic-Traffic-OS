@@ -1,0 +1,20 @@
+[
+  { "id": "portugues", "nome": "Português", "status": "ativo" },
+  { "id": "matematica", "nome": "Matemática", "status": "ativo" },
+  { "id": "informatica", "nome": "Informática", "status": "ativo" },
+  { "id": "conhecimentos_gerais", "nome": "Conhecimentos Gerais", "status": "ativo" },
+  { "id": "legislacao_municipal", "nome": "Legislação Municipal", "status": "ativo" },
+  { "id": "direito_administrativo", "nome": "Direito Administrativo", "status": "ativo" },
+  { "id": "direito_constitucional", "nome": "Direito Constitucional", "status": "ativo" },
+  { "id": "raciocinio_logico", "nome": "Raciocínio Lógico", "status": "ativo" },
+  { "id": "atualidades", "nome": "Atualidades", "status": "ativo" },
+  { "id": "editais", "nome": "Editais", "status": "ativo" },
+  { "id": "questoes_comentadas", "nome": "Questões Comentadas", "status": "ativo" },
+  { "id": "cronogramas", "nome": "Cronogramas", "status": "ativo" },
+  { "id": "materiais_gratuitos", "nome": "Materiais Gratuitos", "status": "ativo" },
+  { "id": "e_books", "nome": "E-books", "status": "ativo" },
+  { "id": "videos", "nome": "Vídeos", "status": "ativo" },
+  { "id": "simulados", "nome": "Simulados", "status": "ativo" },
+  { "id": "banca_ivin", "nome": "Banca IVIN", "status": "ativo" },
+  { "id": "prefeitura", "nome": "Prefeitura", "status": "ativo" }
+]

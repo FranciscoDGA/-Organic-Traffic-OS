@@ -1,0 +1,12 @@
+{
+  "id": "uuid",
+  "objetivo": "string",
+  "publico": "string",
+  "persona": "string",
+  "intencao": "string",
+  "nivel_tecnico": "iniciante | intermediario | avancado",
+  "tom": "informacional | persuasivo | urgente",
+  "narrativa": "string",
+  "cta": "uuid",
+  "status": "active"
+}

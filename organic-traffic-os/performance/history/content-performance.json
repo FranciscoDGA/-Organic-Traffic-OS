@@ -1,0 +1,7 @@
+{
+  "content_id": "uuid",
+  "url": "https://passacumaru.com/artigo-exemplo",
+  "status": "Healthy | Warning | Decay",
+  "ultima_analise": "datetime",
+  "ultima_atualizacao": "datetime"
+}

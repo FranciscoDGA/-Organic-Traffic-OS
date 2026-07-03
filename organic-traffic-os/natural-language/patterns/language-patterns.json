@@ -1,0 +1,6 @@
+{
+  "aberturas": ["Você já se perguntou...", "Muitos profissionais enfrentam..."],
+  "transicoes": ["Além disso...", "Por outro lado...", "Na prática, isso significa..."],
+  "conclusoes": ["Em resumo...", "Para dar o próximo passo..."],
+  "chamadas_atencao": ["Importante:", "O erro mais comum é..."]
+}

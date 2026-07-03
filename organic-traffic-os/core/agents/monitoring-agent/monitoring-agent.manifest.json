@@ -1,0 +1,17 @@
+{
+  "id": "monitoring-agent",
+  "name": "Monitoring Agent",
+  "version": "1.0.0",
+  "layer": "agents",
+  "category": "monitoring",
+  "description": "Acompanha o desempenho, detecta tendências e fecha o ciclo de feedback enviando sugestões para o Discovery Agent.",
+  "inputs": ["PublicationPackage", "PerformanceMetrics", "History", "blog_id", "mode"],
+  "outputs": ["MonitoringReport", "HealthScore", "MonitoringAgentOutput"],
+  "required_services": ["publishing-agent", "discovery-agent"],
+  "required_workflows": ["editorial-workflow", "feedback-loop"],
+  "dependencies": {
+    "agents": ["publishing-agent", "discovery-agent"],
+    "layers": ["engines", "connectors"]
+  },
+  "status": "active"
+}

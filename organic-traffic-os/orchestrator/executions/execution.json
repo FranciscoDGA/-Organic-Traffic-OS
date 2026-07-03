@@ -1,0 +1,13 @@
+{
+  "id": "uuid",
+  "pipeline": "main-content-pipeline",
+  "blog": "blog-id",
+  "status": "Pending",
+  "etapa_atual": "Knowledge",
+  "progresso": 0,
+  "inicio": "date",
+  "fim": null,
+  "tempo_total": 0,
+  "erros": [],
+  "avisos": []
+}

@@ -1,0 +1,42 @@
+{
+  "report_type": "wordpress_connector",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "title": "Connection Status",
+      "fields": ["connected", "site_url", "site_name", "last_sync"]
+    },
+    {
+      "title": "Content Overview",
+      "fields": ["total_posts", "total_categories", "total_tags"]
+    },
+    {
+      "title": "Recent Posts",
+      "fields": ["posts"]
+    },
+    {
+      "title": "Categories",
+      "fields": ["categories"]
+    },
+    {
+      "title": "Tags",
+      "fields": ["tags"]
+    },
+    {
+      "title": "Errors & Logs",
+      "fields": ["errors", "logs"]
+    }
+  ],
+  "visualizations": [
+    {
+      "type": "posts_by_status",
+      "title": "Posts by Status",
+      "data_key": "posts"
+    },
+    {
+      "type": "categories_usage",
+      "title": "Categories Usage",
+      "data_key": "categories"
+    }
+  ]
+}

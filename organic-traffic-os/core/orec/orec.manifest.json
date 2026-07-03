@@ -1,0 +1,6 @@
+{
+  "name": "Organic Reliability Engineering Center",
+  "version": "1.0.0",
+  "description": "Confiabilidade e evolucao continua da plataforma",
+  "features": ["reliability_score", "trends", "capacity", "recommendations"]
+}

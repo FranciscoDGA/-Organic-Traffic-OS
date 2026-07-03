@@ -1,0 +1,16 @@
+{
+  "estados_validos": [
+    "Pending",
+    "Running",
+    "Paused",
+    "Completed",
+    "Failed",
+    "Cancelled"
+  ],
+  "transicoes": {
+    "Pending": ["Running", "Cancelled"],
+    "Running": ["Paused", "Completed", "Failed", "Cancelled"],
+    "Paused": ["Running", "Cancelled"],
+    "Failed": ["Running", "Cancelled"]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "meta_title": "Máximo 60 caracteres. Deve incluir a Keyword principal e um modificador de CTA (ex: 'Atualizado', 'Guia', '[Ano]').",
+  "meta_description": "Máximo 155 caracteres. Deve instigar a curiosidade e ter a Keyword principal de forma natural.",
+  "slug": "Curto, apenas com a Keyword principal. Separado por hífen. Ex: 'como-passar-concurso-municipal'.",
+  "links_internos": "Mínimo de 3 links para outros artigos do blog que complementem o assunto (Silo structure).",
+  "links_externos": "Mínimo de 1 link para sites de alta autoridade (.gov, .edu, ou jornais grandes) para comprovar dados.",
+  "schema": "Obrigatório uso de Article Schema em todos os posts de blog.",
+  "open_graph": "Obrigatório configurar og:title, og:description e og:image.",
+  "faq_schema": "Obrigatório se a seção FAQ for usada no artigo.",
+  "breadcrumb": "Obrigatório para ajudar na navegação e exibição correta na SERP.",
+  "heading_hierarchy": "H1 -> H2 -> H3. Nunca pular de H2 direto para H4. Sem H1 duplicados."
+}

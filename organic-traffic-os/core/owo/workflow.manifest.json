@@ -1,0 +1,26 @@
+{
+  "name": "Organic Workflow Orchestrator",
+  "version": "1.0.0",
+  "description": "Workflow Engine central do Organic Traffic OS",
+  "components": {
+    "workflowBuilder": "Construcao de workflows com sequencia, paralelismo e aprovacao",
+    "dagEngine": "Directed Acyclic Graph com validacao de ciclos",
+    "dependencyEngine": "Gerenciamento de dependencias entre steps",
+    "conditionEngine": "Suporte a IF, ELSE, WAIT, APPROVAL, RETRY, TIMEOUT, FAILOVER",
+    "transitionEngine": "Controle de transicoes de estado validas",
+    "workflowMonitor": "Monitoramento em tempo real de execucoes",
+    "workflowService": "Servico central de orquestracao"
+  },
+  "templates": {
+    "article": "Artigo Completo (5 steps)",
+    "review": "Review Comparativo (5 steps)",
+    "pillar": "Pagina Pilar (7 steps)",
+    "landing": "Landing Page (4 steps)",
+    "ebook": "E-book (6 steps)",
+    "newsletter": "Newsletter (4 steps)",
+    "update": "Atualizacao (4 steps)",
+    "refresh": "Refresh de Conteudo (4 steps)",
+    "campaign": "Campanha Integrada (9 steps)",
+    "seoAudit": "Auditoria SEO (5 steps)"
+  }
+}

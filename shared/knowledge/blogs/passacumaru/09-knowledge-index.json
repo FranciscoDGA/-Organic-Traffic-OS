@@ -1,0 +1,13 @@
+{
+  "blog_id": "passacumaru",
+  "files": [
+    "01-blog-profile.json",
+    "02-target-audience.json",
+    "03-editorial-guidelines.json",
+    "04-categories.json",
+    "05-products.json",
+    "06-content-rules.json",
+    "07-writing-style.json",
+    "08-seo-rules.json"
+  ]
+}

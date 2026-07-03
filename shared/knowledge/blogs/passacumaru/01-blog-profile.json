@@ -1,0 +1,15 @@
+{
+  "id": "passacumaru",
+  "nome": "PassaCumaru",
+  "slug": "passacumaru",
+  "dominio": "https://passacumaru.com.br",
+  "descricao": "Portal especializado em aprovação para concursos de prefeituras e bancas municipais, com foco especial na Banca IVIN.",
+  "missao": "Democratizar o acesso à informação de qualidade para concursos municipais e guiar estudantes rumo à aprovação com materiais diretos e eficientes.",
+  "historia": "Nascido da necessidade de focar em bancas menores e concursos de prefeituras que são negligenciados pelos grandes cursinhos.",
+  "cidade": "São Paulo",
+  "estado": "SP",
+  "pais": "Brasil",
+  "idioma": "pt-BR",
+  "data_criacao": "2026-07-02",
+  "status": "ativo"
+}

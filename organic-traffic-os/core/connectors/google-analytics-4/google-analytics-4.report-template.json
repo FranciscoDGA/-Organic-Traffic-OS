@@ -1,0 +1,14 @@
+{
+  "connector": "google-analytics-4",
+  "version": "1.0.0",
+  "status": {},
+  "properties": [],
+  "pages": [],
+  "traffic_sources": [],
+  "events": [],
+  "conversions": [],
+  "sync_result": {},
+  "cache_meta": {},
+  "logs": [],
+  "created_at": ""
+}

@@ -1,0 +1,17 @@
+{
+  "agent": "discovery-agent",
+  "blog_id": "",
+  "topic": "",
+  "opportunities": [],
+  "summary": {
+    "total_found": 0,
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0,
+    "avg_score": 0,
+    "top_cluster": ""
+  },
+  "warnings": [],
+  "created_at": ""
+}

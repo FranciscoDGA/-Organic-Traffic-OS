@@ -1,0 +1,22 @@
+[
+  {
+    "id": "cluster-banca-ivin",
+    "nome": "Guia Completo: Banca IVIN",
+    "descricao": "Tudo sobre o perfil da banca organizadora IVIN.",
+    "categoria": "Bancas Municipais",
+    "palavra_principal": "banca ivin",
+    "palavras_secundarias": ["o que cai na prova da banca ivin", "questoes banca ivin", "apostila banca ivin pdf"],
+    "objetivo": "Dominar as buscas pela banca IVIN no Google",
+    "status": "ativo"
+  },
+  {
+    "id": "cluster-lei-organica",
+    "nome": "Legislação: Lei Orgânica",
+    "descricao": "Série de artigos ensinando a estudar as Leis Orgânicas Municipais.",
+    "categoria": "Legislação",
+    "palavra_principal": "lei organica do municipio",
+    "palavras_secundarias": ["lei organica resumo", "lei organica esquematizada"],
+    "objetivo": "Tornar-se referência em Direito Administrativo Municipal",
+    "status": "ativo"
+  }
+]

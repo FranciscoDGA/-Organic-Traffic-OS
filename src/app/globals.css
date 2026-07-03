@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* ── ORGANIC OS — DESIGN SYSTEM TOKENS ────────────── */
+@theme {
+  --color-os-bg:       #0b0e14;
+  --color-os-surface:  #111520;
+  --color-os-border:   #1d2133;
+  --color-os-muted:    #2a2f45;
+  --color-os-text:     #e2e8f0;
+  --color-os-subtle:   #64748b;
+  --color-os-accent:   #6366f1;
+  --color-os-accent2:  #818cf8;
+  --color-os-success:  #10b981;
+  --color-os-warning:  #f59e0b;
+  --color-os-danger:   #f43f5e;
+
+  --font-sans: "Inter", "SF Pro Display", system-ui, sans-serif;
+}
+
+/* ── GLOBAL RESETS ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background-color: #0b0e14;
+  color: #e2e8f0;
+  font-family: "Inter", "SF Pro Display", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: #0b0e14;
+  color: #e2e8f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── SCROLLBAR ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #2a2f45; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+
+/* ── ANIMATIONS ────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(99,102,241,.3); }
+  50%       { box-shadow: 0 0 0 6px rgba(99,102,241,0); }
+}
+.animate-fade-in-up { animation: fadeInUp 0.4s ease both; }
+.animate-pulse-glow { animation: pulse-glow 2s ease infinite; }

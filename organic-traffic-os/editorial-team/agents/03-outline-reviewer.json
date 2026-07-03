@@ -1,0 +1,9 @@
+{
+  "id": "outline-reviewer",
+  "name": "Outline Reviewer",
+  "responsibilities": [
+    "Validar Blueprint",
+    "Validar estrutura",
+    "Validar componentes"
+  ]
+}

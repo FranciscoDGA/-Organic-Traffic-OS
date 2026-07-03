@@ -1,0 +1,29 @@
+{
+  "id": "google-search-console",
+  "name": "Google Search Console",
+  "version": "1.0.0",
+  "provider": "google",
+  "category": "search-analytics",
+  "authentication": "oauth2",
+  "status": "active",
+  "description": "Connector para integração com Google Search Console. Obtém dados reais de consultas, páginas, impressões, cliques, CTR e posição média de pesquisa.",
+  "supported_resources": ["sites", "queries", "pages", "countries", "devices", "dates"],
+  "rate_limits": {
+    "queries_per_minute": 50,
+    "queries_per_day": 100000000,
+    "max_row_limit": 25000,
+    "max_date_range_days": 901
+  },
+  "oauth": {
+    "authorize_url": "https://accounts.google.com/o/oauth2/v2/auth",
+    "token_url": "https://oauth2.googleapis.com/token",
+    "scope": "https://www.googleapis.com/auth/webmasters.readonly",
+    "access_type": "offline",
+    "prompt": "consent"
+  },
+  "env_vars": {
+    "client_id": "GOOGLE_CLIENT_ID",
+    "client_secret": "GOOGLE_CLIENT_SECRET",
+    "redirect_uri": "GOOGLE_REDIRECT_URI"
+  }
+}

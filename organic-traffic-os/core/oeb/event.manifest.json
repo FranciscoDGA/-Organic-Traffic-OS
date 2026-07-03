@@ -1,0 +1,17 @@
+{
+  "name": "Organic Event Bus",
+  "version": "1.0.0",
+  "description": "Comunicacao assincrona centralizada entre modulos do Organic Traffic OS",
+  "components": {
+    "eventBus": "Publicacao e distribuicao de eventos",
+    "eventRouter": "Roteamento de eventos para subscribers",
+    "eventStore": "Persistencia de eventos criticos",
+    "eventPublisher": "Publicacao de eventos com validacao",
+    "eventConsumer": "Consumicao de eventos por modulos",
+    "eventValidator": "Validacao de estrutura de eventos",
+    "subscriptionManager": "Gerenciamento de subscriptions",
+    "eventMonitor": "Monitoramento e metricas"
+  },
+  "eventTypes": 26,
+  "features": ["retry", "dead_letter", "replay", "correlation", "audit"]
+}

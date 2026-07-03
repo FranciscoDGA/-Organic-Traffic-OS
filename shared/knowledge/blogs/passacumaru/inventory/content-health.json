@@ -1,0 +1,44 @@
+[
+  {
+    "id": "post-001",
+    "score_geral": 92,
+    "seo_score": 95,
+    "qualidade": 90,
+    "legibilidade": 85,
+    "atualizacao": 98,
+    "estrutura": 90,
+    "links": 80,
+    "imagens": 100,
+    "faq": 100,
+    "cta": 100,
+    "status": "excelente"
+  },
+  {
+    "id": "page-001",
+    "score_geral": 85,
+    "seo_score": 80,
+    "qualidade": 95,
+    "legibilidade": 90,
+    "atualizacao": 100,
+    "estrutura": 90,
+    "links": 50,
+    "imagens": 100,
+    "faq": 100,
+    "cta": 100,
+    "status": "bom"
+  },
+  {
+    "id": "post-002",
+    "score_geral": 45,
+    "seo_score": 40,
+    "qualidade": 60,
+    "legibilidade": 70,
+    "atualizacao": 30,
+    "estrutura": 50,
+    "links": 0,
+    "imagens": 30,
+    "faq": 0,
+    "cta": 0,
+    "status": "precisa_de_revisao"
+  }
+]

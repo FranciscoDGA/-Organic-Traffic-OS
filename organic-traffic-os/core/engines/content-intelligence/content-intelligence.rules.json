@@ -1,0 +1,91 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {
+      "id": "critical_bounce_high_position",
+      "name": "Alto bounce + Posição Ruim",
+      "condition": "bounce_rate > 70 && position > 20",
+      "action": "update",
+      "priority": "critical",
+      "message": "Conteúdo com alto bounce rate e posição ruim precisa de melhoria urgente"
+    },
+    {
+      "id": "opportunity_high_impressions_low_ctr",
+      "name": "Alta impressão + CTR baixo",
+      "condition": "impressions > 1000 && ctr < 2",
+      "action": "optimize",
+      "priority": "high",
+      "message": "Muitas impressões mas CTR baixo — otimizar title e meta description"
+    },
+    {
+      "id": "risk_decaying_content",
+      "name": "Conteúdo em declínio",
+      "condition": "clicks > 20 && position > 10 && ageDays > 180",
+      "action": "update",
+      "priority": "high",
+      "message": "Conteúdo com tráfego caindo — atualizar dados e informações"
+    },
+    {
+      "id": "opportunity_position_5_20",
+      "name": "Posição favorável para crescimento",
+      "condition": "position > 5 && position <= 20 && impressions > 500",
+      "action": "optimize",
+      "priority": "medium",
+      "message": "Posição entre 5-20 — otimizações podem levar à primeira página"
+    },
+    {
+      "id": "freshness_stale_content",
+      "name": "Conteúdo desatualizado",
+      "condition": "ageDays > 365",
+      "action": "update",
+      "priority": "medium",
+      "message": "Conteúdo com mais de 1 ano — revisar e atualizar"
+    },
+    {
+      "id": "authority_high_clicks",
+      "name": "Conteúdo autoridade",
+      "condition": "clicks > 100 && position <= 5",
+      "action": "monitor",
+      "priority": "low",
+      "message": "Conteúdo performando bem — monitorar para manter posição"
+    },
+    {
+      "id": "potential_new_content",
+      "name": "Oportunidade de conteúdo novo",
+      "condition": "impressions > 2000 && clicks < 5",
+      "action": "create",
+      "priority": "high",
+      "message": "Alta demanda detectada mas conteúdo insuficiente — criar novo conteúdo"
+    },
+    {
+      "id": "cluster_opportunity",
+      "name": "Oportunidade de cluster",
+      "condition": "impressions > 500 && position > 10 && related_content_count > 2",
+      "action": "cluster",
+      "priority": "medium",
+      "message": "Tópico com múltiplos conteúdos relacionados — considerar cluster temático"
+    }
+  ],
+  "scoring_weights": {
+    "health": {
+      "clicks": 0.2,
+      "ctr": 0.2,
+      "position": 0.25,
+      "bounce_rate": 0.15,
+      "time_on_page": 0.1,
+      "freshness": 0.1
+    },
+    "opportunity": {
+      "impressions": 0.3,
+      "ctr_gap": 0.25,
+      "position_potential": 0.25,
+      "click_potential": 0.2
+    },
+    "risk": {
+      "position_drop": 0.3,
+      "age": 0.25,
+      "ctr_decline": 0.2,
+      "bounce_rate": 0.25
+    }
+  }
+}

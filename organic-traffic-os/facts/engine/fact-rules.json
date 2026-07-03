@@ -1,0 +1,7 @@
+[
+  { "regra": "Nunca aceitar fatos sem origem" },
+  { "regra": "Priorizar documentos oficiais" },
+  { "regra": "Registrar divergências" },
+  { "regra": "Nunca remover histórico" },
+  { "regra": "Registrar revisões" }
+]

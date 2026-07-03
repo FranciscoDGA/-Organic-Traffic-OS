@@ -1,0 +1,12 @@
+{
+  "id": "e2e-run-uuid",
+  "pipeline": "MVP V1 Flow",
+  "tema": "Concurso Prefeitura de Cumaru do Norte",
+  "tempo_total": 45000,
+  "status": "Success",
+  "engines_executadas": 23,
+  "falhas": 0,
+  "avisos": 2,
+  "tokens": 42500,
+  "provedores_utilizados": ["OpenAI", "Anthropic", "Google"]
+}

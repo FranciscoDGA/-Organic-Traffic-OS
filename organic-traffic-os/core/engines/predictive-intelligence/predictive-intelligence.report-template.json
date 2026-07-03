@@ -1,0 +1,67 @@
+{
+  "report_type": "predictive_intelligence",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "title": "Overall Scores",
+      "fields": ["overall_scores"]
+    },
+    {
+      "title": "Traffic Forecasts",
+      "fields": ["traffic_forecasts"]
+    },
+    {
+      "title": "Ranking Forecasts",
+      "fields": ["ranking_forecasts"]
+    },
+    {
+      "title": "Growth Forecasts",
+      "fields": ["growth_forecasts"]
+    },
+    {
+      "title": "Risk Forecasts",
+      "fields": ["risk_forecasts"]
+    },
+    {
+      "title": "Refresh Forecasts",
+      "fields": ["refresh_forecasts"]
+    },
+    {
+      "title": "Scenarios",
+      "fields": ["scenarios"]
+    },
+    {
+      "title": "Predictions",
+      "fields": ["predictions"]
+    },
+    {
+      "title": "Recommendations",
+      "fields": ["recommendations"]
+    },
+    {
+      "title": "Warnings",
+      "fields": ["warnings"]
+    },
+    {
+      "title": "Logs",
+      "fields": ["logs"]
+    }
+  ],
+  "visualizations": [
+    {
+      "type": "score_gauges",
+      "title": "Prediction Scores",
+      "data_keys": ["confidence", "growth_potential", "content_longevity", "refresh_probability", "traffic_forecast", "strategic_value", "overall"]
+    },
+    {
+      "type": "scenarios_comparison",
+      "title": "Scenarios Comparison",
+      "data_key": "scenarios"
+    },
+    {
+      "type": "risk_distribution",
+      "title": "Risk Distribution",
+      "data_key": "risk_forecasts"
+    }
+  ]
+}

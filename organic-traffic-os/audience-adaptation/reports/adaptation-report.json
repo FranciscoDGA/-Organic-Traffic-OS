@@ -1,0 +1,13 @@
+{
+  "id": "uuid",
+  "draft_id": "uuid",
+  "persona": "string",
+  "nivel_tecnico": "string",
+  "tom_atual": "string",
+  "tom_recomendado": "string",
+  "clareza": 0,
+  "didatica": 0,
+  "score": 0,
+  "status": "adapted | needs_adaptation",
+  "observacoes": ["string"]
+}

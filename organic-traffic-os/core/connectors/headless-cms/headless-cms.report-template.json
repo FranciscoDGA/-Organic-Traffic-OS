@@ -1,0 +1,38 @@
+{
+  "report_type": "headless_cms_connector",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "title": "Connection Status",
+      "fields": ["connected", "provider", "api_url", "last_sync"]
+    },
+    {
+      "title": "Content Overview",
+      "fields": ["total_collections", "total_content"]
+    },
+    {
+      "title": "Collections",
+      "fields": ["collections"]
+    },
+    {
+      "title": "Content",
+      "fields": ["content"]
+    },
+    {
+      "title": "Errors & Logs",
+      "fields": ["errors", "logs"]
+    }
+  ],
+  "visualizations": [
+    {
+      "type": "content_by_collection",
+      "title": "Content by Collection",
+      "data_key": "content"
+    },
+    {
+      "type": "content_by_status",
+      "title": "Content by Status",
+      "data_key": "content"
+    }
+  ]
+}

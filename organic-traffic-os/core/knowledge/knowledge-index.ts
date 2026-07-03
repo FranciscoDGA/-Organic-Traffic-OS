@@ -1,0 +1,1 @@
+export interface KnowledgeIndex { build(data: any[]): void; search(q: string): any[]; }

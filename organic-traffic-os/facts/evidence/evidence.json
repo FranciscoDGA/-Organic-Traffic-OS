@@ -1,0 +1,9 @@
+{
+  "fonte": "string",
+  "tipo": "string",
+  "url": "string",
+  "titulo": "string",
+  "data": "date",
+  "autor": "string",
+  "observacoes": "string"
+}

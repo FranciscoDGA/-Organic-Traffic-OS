@@ -1,0 +1,9 @@
+[
+  {
+    "id": "cta-1",
+    "cta_principal": "Baixar E-book",
+    "cta_secundario": "Assinar Newsletter",
+    "momento_cta": "Final do texto (Principal), Meio do texto (Secundário)",
+    "objetivo": "Gerar Lead"
+  }
+]

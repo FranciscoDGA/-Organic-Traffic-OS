@@ -1,0 +1,46 @@
+{
+  "name": "Semantic Intelligence Engine",
+  "version": "1.0.0",
+  "type": "engine",
+  "domain": "intelligence",
+  "description": "Analisa cobertura semântica, entidades, tópicos, perguntas e lacunas de significado dos conteúdos",
+  "inputs": [
+    "knowledge_core",
+    "keywords_data",
+    "serp_data",
+    "inventory_data",
+    "research_packs",
+    "drafts",
+    "visibility_reports",
+    "sources",
+    "facts"
+  ],
+  "outputs": [
+    "semantic_scores",
+    "entity_report",
+    "topic_report",
+    "question_report",
+    "gap_report",
+    "semantic_recommendations",
+    "intelligence_report"
+  ],
+  "capabilities": [
+    "analyze_semantic_coverage",
+    "extract_entities",
+    "map_topics",
+    "map_questions",
+    "detect_semantic_gaps",
+    "calculate_scores",
+    "generate_recommendations"
+  ],
+  "scoring": {
+    "coverage": "0-100 semantic coverage score",
+    "entity_coverage": "0-100 entity coverage",
+    "topic_depth": "0-100 topic depth",
+    "question_answering": "0-100 question answering",
+    "topical_authority": "0-100 topical authority",
+    "completeness": "0-100 content completeness"
+  },
+  "created_at": "2026-07-02",
+  "updated_at": "2026-07-02"
+}

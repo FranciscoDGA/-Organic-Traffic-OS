@@ -1,0 +1,10 @@
+{
+  "id": "seo-reviewer",
+  "name": "SEO Reviewer",
+  "responsibilities": [
+    "Validar intenção",
+    "Validar entidades",
+    "Validar links",
+    "Validar Schema"
+  ]
+}

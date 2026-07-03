@@ -1,0 +1,13 @@
+{
+  "name": "Organic Knowledge Base",
+  "version": "1.0.0",
+  "description": "Base de conhecimento centralizada para Agents",
+  "components": {
+    "playbooks": 13,
+    "prompts": 8,
+    "templates": 7,
+    "guidelines": 8,
+    "workspaceKnowledge": 5
+  },
+  "features": ["search", "versioning", "workspace_scoped", "category_filter"]
+}

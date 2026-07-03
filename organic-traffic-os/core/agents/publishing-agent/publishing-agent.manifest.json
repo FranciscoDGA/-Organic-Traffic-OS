@@ -1,0 +1,17 @@
+{
+  "id": "publishing-agent",
+  "name": "Publishing Agent",
+  "version": "1.0.0",
+  "layer": "agents",
+  "category": "publishing",
+  "description": "Transforma conteúdos aprovados em pacotes de publicação prontos para qualquer plataforma usando Adapters.",
+  "inputs": ["OptimizedDraft", "VisibilityReport", "Metadata", "Schema", "PublishingConfig", "blog_id", "mode"],
+  "outputs": ["PublicationPackage", "PublishingReport", "PublishingAgentOutput"],
+  "required_services": ["visibility-agent", "review-agent", "writer-agent", "fact-agent", "research-agent"],
+  "required_workflows": ["editorial-workflow"],
+  "dependencies": {
+    "agents": ["visibility-agent"],
+    "layers": ["engines", "publishing"]
+  },
+  "status": "active"
+}

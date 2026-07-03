@@ -1,0 +1,9 @@
+{
+  "max_tentativas": 3,
+  "tempo_entre_tentativas_ms": 5000,
+  "regras_de_falha": [
+    "timeout",
+    "network_error",
+    "validation_failed"
+  ]
+}

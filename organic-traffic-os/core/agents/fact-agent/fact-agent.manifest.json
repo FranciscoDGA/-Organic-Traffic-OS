@@ -1,0 +1,17 @@
+{
+  "id": "fact-agent",
+  "name": "Fact Agent",
+  "version": "1.0.0",
+  "layer": "agents",
+  "category": "validation",
+  "description": "Valida fatos, consolida evidências e identifica conflitos antes da redação do conteúdo.",
+  "inputs": ["ResearchPack", "blog_id", "mode"],
+  "outputs": ["EvidencePack", "FactValidationReport", "ConfidenceReport", "ConflictReport"],
+  "required_services": ["knowledge-core", "source-library"],
+  "required_workflows": ["editorial-workflow"],
+  "dependencies": {
+    "agents": ["research-agent"],
+    "layers": ["knowledge", "engines"]
+  },
+  "status": "active"
+}

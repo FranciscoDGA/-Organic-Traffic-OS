@@ -1,0 +1,54 @@
+{
+  "name": "Opportunity Intelligence Engine",
+  "version": "1.0.0",
+  "type": "engine",
+  "domain": "intelligence",
+  "description": "Cruza múltiplos sinais para identificar as melhores oportunidades editoriais",
+  "inputs": [
+    "content_intelligence",
+    "semantic_intelligence",
+    "authority_intelligence",
+    "gsc_connector_data",
+    "ga4_connector_data",
+    "bing_connector_data",
+    "trends_connector_data",
+    "rss_connector_data",
+    "keywords_data",
+    "serp_data",
+    "inventory_data",
+    "performance_data",
+    "competitors_data"
+  ],
+  "outputs": [
+    "ranked_opportunities",
+    "quick_wins",
+    "strategic_opportunities",
+    "refresh_opportunities",
+    "cluster_opportunities",
+    "conversion_opportunities",
+    "opportunity_recommendations",
+    "intelligence_report"
+  ],
+  "capabilities": [
+    "analyze_opportunities",
+    "merge_signals",
+    "rank_opportunities",
+    "detect_quick_wins",
+    "detect_strategic_opportunities",
+    "detect_refresh_opportunities",
+    "detect_cluster_opportunities",
+    "generate_recommendations"
+  ],
+  "scoring": {
+    "opportunity": "0-100 overall opportunity score",
+    "traffic_potential": "0-100 traffic potential",
+    "difficulty": "0-100 difficulty level",
+    "monetization": "0-100 monetization potential",
+    "freshness": "0-100 content freshness",
+    "authority_fit": "0-100 authority alignment",
+    "content_gap": "0-100 content gap size",
+    "strategic_priority": "0-100 strategic priority"
+  },
+  "created_at": "2026-07-02",
+  "updated_at": "2026-07-02"
+}

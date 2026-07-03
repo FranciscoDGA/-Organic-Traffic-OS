@@ -1,0 +1,12 @@
+{
+  "id": "uuid",
+  "brief_id": "uuid",
+  "tipo_de_conteudo": "string",
+  "objetivo": "string",
+  "estrutura": [],
+  "componentes": [],
+  "tamanho_estimado": 0,
+  "nivel_tecnico": "string",
+  "status": "draft",
+  "versao": "1.0"
+}

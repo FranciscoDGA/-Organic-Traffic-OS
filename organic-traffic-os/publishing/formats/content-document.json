@@ -1,0 +1,13 @@
+{
+  "content_id": "uuid",
+  "asset_id": "uuid",
+  "titulo": "string",
+  "slug": "string",
+  "tipo": "Artigo | FAQ",
+  "versao": "1.0",
+  "status": "ready_for_publishing",
+  "idioma": "pt-BR",
+  "autor": "AI System",
+  "created_at": "datetime",
+  "updated_at": "datetime"
+}

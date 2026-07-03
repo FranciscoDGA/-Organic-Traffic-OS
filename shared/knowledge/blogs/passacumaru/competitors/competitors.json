@@ -1,0 +1,44 @@
+[
+  {
+    "id": "comp-001",
+    "nome": "Estratégia Concursos",
+    "dominio": "estrategiaconcursos.com.br",
+    "categoria": "Grande Portal",
+    "descricao": "Maior portal de concursos do Brasil, cobre todas as bancas e esferas.",
+    "publico": "Concurseiros em geral, desde iniciantes até avançados.",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "pais": "Brasil",
+    "tipo": "Direto/Indireto",
+    "status": "ativo",
+    "observacoes": "Produz conteúdo em massa, mas muitas vezes raso para bancas pequenas como a IVIN."
+  },
+  {
+    "id": "comp-002",
+    "nome": "QConcursos",
+    "dominio": "qconcursos.com",
+    "categoria": "Plataforma de Questões",
+    "descricao": "Plataforma focada em resolução de questões.",
+    "publico": "Concurseiros focados em prática.",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "pais": "Brasil",
+    "tipo": "Indireto",
+    "status": "ativo",
+    "observacoes": "Excelente banco de questões da IVIN, mas pecam em artigos analíticos."
+  },
+  {
+    "id": "comp-003",
+    "nome": "Concursos no Brasil",
+    "dominio": "concursosnobrasil.com.br",
+    "categoria": "Agregador de Editais",
+    "descricao": "Portal focado em divulgar editais abertos.",
+    "publico": "Pessoas buscando oportunidades locais.",
+    "cidade": "Curitiba",
+    "estado": "PR",
+    "pais": "Brasil",
+    "tipo": "Direto",
+    "status": "ativo",
+    "observacoes": "Ranqueia muito bem para 'edital prefeitura X', mas os textos são 100% template."
+  }
+]

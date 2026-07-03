@@ -1,0 +1,42 @@
+{
+  "report_type": "content_intelligence",
+  "version": "1.0.0",
+  "sections": [
+    {
+      "title": "Overall Scores",
+      "fields": ["overall_scores"]
+    },
+    {
+      "title": "Content Analysis",
+      "fields": ["total_content", "total_analyzed"]
+    },
+    {
+      "title": "Critical Content",
+      "fields": ["critical_content"]
+    },
+    {
+      "title": "Promising Content",
+      "fields": ["promising_content"]
+    },
+    {
+      "title": "Recommendations",
+      "fields": ["recommendations"]
+    },
+    {
+      "title": "Logs",
+      "fields": ["logs"]
+    }
+  ],
+  "visualizations": [
+    {
+      "type": "score_gauges",
+      "title": "Content Scores",
+      "data_keys": ["health", "opportunity", "risk", "freshness", "authority", "potential"]
+    },
+    {
+      "type": "recommendations_by_type",
+      "title": "Recommendations by Type",
+      "data_key": "recommendations"
+    }
+  ]
+}

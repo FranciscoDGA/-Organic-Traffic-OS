@@ -1,0 +1,38 @@
+[
+  {
+    "id": "kw-001",
+    "keyword": "banca ivin",
+    "idioma": "pt-BR",
+    "categoria": "Bancas Organizadoras",
+    "cluster": "cluster-banca-ivin",
+    "entidade": "ent-banca-ivin",
+    "status": "aprovada"
+  },
+  {
+    "id": "kw-002",
+    "keyword": "o que cai na prova da banca ivin",
+    "idioma": "pt-BR",
+    "categoria": "Bancas Organizadoras",
+    "cluster": "cluster-banca-ivin",
+    "entidade": "ent-banca-ivin",
+    "status": "aprovada"
+  },
+  {
+    "id": "kw-003",
+    "keyword": "apostila banca ivin pdf",
+    "idioma": "pt-BR",
+    "categoria": "Materiais de Estudo",
+    "cluster": "cluster-banca-ivin",
+    "entidade": "ent-banca-ivin",
+    "status": "aprovada"
+  },
+  {
+    "id": "kw-004",
+    "keyword": "lei organica do municipio esquematizada",
+    "idioma": "pt-BR",
+    "categoria": "Legislação Municipal",
+    "cluster": "cluster-lei-organica",
+    "entidade": "ent-lei-organica",
+    "status": "aprovada"
+  }
+]

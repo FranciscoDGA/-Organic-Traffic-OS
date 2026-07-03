@@ -1,0 +1,7 @@
+[
+  { "regra": "Guias completos devem possuir FAQ" },
+  { "regra": "Tutoriais devem possuir passo a passo" },
+  { "regra": "Comparativos devem possuir tabela" },
+  { "regra": "Conteúdos para concursos devem incluir legislação quando aplicável" },
+  { "regra": "Artigos pilares devem prever links para artigos satélites" }
+]

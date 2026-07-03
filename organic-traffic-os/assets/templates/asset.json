@@ -1,0 +1,11 @@
+{
+  "id": "uuid",
+  "content_id": "uuid",
+  "tipo": "Artigo | FAQ | Guia | Landing Page | Quiz",
+  "titulo": "string",
+  "status": "generated | validated",
+  "versao": "v1.0",
+  "formato": "html | json | markdown",
+  "objetivo": "Lead | Awareness | Conversion",
+  "publico": "string"
+}

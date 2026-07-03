@@ -1,0 +1,11 @@
+{
+  "h1": "string",
+  "introducao": "string",
+  "h2": ["string"],
+  "h3": ["string"],
+  "faq": [
+    { "pergunta": "string", "resposta": "string" }
+  ],
+  "conclusao": "string",
+  "cta": "string"
+}

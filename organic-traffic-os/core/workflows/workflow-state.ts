@@ -1,0 +1,1 @@
+export interface WorkflowState { currentStep: number; status: string; data: any; }

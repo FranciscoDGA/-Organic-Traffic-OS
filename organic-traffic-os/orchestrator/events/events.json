@@ -1,0 +1,9 @@
+[
+  {
+    "id": "uuid",
+    "execution_id": "uuid",
+    "tipo": "Início",
+    "mensagem": "Pipeline iniciado",
+    "timestamp": "date"
+  }
+]

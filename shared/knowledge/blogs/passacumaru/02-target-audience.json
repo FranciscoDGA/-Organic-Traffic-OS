@@ -1,0 +1,35 @@
+[
+  {
+    "perfil": "Concurseiro Iniciante",
+    "idade_media": 25,
+    "objetivos": ["Entender como funcionam os concursos", "Achar um material barato ou gratuito", "Passar no primeiro concurso municipal"],
+    "dores": ["Não sabe por onde começar a estudar", "Tem pouco dinheiro para investir", "Fica confuso com editais longos"],
+    "medos": ["Medo de reprovar", "Medo de perder tempo estudando errado"],
+    "dificuldades": ["Falta de foco", "Não sabe organizar um cronograma"],
+    "nivel_conhecimento": "Básico",
+    "tom_recomendado": "Acolhedor, motivacional e muito didático",
+    "linguagem_recomendada": "Simples, sem jargões jurídicos complexos"
+  },
+  {
+    "perfil": "Concurseiro Avançado",
+    "idade_media": 30,
+    "objetivos": ["Gabaritar matérias específicas", "Passar nas primeiras colocações", "Encontrar questões inéditas da Banca IVIN"],
+    "dores": ["Falta de material focado na banca específica", "Estagnação nos simulados"],
+    "medos": ["Ficar no cadastro de reserva", "Errar questões por 'pegadinhas' da banca"],
+    "dificuldades": ["Encontrar tempo para revisar tudo", "Esgotamento mental"],
+    "nivel_conhecimento": "Avançado",
+    "tom_recomendado": "Direto ao ponto, técnico e desafiador",
+    "linguagem_recomendada": "Objetiva, técnica e focada em resultados"
+  },
+  {
+    "perfil": "Estudante que Trabalha",
+    "idade_media": 28,
+    "objetivos": ["Conseguir estudar 2h por dia com eficiência", "Aprovação para ter estabilidade e sair do setor privado"],
+    "dores": ["Falta de tempo absurda", "Cansaço extremo após o trabalho"],
+    "medos": ["Não conseguir competir com quem só estuda", "Desistir no meio do caminho"],
+    "dificuldades": ["Manter a consistência diária"],
+    "nivel_conhecimento": "Intermediário",
+    "tom_recomendado": "Prático, encorajador e realista",
+    "linguagem_recomendada": "Rápida, baseada em resumos e mapas mentais"
+  }
+]

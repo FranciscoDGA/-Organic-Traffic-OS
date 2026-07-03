@@ -1,0 +1,92 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {
+      "id": "entity_low_coverage",
+      "name": "Cobertura de entidades baixa",
+      "condition": "entity_coverage < 30",
+      "action": "cover_entity",
+      "priority": "high",
+      "message": "Poucas entidades identificadas — adicionar entidades relevantes ao conteúdo"
+    },
+    {
+      "id": "topic_insufficient_depth",
+      "name": "Profundidade temática insuficiente",
+      "condition": "topic_depth < 40",
+      "action": "deepen_topic",
+      "priority": "high",
+      "message": "Tópicos rasos — aprofundar com sub-tópicos e detalhes"
+    },
+    {
+      "id": "question_unanswered",
+      "name": "Perguntas sem resposta",
+      "condition": "question_answering < 30",
+      "action": "answer_question",
+      "priority": "critical",
+      "message": "Muitas perguntas do público sem resposta — criar conteúdo que responda"
+    },
+    {
+      "id": "keyword_missing",
+      "name": "Palavras-chave ausentes",
+      "condition": "keyword_count < 3 && word_count > 500",
+      "action": "add_keyword",
+      "priority": "medium",
+      "message": "Conteúdo longo com poucas palavras-chave — incorporar termos relevantes"
+    },
+    {
+      "id": "content_shallow",
+      "name": "Conteúdo raso",
+      "condition": "word_count < 500 && type == 'post'",
+      "action": "improve_depth",
+      "priority": "medium",
+      "message": "Post curto — expandir com mais informações e contexto"
+    },
+    {
+      "id": "cluster_incomplete",
+      "name": "Cluster temático incompleto",
+      "condition": "topic_frequency > 3 && items_in_cluster < 3",
+      "action": "expand_cluster",
+      "priority": "high",
+      "message": "Tópico com várias menções mas poucos conteúdos — expandir cluster"
+    },
+    {
+      "id": "coverage_gap",
+      "name": "Lacuna de cobertura",
+      "condition": "impressions > 500 && coverage_score < 40",
+      "action": "create_content",
+      "priority": "high",
+      "message": "Tópico com demanda mas cobertura insuficiente — criar conteúdo dedicado"
+    },
+    {
+      "id": "authority_weak",
+      "name": "Autoridade temática fraca",
+      "condition": "topical_authority < 30 && topic_count > 5",
+      "action": "deepen_topic",
+      "priority": "medium",
+      "message": "Muitos tópicos ralos — focar em aprofundar os mais importantes"
+    }
+  ],
+  "scoring_weights": {
+    "coverage": {
+      "word_count": 0.2,
+      "keyword_density": 0.15,
+      "entity_density": 0.15,
+      "topic_breadth": 0.15,
+      "structure": 0.15,
+      "links": 0.1,
+      "readability": 0.1
+    },
+    "entity_coverage": {
+      "items_with_entities": 0.3,
+      "total_entities": 0.3,
+      "avg_per_item": 0.2,
+      "diversity": 0.2
+    },
+    "topic_depth": {
+      "avg_depth": 0.3,
+      "avg_coverage": 0.3,
+      "topic_count": 0.2,
+      "keyword_support": 0.2
+    }
+  }
+}

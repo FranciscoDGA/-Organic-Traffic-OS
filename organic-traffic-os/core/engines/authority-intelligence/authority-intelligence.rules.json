@@ -1,0 +1,99 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {
+      "id": "cluster_without_pillar",
+      "name": "Cluster sem página pilar",
+      "condition": "cluster.pillar_id == null && cluster.items.length >= 3",
+      "action": "create_pillar",
+      "priority": "critical",
+      "message": "Cluster com múltiplos conteúdos mas sem página pilar — criar pilar para consolidar autoridade"
+    },
+    {
+      "id": "weak_cluster",
+      "name": "Cluster fraco",
+      "condition": "cluster.total_words < 2000 && cluster.items.length < 3",
+      "action": "expand_cluster",
+      "priority": "high",
+      "message": "Cluster com pouco conteúdo — expandir com mais artigos e sub-tópicos"
+    },
+    {
+      "id": "no_internal_links",
+      "name": "Sem links internos",
+      "condition": "item.internal_links_in == 0 && item.internal_links_out == 0",
+      "action": "add_internal_links",
+      "priority": "high",
+      "message": "Item isolado sem links internos — conectar ao restante do site"
+    },
+    {
+      "id": "orphan_content",
+      "name": "Conteúdo órfão",
+      "condition": "item.internal_links_in == 0 && item.type == 'post'",
+      "action": "add_internal_links",
+      "priority": "medium",
+      "message": "Post sem links de entrada — adicionar links de outros conteúdos"
+    },
+    {
+      "id": "entity_low_coverage",
+      "name": "Entidade com baixa cobertura",
+      "condition": "entity.mentions < 3 && entity.clusters_referenced.length < 2",
+      "action": "strengthen_entity",
+      "priority": "medium",
+      "message": "Entidade com poucas menções — referenciar em mais conteúdos e clusters"
+    },
+    {
+      "id": "shallow_pillar",
+      "name": "Página pilar rasa",
+      "condition": "pillar.word_count < 1500",
+      "action": "expand_cluster",
+      "priority": "high",
+      "message": "Página pilar com pouco conteúdo — expandir para 2000+ palavras"
+    },
+    {
+      "id": "keyword_cluster_mismatch",
+      "name": "Keyword fora do cluster",
+      "condition": "cluster.keywords.length == 0 && cluster.items.length > 2",
+      "action": "consolidate_topic",
+      "priority": "medium",
+      "message": "Cluster sem keywords definidas — definir keywords foco para o cluster"
+    },
+    {
+      "id": "source_dominance",
+      "name": "Fonte dominante",
+      "condition": "source_dominance_ratio > 0.7",
+      "action": "improve_source",
+      "priority": "low",
+      "message": "Uma fonte domina o conteúdo — diversificar fontes de dados"
+    },
+    {
+      "id": "high_authority_opportunity",
+      "name": "Oportunidade de alta autoridade",
+      "condition": "cluster.items.length >= 5 && cluster.pillar_id == null",
+      "action": "create_pillar",
+      "priority": "critical",
+      "message": "Cluster grande sem pilar — oportunidade de consolidar autoridade"
+    }
+  ],
+  "scoring_weights": {
+    "topical": {
+      "word_count": 0.2,
+      "cluster_count": 0.25,
+      "internal_links": 0.2,
+      "keyword_breadth": 0.2,
+      "entity_breadth": 0.15
+    },
+    "cluster": {
+      "pillar_ratio": 0.3,
+      "avg_items": 0.25,
+      "avg_words": 0.2,
+      "avg_links": 0.15,
+      "keyword_coverage": 0.1
+    },
+    "entity": {
+      "avg_mentions": 0.3,
+      "pillar_ratio": 0.3,
+      "cluster_spread": 0.25,
+      "entity_count": 0.15
+    }
+  }
+}

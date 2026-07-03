@@ -1,0 +1,27 @@
+{
+  "agent": "discovery-agent",
+  "blog_id": "{{blog_id}}",
+  "topic": "{{topic}}",
+  "opportunities": [
+    {
+      "id": "opp_{{id}}",
+      "title": "{{title}}",
+      "type": "educational|news|guide",
+      "category": "{{category}}",
+      "cluster": "{{cluster}}",
+      "intent": "informational|navigational|transactional",
+      "priority": "high",
+      "score": 0,
+      "reason": "Motivo da oportunidade...",
+      "source": "knowledge|serp|inventory",
+      "confidence": 0,
+      "next_step": "create_brief"
+    }
+  ],
+  "summary": {
+    "total_found": 0,
+    "high_priority": 0
+  },
+  "warnings": [],
+  "created_at": "{{timestamp}}"
+}

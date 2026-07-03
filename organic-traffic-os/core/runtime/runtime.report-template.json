@@ -1,0 +1,48 @@
+{
+  "report_type": "runtime_sprint_42",
+  "title": "Sprint 42 — Autonomous Runtime Engine V1",
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Visão Geral",
+      "type": "text"
+    },
+    {
+      "id": "modules_loaded",
+      "title": "Módulos Carregados",
+      "type": "table",
+      "columns": ["Nome", "Tipo", "Versão", "Status"]
+    },
+    {
+      "id": "queues",
+      "title": "Filas",
+      "type": "table",
+      "columns": ["Fila", "Itens", "Processando", "Tamanho Máx"]
+    },
+    {
+      "id": "heartbeats",
+      "title": "Heartbeats",
+      "type": "chart",
+      "chart_type": "line",
+      "metrics": ["uptime", "memory", "tasks"]
+    },
+    {
+      "id": "health",
+      "title": "Health Score",
+      "type": "gauge",
+      "metrics": ["runtime", "queues", "overall"]
+    },
+    {
+      "id": "events",
+      "title": "Eventos Recentes",
+      "type": "table",
+      "columns": ["Tipo", "Fonte", "Timestamp"]
+    },
+    {
+      "id": "schedules",
+      "title": "Agendamentos",
+      "type": "table",
+      "columns": ["Workflow", "Tipo", "Próxima Execução", "Ativo"]
+    }
+  ]
+}
