@@ -1,0 +1,10 @@
+{
+  "name": "Strategic Director Report",
+  "version": "1.0.0",
+  "template": {
+    "supervisedMissions": 0,
+    "activeDecisions": 0,
+    "overallStrategicScore": 0,
+    "recommendations": []
+  }
+}
