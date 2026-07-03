@@ -1,0 +1,6 @@
+{
+  "name": "Infrastructure Wizard Manifest",
+  "version": "1.0.0",
+  "steps_count": 10,
+  "default_estimated_total_minutes": 60
+}

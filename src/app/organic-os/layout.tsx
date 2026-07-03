@@ -86,6 +86,8 @@ const menuSections = [
       { label: 'Health',                  path: '/organic-os/health',                         icon: '💚' },
       { label: 'Staging & Sandbox',       path: '/organic-os/staging',                        icon: '🔬' },
       { label: 'Database & Storage',      path: '/organic-os/system/database',                icon: '🗄️' },
+      { label: 'Setup Wizard',            path: '/organic-os/setup',                          icon: '🧙‍♂️' },
+      { label: 'Infrastructure',          path: '/organic-os/infrastructure',                 icon: '🔒' },
       { label: 'E2E Validation',          path: '/organic-os/validation',                     icon: '✅' },
       { label: 'Autonomous Ops',          path: '/organic-os/autonomous',                     icon: '🤖' },
       { label: 'Go-Live',                path: '/organic-os/go-live',                        icon: '🚀' },
@@ -129,6 +131,7 @@ const menuSections = [
       { label: 'Auto Learning',         path: '/organic-os/auto-learning',                   icon: '📚' },
       { label: 'Experiments',           path: '/organic-os/experiments',                     icon: '🧪' },
       { label: 'Growth Engine',         path: '/organic-os/growth',                          icon: '📈' },
+      { label: 'Opportunities',        path: '/organic-os/opportunities',                   icon: '🎯' },
       { label: 'Portfolio Intel',      path: '/organic-os/portfolio',                       icon: '📊' },
     ]
   },

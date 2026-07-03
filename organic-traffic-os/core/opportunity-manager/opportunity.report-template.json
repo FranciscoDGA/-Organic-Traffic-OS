@@ -1,0 +1,10 @@
+{
+  "name": "Opportunity Manager Report",
+  "version": "1.0.0",
+  "template": {
+    "totalOpportunities": 0,
+    "totalProposals": 0,
+    "opportunities": [],
+    "proposals": []
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "Infrastructure Validator",
+  "version": "1.0.0",
+  "description": "Validador automático para auditorias e diagnósticos de infraestrutura",
+  "modules": [
+    "environment_variables",
+    "supabase_connection",
+    "database_schema",
+    "storage_buckets",
+    "ai_providers",
+    "github_vercel",
+    "google_cloud",
+    "email_services",
+    "organic_bridge_workspaces"
+  ]
+}
