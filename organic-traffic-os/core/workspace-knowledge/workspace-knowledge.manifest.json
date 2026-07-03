@@ -1,0 +1,6 @@
+{
+  "name": "Workspace Knowledge Isolation Engine",
+  "version": "1.0.0",
+  "description": "Isolamento de conhecimento por workspace",
+  "features": ["knowledge_isolation", "workspace_memory", "personas", "entities", "taxonomy", "editorial_style"]
+}

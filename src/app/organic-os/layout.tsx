@@ -69,6 +69,7 @@ const menuSections = [
     subtitle: "Configuracao",
     items: [
       { label: 'Multi-Blog',              path: '/organic-os/workspaces-new',                 icon: '🌐' },
+      { label: 'Knowledge Isolation',     path: '/organic-os/workspace-knowledge',            icon: '🔒' },
       { label: 'Onboarding',              path: '/organic-os/workspaces',                     icon: '🏢' },
       { label: 'Editorial Profile',       path: '/organic-os/workspace-editorial',            icon: '✍️' },
       { label: 'AI Intelligence',         path: '/organic-os/ai',                             icon: '🧠' },
