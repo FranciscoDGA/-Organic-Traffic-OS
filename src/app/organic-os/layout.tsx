@@ -114,6 +114,7 @@ const menuSections = [
       { label: 'Knowledge Graph',       path: '/organic-os/knowledge-graph',                  icon: '🔗' },
       { label: 'Memory Engine',         path: '/organic-os/memory',                          icon: '🧠' },
       { label: 'Context Intelligence',  path: '/organic-os/context',                         icon: '🎯' },
+      { label: 'Execution Intelligence', path: '/organic-os/execution',                      icon: '⚡' },
     ]
   },
   {

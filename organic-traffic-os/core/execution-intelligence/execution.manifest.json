@@ -1,0 +1,6 @@
+{
+  "name": "Execution Intelligence Engine",
+  "version": "1.0.0",
+  "description": "Motor de decisao de execucao por workspace",
+  "features": ["provider_selection", "model_selection", "cost_estimation", "fallback"]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Execution Intelligence Report",
+  "version": "1.0.0",
+  "template": {
+    "workspace": "",
+    "totalPlans": 0,
+    "avgCost": 0,
+    "providers": [],
+    "strategies": []
+  }
+}
