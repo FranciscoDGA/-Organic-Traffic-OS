@@ -116,6 +116,7 @@ const menuSections = [
       { label: 'Context Intelligence',  path: '/organic-os/context',                         icon: '🎯' },
       { label: 'Execution Intelligence', path: '/organic-os/execution',                      icon: '⚡' },
       { label: 'Auto Learning',         path: '/organic-os/auto-learning',                   icon: '📚' },
+      { label: 'Experiments',           path: '/organic-os/experiments',                     icon: '🧪' },
     ]
   },
   {

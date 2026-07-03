@@ -1,0 +1,6 @@
+{
+  "name": "Experimentation Engine",
+  "version": "1.0.0",
+  "description": "Motor de experimentacao editorial por workspace",
+  "features": ["experiments", "variants", "analysis", "winner_selection"]
+}

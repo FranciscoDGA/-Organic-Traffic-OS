@@ -1,0 +1,11 @@
+{
+  "name": "Experimentation Report",
+  "version": "1.0.0",
+  "template": {
+    "workspace": "",
+    "totalExperiments": 0,
+    "active": 0,
+    "completed": 0,
+    "winners": 0
+  }
+}
