@@ -1,0 +1,10 @@
+{
+  "name": "Chief of Staff Report",
+  "version": "1.0.0",
+  "template": {
+    "totalPlans": 0,
+    "totalTasks": 0,
+    "totalCost": 0,
+    "plans": []
+  }
+}

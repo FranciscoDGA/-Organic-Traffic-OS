@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
     const {
       title, slug, excerpt, html, markdown, seo, schema,
       category, tags, status, workspace_id, content_id,
-      featured_image, images
+      featured_image, images, cta, author, metadata, governance_approved
     } = body;
 
     // 1. Validação de payload completo
@@ -32,9 +32,18 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Payload incompleto. Campos obrigatórios: title, slug, html, markdown, workspace_id, content_id' }, { status: 400 });
     }
 
-    // 2. Validação obrigatória de imagens
-    if (!featured_image || !featured_image.url || !featured_image.alt) {
-      return NextResponse.json({ error: 'featured_image é obrigatória e deve conter url e alt text' }, { status: 400 });
+    // 2. Validação obrigatória de imagem destacada (featured_image) para publicação
+    const isDraft = status === 'draft';
+    if (!isDraft) {
+      if (!featured_image || !featured_image.url || !featured_image.alt) {
+        return NextResponse.json({ error: 'featured_image é obrigatória e deve conter url e alt text para publicação direta.' }, { status: 400 });
+      }
+    } else {
+      // Para draft, permitir sem imagem destacada, mas sinalizar no warning
+    }
+
+    if (featured_image && (!featured_image.url || !featured_image.alt)) {
+      return NextResponse.json({ error: 'Se fornecida, featured_image deve conter url e alt text.' }, { status: 400 });
     }
 
     if (images && Array.isArray(images)) {
@@ -54,21 +63,29 @@ export async function POST(req: NextRequest) {
     }
 
     // 4. Regras de publicação (Forçar rascunho por padrão - modo manual)
-    const finalStatus = 'draft'; 
-    const mode = 'manual';
-    const autoPublish = false;
-    const requireApproval = true;
+    const autoPublish = process.env.ORGANIC_AUTO_PUBLISH === 'true';
+    const requireApproval = process.env.ORGANIC_REQUIRE_APPROVAL !== 'false';
+
+    let finalStatus = 'draft';
+    if (status === 'published') {
+      if (autoPublish && !requireApproval && governance_approved) {
+        finalStatus = 'published';
+      } else {
+        return NextResponse.json({ 
+          error: 'Publicação direta rejeitada. O blog está configurado para aprovação manual (require_approval=true) ou aprovação de governança está ausente.' 
+        }, { status: 403 });
+      }
+    }
 
     // Logs no console / banco de logs do blog
     console.log(`[Organic Bridge] Novo artigo recebido em modo rascunho: "${title}"`);
-    console.log(`[Organic Bridge] Imagem destacada: ${featured_image.url} (Alt: ${featured_image.alt})`);
-    if (images && images.length > 0) {
-      console.log(`[Organic Bridge] ${images.length} imagens internas registradas.`);
-    }
+    
+    // Gerar preview url
+    const previewUrl = `/organic-publisher/preview/${slug}?content_id=${content_id}&title=${encodeURIComponent(title)}&category=${encodeURIComponent(category || '')}&tags=${encodeURIComponent(tags ? tags.join(',') : '')}&author=${encodeURIComponent(author || '')}&excerpt=${encodeURIComponent(excerpt || '')}&seo_title=${encodeURIComponent(seo?.title || '')}&seo_desc=${encodeURIComponent(seo?.description || '')}&cta=${encodeURIComponent(cta || '')}`;
 
     return NextResponse.json({
       success: true,
-      message: 'Artigo recebido com sucesso e salvo como rascunho.',
+      message: finalStatus === 'published' ? 'Artigo publicado com sucesso.' : 'Artigo recebido com sucesso e salvo como rascunho.',
       post: {
         content_id,
         workspace_id,
@@ -77,10 +94,14 @@ export async function POST(req: NextRequest) {
         status: finalStatus,
         featured_image,
         images: images || [],
-        mode,
+        mode: autoPublish ? 'auto' : 'manual',
         auto_publish: autoPublish,
-        require_approval: requireApproval
+        require_approval: requireApproval,
+        author,
+        cta,
+        metadata
       },
+      preview_url: previewUrl,
       warnings,
       logs: [
         { timestamp: new Date().toISOString(), action: 'publish_receive', message: `Artigo "${title}" recebido como rascunho. featured_image validada.` }

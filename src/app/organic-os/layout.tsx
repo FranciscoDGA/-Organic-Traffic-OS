@@ -116,6 +116,7 @@ const menuSections = [
       { label: 'Mission Control',       path: '/organic-os/missions',                         icon: '🎯' },
       { label: 'Strategic Director',    path: '/organic-os/strategic',                        icon: '🧭' },
       { label: 'Mission Progress',      path: '/organic-os/mission-progress',                 icon: '📈' },
+      { label: 'Chief of Staff',        path: '/organic-os/chief',                            icon: '👔' },
       { label: 'Mission Planner',       path: '/organic-os/mission-planner',                  icon: '📋' },
       { label: 'Workflow Orchestrator', path: '/organic-os/workflow',                         icon: '🔄' },
       { label: 'Runtime Engine (ORE)',  path: '/organic-os/runtime',                          icon: '⚡' },
