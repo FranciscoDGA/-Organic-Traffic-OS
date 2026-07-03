@@ -1,0 +1,6 @@
+{
+  "name": "Multi-Blog Workspace",
+  "version": "1.0.0",
+  "description": "Gerenciamento de multiplos blogs/workspaces",
+  "features": ["workspace_registry", "workspace_context", "multi_blog", "isolated_config"]
+}
