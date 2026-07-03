@@ -1,0 +1,10 @@
+{
+  "name": "Mission Control Report",
+  "version": "1.0.0",
+  "template": {
+    "totalMissions": 0,
+    "activeMissions": 0,
+    "completedMissions": 0,
+    "missions": []
+  }
+}

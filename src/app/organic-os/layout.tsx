@@ -113,6 +113,7 @@ const menuSections = [
     subtitle: "Coordenacao (Epic 06)",
     items: [
       { label: 'Orchestrator',          path: '/organic-os/orchestrator',                     icon: '⚙️' },
+      { label: 'Mission Control',       path: '/organic-os/missions',                         icon: '🎯' },
       { label: 'Mission Planner',       path: '/organic-os/mission-planner',                  icon: '📋' },
       { label: 'Workflow Orchestrator', path: '/organic-os/workflow',                         icon: '🔄' },
       { label: 'Runtime Engine (ORE)',  path: '/organic-os/runtime',                          icon: '⚡' },
