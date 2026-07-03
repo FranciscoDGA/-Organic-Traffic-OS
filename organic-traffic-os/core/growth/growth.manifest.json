@@ -1,0 +1,6 @@
+{
+  "name": "Autonomous Growth Engine",
+  "version": "1.0.0",
+  "description": "Motor de crescimento autonomo por workspace",
+  "features": ["growth_plans", "prioritization", "actions", "approval"]
+}
