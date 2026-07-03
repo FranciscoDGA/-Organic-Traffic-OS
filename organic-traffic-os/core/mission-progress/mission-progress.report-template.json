@@ -1,0 +1,10 @@
+{
+  "name": "Mission Progress Report",
+  "version": "1.0.0",
+  "template": {
+    "totalMissions": 0,
+    "avgProgress": 0,
+    "alerts": [],
+    "kpis": []
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "openai": {
+    "name": "OpenAI",
+    "category": "AI",
+    "enabled": true,
+    "api_version": "v1",
+    "max_cost_limit_monthly": 100.00
+  },
+  "anthropic": {
+    "name": "Anthropic",
+    "category": "AI",
+    "enabled": false,
+    "api_version": "v1"
+  },
+  "gemini": {
+    "name": "Google Gemini",
+    "category": "AI",
+    "enabled": true,
+    "api_version": "v1"
+  },
+  "github": {
+    "name": "GitHub",
+    "category": "Infraestrutura",
+    "enabled": true,
+    "api_version": "v3"
+  },
+  "vercel": {
+    "name": "Vercel",
+    "category": "Infraestrutura",
+    "enabled": true
+  },
+  "google-search-console": {
+    "name": "Google Search Console",
+    "category": "Analytics",
+    "enabled": true,
+    "scopes": ["https://www.googleapis.com/auth/webmasters.readonly"]
+  },
+  "resend": {
+    "name": "Resend",
+    "category": "Comunicação",
+    "enabled": true
+  }
+}
