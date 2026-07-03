@@ -118,6 +118,7 @@ const menuSections = [
       { label: 'Auto Learning',         path: '/organic-os/auto-learning',                   icon: '📚' },
       { label: 'Experiments',           path: '/organic-os/experiments',                     icon: '🧪' },
       { label: 'Growth Engine',         path: '/organic-os/growth',                          icon: '📈' },
+      { label: 'Portfolio Intel',      path: '/organic-os/portfolio',                       icon: '📊' },
     ]
   },
   {

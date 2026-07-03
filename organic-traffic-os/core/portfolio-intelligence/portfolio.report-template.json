@@ -1,0 +1,11 @@
+{
+  "name": "Portfolio Intelligence Report",
+  "version": "1.0.0",
+  "template": {
+    "totalWorkspaces": 0,
+    "portfolioScore": 0,
+    "ranking": [],
+    "risks": [],
+    "recommendations": []
+  }
+}

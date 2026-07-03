@@ -1,0 +1,6 @@
+{
+  "name": "Portfolio Intelligence Engine",
+  "version": "1.0.0",
+  "description": "Inteligencia de portfolio multi-workspace",
+  "features": ["portfolio_score", "ranking", "comparison", "capacity"]
+}
