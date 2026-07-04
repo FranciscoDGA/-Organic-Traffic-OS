@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "semver": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "release_stage": "production",
+  "next_planned_version": "1.1.0",
+  "next_version_criteria": [
+    "Feedback real do proprietário após 30 dias de operação",
+    "Métricas de tráfego orgânico dos 5 workspaces",
+    "Identificação de gargalos operacionais reais",
+    "Leads e conversões gerados em produção"
+  ],
+  "development_philosophy": "Results-first, not feature-first"
+}

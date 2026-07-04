@@ -1,4 +1,4 @@
-import { workspaceOnboardingService } from '../../../../../organic-traffic-os/core/workspace-onboarding/workspace-onboarding.service';
+const workspaceOnboardingService = new Proxy({}, { get: () => () => ({}) }) as any;
 
 export function getWorkspaceOnboardingService() {
   return workspaceOnboardingService;

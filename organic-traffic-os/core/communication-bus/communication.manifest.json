@@ -1,0 +1,5 @@
+{
+  "name": "Agent Communication Bus",
+  "version": "1.0.0",
+  "description": "Transporte de eventos desacoplado entre componentes"
+}

@@ -6,6 +6,7 @@ import { queueManager } from './queue-manager';
 import { Scheduler } from './scheduler';
 import { Heartbeat } from './heartbeat';
 import { HealthMonitor } from './health-monitor';
+import { QueueProcessor, getQueueProcessor } from './queue-processor';
 
 const DEFAULT_CONFIG: RuntimeConfig = {
   maxQueueSize: 100,
@@ -24,6 +25,7 @@ export class Runtime {
   private scheduler: Scheduler;
   private heartbeat: Heartbeat;
   private healthMonitor: HealthMonitor;
+  private queueProcessor: QueueProcessor;
   private getQueueSizes: () => Record<QueueName, number>;
   private getActiveModules: () => number;
   private getActiveTasks: () => number;
@@ -47,6 +49,7 @@ export class Runtime {
     );
     this.healthMonitor = new HealthMonitor(this.config.healthCheckIntervalMs);
     this.scheduler = new Scheduler();
+    this.queueProcessor = getQueueProcessor();
   }
 
   async start(): Promise<void> {
@@ -63,6 +66,7 @@ export class Runtime {
       if (this.config.enableScheduler) this.scheduler.start();
       if (this.config.enableHeartbeat) this.heartbeat.start();
       if (this.config.enableHealthMonitor) this.healthMonitor.start();
+      this.queueProcessor.start();
 
       this.startedAt = new Date().toISOString();
       this.state = 'running';
@@ -81,6 +85,7 @@ export class Runtime {
     this.scheduler.stop();
     this.heartbeat.stop();
     this.healthMonitor.stop();
+    this.queueProcessor.stop();
     moduleRegistry.getAll().forEach(m => {
       moduleRegistry.updateStatus(m.id, 'unloaded');
     });
@@ -134,6 +139,10 @@ export class Runtime {
 
   getHealthMonitor() {
     return this.healthMonitor;
+  }
+
+  getQueueProcessor() {
+    return this.queueProcessor;
   }
 
   getConfig(): RuntimeConfig {

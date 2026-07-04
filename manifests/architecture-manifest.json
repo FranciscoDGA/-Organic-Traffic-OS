@@ -1,0 +1,23 @@
+{
+  "architecture": "Next.js 16 App Router (Turbopack)",
+  "layers": {
+    "presentation": ["src/app/organic-os/**", "src/app/setup/**"],
+    "api": ["src/app/api/organic-os/**", "src/app/api/organic-publisher/**"],
+    "services": ["src/services/**", "src/core/**"],
+    "infrastructure": ["src/infrastructure/**", "src/config/**"]
+  },
+  "core_modules": {
+    "orchestration": ["Runtime Engine (ORE)", "Mission Control", "Scheduler & Jobs", "Event Bus", "Workflow Orchestrator"],
+    "production": ["Content Factory", "Campaign Engine", "Draft Writer", "QA Review", "Publishing Engine"],
+    "intelligence": ["Content Intelligence", "Semantic Intelligence", "Authority Intelligence", "Opportunity Intelligence", "Predictive Intelligence"],
+    "connectors": ["Google Search Console", "Google Analytics 4", "Google Trends", "Bing Webmaster", "WordPress", "Headless CMS"],
+    "governance": ["Approval Queue", "Audit Logs", "Governance Engine", "Worker Mode"],
+    "executive": ["Morning Briefing", "Weekly Review", "CEO Dashboard", "Portfolio Planner"]
+  },
+  "database": "Supabase (PostgreSQL)",
+  "deployment": "Vercel",
+  "ai_providers": ["OpenAI GPT-4o", "Anthropic Claude 3.5 Sonnet", "Google Gemini 1.5 Pro"],
+  "email": ["Resend", "SMTP Fallback"],
+  "version": "1.0.0",
+  "frozen": true
+}

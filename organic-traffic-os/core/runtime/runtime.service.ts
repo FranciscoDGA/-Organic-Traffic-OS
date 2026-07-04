@@ -59,6 +59,10 @@ export class RuntimeService {
     return this.runtime.getHealthMonitor();
   }
 
+  getQueueProcessor() {
+    return this.runtime.getQueueProcessor();
+  }
+
   isRunning(): boolean {
     return this.runtime.getState() === 'running';
   }

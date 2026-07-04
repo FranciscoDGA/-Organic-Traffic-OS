@@ -1,0 +1,12 @@
+{
+  "name": "Governance Report",
+  "version": "1.0.0",
+  "template": {
+    "totalPolicies": 0,
+    "activePolicies": 0,
+    "pendingApprovals": 0,
+    "resolvedApprovals": 0,
+    "auditEntries": 0,
+    "deniedActions": 0
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Workforce Report",
+  "version": "1.0.0",
+  "template": {
+    "totalAgents": 0,
+    "availableAgents": 0,
+    "busyAgents": 0,
+    "avgReliability": 0,
+    "avgQuality": 0,
+    "totalAssignments": 0
+  }
+}

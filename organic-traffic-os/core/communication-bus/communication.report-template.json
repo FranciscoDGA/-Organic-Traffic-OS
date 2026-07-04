@@ -1,0 +1,14 @@
+{
+  "name": "Communication Bus Report",
+  "version": "1.0.0",
+  "template": {
+    "totalEvents": 0,
+    "pendingEvents": 0,
+    "completedEvents": 0,
+    "failedEvents": 0,
+    "deadLetterCount": 0,
+    "subscribers": 0,
+    "publishers": 0,
+    "throughput": 0
+  }
+}

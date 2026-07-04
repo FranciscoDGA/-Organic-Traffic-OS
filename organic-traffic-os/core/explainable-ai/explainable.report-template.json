@@ -1,0 +1,11 @@
+{
+  "name": "Explainable AI Report",
+  "version": "1.0.0",
+  "template": {
+    "totalDecisions": 0,
+    "avgConfidence": 0,
+    "highConfidence": 0,
+    "lowConfidence": 0,
+    "types": {}
+  }
+}

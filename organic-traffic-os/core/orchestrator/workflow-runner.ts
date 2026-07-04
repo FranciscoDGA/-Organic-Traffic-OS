@@ -1,12 +1,14 @@
 import {
   WorkflowDefinition, WorkflowStep, ExecutionContext, ExecutionLog, StepExecution
 } from './orchestrator.types';
-import { resolveExecutionOrder, getReadySteps } from './dependency-resolver';
+import { resolveExecutionOrder } from './dependency-resolver';
 import { validateStepExecution } from './execution-validator';
+import { executeWorker, WorkerExecuteParams } from '../worker-mode/worker-executor';
 
 export class WorkflowRunner {
   private currentExecution: ExecutionLog | null = null;
   private cancelled = false;
+  private workerSessionIds: string[] = [];
 
   async runWorkflow(
     workflow: WorkflowDefinition,
@@ -14,6 +16,7 @@ export class WorkflowRunner {
     onStepComplete?: (step: StepExecution) => void
   ): Promise<ExecutionLog> {
     this.cancelled = false;
+    this.workerSessionIds = [];
     const executionId = `exec-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
 
     const orderedSteps = resolveExecutionOrder(workflow.steps);
@@ -85,9 +88,11 @@ export class WorkflowRunner {
           stepExec.completed_at = new Date().toISOString();
           stepExec.duration_ms = new Date(stepExec.completed_at).getTime() - new Date(stepExec.started_at).getTime();
 
+          if (result?.tokens_used) stepExec.ai_tokens_used = result.tokens_used;
           if (stepExec.type === 'connector') log.total_connector_calls++;
           else if (stepExec.type === 'engine') log.total_engine_calls++;
           else if (stepExec.type === 'agent') log.total_agent_calls++;
+          log.total_ai_tokens += stepExec.ai_tokens_used;
 
           success = true;
           completedSteps.add(stepDef.id);
@@ -127,13 +132,15 @@ export class WorkflowRunner {
     return this.currentExecution;
   }
 
+  getWorkerSessionIds(): string[] {
+    return this.workerSessionIds;
+  }
+
   private async executeStep(
     step: WorkflowStep,
     context: ExecutionContext,
     log: ExecutionLog
   ): Promise<any> {
-    await this.sleep(Math.random() * 500 + 200);
-
     const baseResult = {
       step_id: step.id,
       target: step.target,
@@ -143,14 +150,64 @@ export class WorkflowRunner {
 
     switch (step.type) {
       case 'connector':
-        return { ...baseResult, message: `Connector "${step.target}" synced successfully`, records: Math.floor(Math.random() * 100) + 10 };
+        return this.executeConnectorStep(step, context, baseResult);
       case 'engine':
-        return { ...baseResult, message: `Engine "${step.target}" analysis completed`, scores: { overall: Math.floor(Math.random() * 40) + 50 } };
+        return this.executeEngineStep(step, context, baseResult);
       case 'agent':
-        return { ...baseResult, message: `Agent "${step.target}" execution completed`, tasks: Math.floor(Math.random() * 5) + 1 };
+        return this.executeAgentStep(step, context, baseResult);
       default:
         return { ...baseResult, message: `Step "${step.id}" completed` };
     }
+  }
+
+  private async executeConnectorStep(step: WorkflowStep, context: ExecutionContext, baseResult: Record<string, any>): Promise<any> {
+    await this.sleep(Math.random() * 500 + 200);
+    return {
+      ...baseResult,
+      message: `Connector "${step.target}" synced successfully`,
+      records: Math.floor(Math.random() * 100) + 10,
+      tokens_used: 0,
+    };
+  }
+
+  private async executeEngineStep(step: WorkflowStep, context: ExecutionContext, baseResult: Record<string, any>): Promise<any> {
+    await this.sleep(Math.random() * 800 + 300);
+    return {
+      ...baseResult,
+      message: `Engine "${step.target}" analysis completed`,
+      scores: { overall: Math.floor(Math.random() * 40) + 50 },
+      tokens_used: 0,
+    };
+  }
+
+  private async executeAgentStep(step: WorkflowStep, context: ExecutionContext, baseResult: Record<string, any>): Promise<any> {
+    const params: WorkerExecuteParams = {
+      agent_id: step.target,
+      agent_name: step.name,
+      workspace_id: context.blog_id,
+      workflow_id: context.workflow_id,
+      mission_id: context.config?.mission_id,
+      provider: context.ai_provider,
+      agent_type: step.target,
+      context: {
+        ...context.config,
+        step_id: step.id,
+        step_config: step.config,
+      },
+    };
+
+    const result = await executeWorker(params);
+    this.workerSessionIds.push(result.data?.session_id || '');
+
+    return {
+      ...baseResult,
+      message: result.output,
+      success: result.success,
+      tokens_used: result.tokens_used,
+      duration_ms: result.duration_ms,
+      session_id: result.data?.session_id,
+      agent_type: result.data?.agent_type,
+    };
   }
 
   private sleep(ms: number): Promise<void> {

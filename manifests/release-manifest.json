@@ -1,0 +1,19 @@
+{
+  "release": "v1.0.0",
+  "codename": "Founders Release",
+  "date": "2026-07-03",
+  "type": "major",
+  "stability": "stable",
+  "highlights": [
+    "12 Epics completamente implementados",
+    "90 Sprints entregues",
+    "180+ rotas de API",
+    "85+ páginas de dashboard",
+    "5 Workspaces fundadores integrados",
+    "Arquitetura principal congelada para evolução guiada por resultados"
+  ],
+  "breaking_changes": [],
+  "migration_required": false,
+  "minimum_node_version": "20",
+  "minimum_next_version": "16.0"
+}

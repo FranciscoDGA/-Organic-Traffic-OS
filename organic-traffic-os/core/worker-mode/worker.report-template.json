@@ -1,0 +1,12 @@
+{
+  "name": "Worker Mode Report",
+  "version": "1.0.0",
+  "template": {
+    "totalWorkers": 0,
+    "activeWorkers": 0,
+    "completedWorkers": 0,
+    "failedWorkers": 0,
+    "totalTokens": 0,
+    "avgDuration": 0
+  }
+}

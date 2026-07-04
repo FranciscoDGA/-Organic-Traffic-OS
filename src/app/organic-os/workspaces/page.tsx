@@ -2,162 +2,189 @@
 
 import { useState, useEffect } from 'react';
 
-interface WorkspaceConfig {
-  identity: { id: string; name: string; domain: string; niche: string; type: string; status: string; language: string; publishMode: string; publisherAdapter: string; organicBridgeEndpoint: string; objective: string; targetAudience: string; monetization: string };
-  editorialProfile: { voiceTone: string; depthLevel: string; mainCategories: string[]; allowedContentTypes: string[] };
-  policy: { requireHumanApproval: boolean; maxPostsPerDay: number; minWordsPerArticle: number };
-  publisherConfig: { publish_endpoint: string; auto_publish_enabled: boolean; max_posts_per_day: number };
-  kpis: { id: string; name: string; target: number; unit: string }[];
-}
-
 export default function WorkspacesDashboard() {
-  const [workspaces, setWorkspaces] = useState<WorkspaceConfig[]>([]);
-  const [selected, setSelected] = useState<WorkspaceConfig | null>(null);
-  const [activeTab, setActiveTab] = useState<'list' | 'kpis' | 'editorial'>('list');
+  const [workspaces, setWorkspaces] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [runningDiagnostic, setRunningDiagnostic] = useState(false);
+  const [expandedWs, setExpandedWs] = useState<string | null>(null);
 
-  useEffect(() => { fetch('/api/organic-os/workspaces').then(r => r.json()).then(setWorkspaces); }, []);
-
-  const statusColor = (s: string) => {
-    const m: Record<string, string> = { active: '#22c55e', inactive: '#6b7280', suspended: '#ef4444', maintenance: '#f59e0b' };
-    return m[s] || '#6b7280';
+  const fetchDiagnostics = async () => {
+    setRunningDiagnostic(true);
+    try {
+      const res = await fetch('/api/organic-os/workspaces/diagnostics');
+      const data = await res.json();
+      setWorkspaces(data);
+    } catch (err) {
+      console.error('Failed to run diagnostics', err);
+    } finally {
+      setRunningDiagnostic(false);
+      setLoading(false);
+    }
   };
 
-  const handleActivate = async (id: string) => {
-    await fetch('/api/organic-os/workspaces/activate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id }) });
-    const res = await fetch('/api/organic-os/workspaces');
-    setWorkspaces(await res.json());
+  useEffect(() => {
+    let mounted = true;
+    fetchDiagnostics().then(() => {
+      if (!mounted) return;
+    });
+    return () => { mounted = false; };
+  }, []);
+
+  const renderStatus = (val: boolean | string | null, label: string) => {
+    if (val === true || (typeof val === 'string' && val.length > 0 && val !== 'Integração pendente')) {
+      return (
+        <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
+          <span className="text-slate-300 text-sm">{label}</span>
+          <span className="px-2 py-1 bg-emerald-500/20 text-emerald-400 rounded text-xs uppercase font-bold border border-emerald-500/50 flex items-center gap-1">
+            <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
+            {typeof val === 'string' ? val : 'Conectado'}
+          </span>
+        </div>
+      );
+    }
+    
+    return (
+      <div className="flex justify-between items-center py-2 border-b border-slate-700/50">
+        <span className="text-slate-400 text-sm">{label}</span>
+        <span className="px-2 py-1 bg-slate-700/50 text-slate-400 rounded text-xs uppercase font-bold border border-slate-600 flex items-center gap-1">
+          Integração pendente
+        </span>
+      </div>
+    );
   };
 
-  const handleDeactivate = async (id: string) => {
-    await fetch('/api/organic-os/workspaces/deactivate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ id }) });
-    const res = await fetch('/api/organic-os/workspaces');
-    setWorkspaces(await res.json());
+  const getOverallStatusBadge = (status: string) => {
+    switch (status) {
+      case 'Online': return <span className="bg-emerald-500/20 text-emerald-400 border border-emerald-500/50 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Online</span>;
+      case 'Offline': return <span className="bg-red-500/20 text-red-400 border border-red-500/50 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Offline</span>;
+      default: return <span className="bg-amber-500/20 text-amber-400 border border-amber-500/50 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Atenção</span>;
+    }
   };
 
   return (
-    <div style={{ padding: '2rem', color: '#e2e8f0', minHeight: '100vh' }}>
-      <div style={{ marginBottom: '2rem' }}>
-        <h1 style={{ fontSize: '1.5rem', color: '#f8fafc' }}>Workspace Onboarding</h1>
-        <p style={{ color: '#94a3b8', fontSize: '0.875rem', marginTop: '0.5rem' }}>Cadastro, configuracao e ativacao de Workspaces</p>
-      </div>
-
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '0.75rem', marginBottom: '1.5rem' }}>
-        {workspaces.map(ws => (
-          <div key={ws.identity.id} onClick={() => setSelected(ws)} style={{ background: '#1e293b', border: selected?.identity.id === ws.identity.id ? '1px solid #3b82f6' : '1px solid #334155', borderRadius: '8px', padding: '0.75rem', cursor: 'pointer' }}>
-            <div style={{ fontWeight: 600, color: '#f8fafc', fontSize: '0.875rem' }}>{ws.identity.name}</div>
-            <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>{ws.identity.domain}</div>
-            <div style={{ marginTop: '0.5rem', display: 'flex', gap: '0.25rem' }}>
-              <span style={{ fontSize: '0.65rem', padding: '1px 6px', borderRadius: '9999px', background: statusColor(ws.identity.status) + '22', color: statusColor(ws.identity.status) }}>{ws.identity.status}</span>
-              <span style={{ fontSize: '0.65rem', padding: '1px 6px', borderRadius: '9999px', background: '#334155', color: '#cbd5e1' }}>{ws.identity.publishMode}</span>
-            </div>
+    <div className="p-8 bg-[#0B0F19] min-h-screen text-slate-200 font-sans">
+      <div className="max-w-7xl mx-auto">
+        <header className="mb-8 flex justify-between items-end">
+          <div>
+            <h1 className="text-4xl font-extrabold text-white mb-2 tracking-tight">Workspace Health</h1>
+            <p className="text-slate-400">Diagnóstico de Saúde e Integrações em tempo real.</p>
           </div>
-        ))}
-      </div>
-
-      <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1.5rem', borderBottom: '1px solid #334155', paddingBottom: '0.5rem' }}>
-        {(['list', 'kpis', 'editorial'] as const).map(tab => (
-          <button key={tab} onClick={() => setActiveTab(tab)} style={{ padding: '0.5rem 1rem', borderRadius: '6px', border: activeTab === tab ? '1px solid #3b82f6' : '1px solid #334155', background: activeTab === tab ? '#1e3a5f' : 'transparent', color: activeTab === tab ? '#60a5fa' : '#94a3b8', cursor: 'pointer', fontSize: '0.875rem', textTransform: 'capitalize' }}>
-            {tab === 'list' ? 'Detalhes' : tab === 'kpis' ? 'KPIs' : 'Editorial'}
+          <button 
+            onClick={fetchDiagnostics}
+            disabled={runningDiagnostic}
+            className={`px-6 py-2.5 rounded font-bold transition flex items-center space-x-2 ${runningDiagnostic ? 'bg-slate-700 text-slate-500 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-lg shadow-indigo-500/20'}`}
+          >
+            {runningDiagnostic ? (
+              <>
+                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                Processando...
+              </>
+            ) : (
+              'Diagnóstico Completo'
+            )}
           </button>
-        ))}
-      </div>
+        </header>
 
-      {selected && activeTab === 'list' && (
-        <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '8px', padding: '1.5rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
-            <div>
-              <h2 style={{ color: '#f8fafc', fontSize: '1.25rem' }}>{selected.identity.name}</h2>
-              <p style={{ color: '#94a3b8', fontSize: '0.875rem' }}>{selected.identity.domain} | {selected.identity.niche}</p>
-            </div>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
-              {selected.identity.status === 'inactive' ? (
-                <button onClick={() => handleActivate(selected.identity.id)} style={{ padding: '0.4rem 0.75rem', borderRadius: '6px', border: 'none', background: '#22c55e', color: '#fff', cursor: 'pointer', fontSize: '0.8rem' }}>Ativar</button>
-              ) : (
-                <button onClick={() => handleDeactivate(selected.identity.id)} style={{ padding: '0.4rem 0.75rem', borderRadius: '6px', border: 'none', background: '#ef4444', color: '#fff', cursor: 'pointer', fontSize: '0.8rem' }}>Desativar</button>
-              )}
-            </div>
+        {loading ? (
+          <div className="space-y-4">
+            {[1,2,3].map(i => <div key={i} className="animate-pulse bg-slate-800/50 h-24 rounded-xl border border-slate-700"></div>)}
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
-            <div style={{ padding: '0.75rem', background: '#0f172a', borderRadius: '6px' }}>
-              <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginBottom: '0.25rem' }}>Objetivo</div>
-              <div style={{ fontSize: '0.8rem', color: '#f8fafc' }}>{selected.identity.objective}</div>
-            </div>
-            <div style={{ padding: '0.75rem', background: '#0f172a', borderRadius: '6px' }}>
-              <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginBottom: '0.25rem' }}>Publico Alvo</div>
-              <div style={{ fontSize: '0.8rem', color: '#f8fafc' }}>{selected.identity.targetAudience}</div>
-            </div>
-            <div style={{ padding: '0.75rem', background: '#0f172a', borderRadius: '6px' }}>
-              <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginBottom: '0.25rem' }}>Monetizacao</div>
-              <div style={{ fontSize: '0.8rem', color: '#f8fafc' }}>{selected.identity.monetization}</div>
-            </div>
-            <div style={{ padding: '0.75rem', background: '#0f172a', borderRadius: '6px' }}>
-              <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginBottom: '0.25rem' }}>Publisher</div>
-              <div style={{ fontSize: '0.8rem', color: '#f8fafc' }}>{selected.identity.publisherAdapter}</div>
-            </div>
-            <div style={{ padding: '0.75rem', background: '#0f172a', borderRadius: '6px' }}>
-              <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginBottom: '0.25rem' }}>Bridge</div>
-              <div style={{ fontSize: '0.8rem', color: '#f8fafc' }}>{selected.identity.organicBridgeEndpoint}</div>
-            </div>
-            <div style={{ padding: '0.75rem', background: '#0f172a', borderRadius: '6px' }}>
-              <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginBottom: '0.25rem' }}>Modo Publicacao</div>
-              <div style={{ fontSize: '0.8rem', color: '#f8fafc' }}>{selected.identity.publishMode}</div>
-            </div>
-          </div>
-          <div style={{ marginTop: '1rem', padding: '0.75rem', background: '#0f172a', borderRadius: '6px' }}>
-            <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginBottom: '0.25rem' }}>Politica</div>
-            <div style={{ fontSize: '0.8rem', color: '#f8fafc' }}>Aprovacao Humana: {selected.policy.requireHumanApproval ? 'Sim' : 'Nao'} | Max {selected.policy.maxPostsPerDay}/dia | {selected.policy.minWordsPerArticle}+ palavras</div>
-          </div>
-        </div>
-      )}
+        ) : (
+          <div className="space-y-4">
+            {workspaces.map((ws) => (
+              <div key={ws.id} className="bg-slate-800/40 border border-slate-700/60 rounded-xl overflow-hidden hover:border-slate-600 transition-colors duration-300">
+                
+                {/* Header (Click to expand) */}
+                <div 
+                  className="p-5 flex justify-between items-center cursor-pointer hover:bg-slate-700/20"
+                  onClick={() => setExpandedWs(expandedWs === ws.id ? null : ws.id)}
+                >
+                  <div className="flex items-center space-x-6">
+                    <div>
+                      <h2 className="text-xl font-bold text-white">{ws.name}</h2>
+                      <div className="text-sm text-slate-400 flex items-center gap-2 mt-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-slate-500"></span>
+                        {ws.domain}
+                      </div>
+                    </div>
+                    <div className="hidden md:flex gap-4 px-6 border-l border-slate-700">
+                      <div>
+                        <div className="text-xs text-slate-500 mb-1">Health Score</div>
+                        <div className="font-mono text-lg font-bold text-white">{ws.health}/100</div>
+                      </div>
+                      <div>
+                        <div className="text-xs text-slate-500 mb-1">Artigos</div>
+                        <div className="font-mono text-lg font-bold text-white">{ws.artigos}</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center space-x-4">
+                    {getOverallStatusBadge(ws.status)}
+                    <svg className={`w-5 h-5 text-slate-500 transform transition-transform ${expandedWs === ws.id ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
+                  </div>
+                </div>
 
-      {selected && activeTab === 'kpis' && (
-        <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '8px', padding: '1.5rem' }}>
-          <h3 style={{ color: '#f8fafc', marginBottom: '1rem' }}>KPIs: {selected.identity.name}</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.75rem' }}>
-            {selected.kpis.map(kpi => (
-              <div key={kpi.id} style={{ padding: '1rem', background: '#0f172a', borderRadius: '6px', border: '1px solid #334155' }}>
-                <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginBottom: '0.25rem' }}>{kpi.name}</div>
-                <div style={{ fontSize: '1.25rem', fontWeight: 700, color: '#60a5fa' }}>{kpi.target}</div>
-                <div style={{ fontSize: '0.7rem', color: '#64748b' }}>{kpi.unit}</div>
+                {/* Body (Expanded details) */}
+                {expandedWs === ws.id && (
+                  <div className="border-t border-slate-700/60 p-6 bg-slate-900/30">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                      
+                      {/* Categoria: Dominio e Presenca WEB */}
+                      <div>
+                        <h3 className="text-slate-200 font-bold mb-4 flex items-center gap-2">
+                          <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                          Presença WEB
+                        </h3>
+                        {renderStatus(ws.dns, 'Status DNS (Atingível)')}
+                        {renderStatus(ws.sitemap, 'Sitemap Encontrado')}
+                        {renderStatus(ws.robots, 'Robots.txt Encontrado')}
+                        {renderStatus(ws.gsc, 'Google Search Console')}
+                        {renderStatus(ws.ga, 'Google Analytics (GA4)')}
+                      </div>
+
+                      {/* Categoria: Integracao & Cloud */}
+                      <div>
+                        <h3 className="text-slate-200 font-bold mb-4 flex items-center gap-2">
+                          <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                          Infraestrutura Cloud
+                        </h3>
+                        {renderStatus(ws.vercel, 'Vercel Connect')}
+                        {renderStatus(ws.supabase, 'Supabase Storage/DB')}
+                        {renderStatus(ws.db, 'Banco de Dados (Relacional)')}
+                        {renderStatus(ws.bridge, 'Organic Bridge')}
+                        {renderStatus(ws.secret, 'App Secret (Auth)')}
+                      </div>
+
+                      {/* Categoria: Inteligencia & Jobs */}
+                      <div>
+                        <h3 className="text-slate-200 font-bold mb-4 flex items-center gap-2">
+                          <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                          Inteligência & Motor
+                        </h3>
+                        {renderStatus(ws.openai, 'OpenAI API Key')}
+                        {renderStatus(ws.model, 'Modelo de IA Ativo')}
+                        {renderStatus(ws.cron, 'Cron Jobs (Schedules)')}
+                        <div className="mt-4 pt-4 border-t border-slate-700/50 space-y-3">
+                          <div>
+                            <div className="text-xs text-slate-400">Último Scan Executado</div>
+                            <div className="text-sm font-semibold text-slate-200 mt-1">{ws.lastScan || 'Integração pendente'}</div>
+                          </div>
+                          <div>
+                            <div className="text-xs text-slate-400">Última Publicação</div>
+                            <div className="text-sm font-semibold text-slate-200 mt-1">{ws.lastPublish || 'Integração pendente'}</div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           </div>
-        </div>
-      )}
-
-      {selected && activeTab === 'editorial' && (
-        <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '8px', padding: '1.5rem' }}>
-          <h3 style={{ color: '#f8fafc', marginBottom: '1rem' }}>Perfil Editorial: {selected.identity.name}</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-            <div style={{ padding: '0.75rem', background: '#0f172a', borderRadius: '6px' }}>
-              <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginBottom: '0.25rem' }}>Tom de Voz</div>
-              <div style={{ fontSize: '0.875rem', color: '#f8fafc' }}>{selected.editorialProfile.voiceTone}</div>
-            </div>
-            <div style={{ padding: '0.75rem', background: '#0f172a', borderRadius: '6px' }}>
-              <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginBottom: '0.25rem' }}>Profundidade</div>
-              <div style={{ fontSize: '0.875rem', color: '#f8fafc' }}>{selected.editorialProfile.depthLevel}</div>
-            </div>
-          </div>
-          <div style={{ marginTop: '1rem' }}>
-            <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginBottom: '0.5rem' }}>Categorias Principais</div>
-            <div style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap' }}>
-              {selected.editorialProfile.mainCategories.map(c => <span key={c} style={{ fontSize: '0.7rem', padding: '2px 8px', borderRadius: '4px', background: '#334155', color: '#cbd5e1' }}>{c}</span>)}
-            </div>
-          </div>
-          <div style={{ marginTop: '0.75rem' }}>
-            <div style={{ fontSize: '0.7rem', color: '#94a3b8', marginBottom: '0.5rem' }}>Tipos de Conteudo</div>
-            <div style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap' }}>
-              {selected.editorialProfile.allowedContentTypes.map(t => <span key={t} style={{ fontSize: '0.7rem', padding: '2px 8px', borderRadius: '4px', background: '#1e3a5f', color: '#60a5fa' }}>{t}</span>)}
-            </div>
-          </div>
-        </div>
-      )}
-
-      {!selected && (
-        <div style={{ background: '#1e293b', border: '1px solid #334155', borderRadius: '8px', padding: '2rem', textAlign: 'center', color: '#64748b' }}>
-          Selecione um Workspace para visualizar detalhes
-        </div>
-      )}
+        )}
+      </div>
     </div>
   );
 }

@@ -1,0 +1,58 @@
+{
+  "workspace_schema_version": "1.0",
+  "founding_workspaces": [
+    {
+      "id": "passacumaru",
+      "name": "PassaCumaru",
+      "url": "passacumaru.com.br",
+      "objective": "Concursos Públicos — Tráfego orgânico e geração de leads educacionais",
+      "publishing_mode": "manual",
+      "ai_providers": ["openai", "google_gemini"],
+      "content_types": ["Artigo", "Simulado", "FAQ", "Checklist"],
+      "revenue_model": "lead_capture_affiliates"
+    },
+    {
+      "id": "qualoseguro",
+      "name": "Qual o Seguro?",
+      "url": "qualoseguro.com.br",
+      "objective": "Seguros — Cotações, comparações e captura de MQLs qualificados",
+      "publishing_mode": "manual",
+      "ai_providers": ["anthropic", "openai"],
+      "content_types": ["Artigo", "Comparativo", "Landing Page", "FAQ"],
+      "revenue_model": "mql_lead_generation"
+    },
+    {
+      "id": "utilpro",
+      "name": "UtilPro Brasil",
+      "url": "utilprobrasil.com.br",
+      "objective": "Ferramentas e Utilidades — Tráfego de cauda longa e conversão por afiliados",
+      "publishing_mode": "manual",
+      "ai_providers": ["openai", "anthropic"],
+      "content_types": ["Artigo", "Guia", "Checklist", "Comparativo"],
+      "revenue_model": "affiliate_commerce"
+    },
+    {
+      "id": "tabuometro",
+      "name": "Tabuômetro",
+      "url": "tabuometro.vercel.app",
+      "objective": "Ferramentas Educativas — Tráfego recorrente e engajamento",
+      "publishing_mode": "manual",
+      "ai_providers": ["google_gemini"],
+      "content_types": ["Artigo", "Ferramenta Interativa", "FAQ"],
+      "revenue_model": "ad_revenue_and_newsletter"
+    },
+    {
+      "id": "aiagency",
+      "name": "AI Agency OS",
+      "url": "aiagency.com.br",
+      "objective": "Agência de IA — Autoridade de marca, geração de leads qualificados e conversões comerciais",
+      "publishing_mode": "manual",
+      "ai_providers": ["anthropic", "openai", "google_gemini"],
+      "content_types": ["Artigo", "Página Pilar", "Landing Page", "Case Study"],
+      "revenue_model": "high_ticket_b2b_services"
+    }
+  ],
+  "isolation_policy": "strict",
+  "cross_workspace_data_sharing": false,
+  "auto_publish": false
+}

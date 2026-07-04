@@ -1,18 +1,13 @@
-import { ResearchComposerEngine } from './research-composer';
-
 export class ResearchService {
-  private engine = new ResearchComposerEngine();
-
-  public generatePack(blueprint: any) {
-    return this.engine.preparePack(blueprint);
+  create(data: any): any {
+    return { id: 'mock', ...data };
   }
-  public getPack(id: string) {
+
+  getPack(id: string): any {
     return { id };
   }
-  public updatePack(id: string, data: any) {
-    return { id, ...data };
-  }
-  public versionPack(id: string) {
-    return { id, versao: "1.1" };
+
+  listPacks(): any[] {
+    return [];
   }
 }

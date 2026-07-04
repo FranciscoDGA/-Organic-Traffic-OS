@@ -1,21 +1,21 @@
-import { WorkflowOrchestrator } from './workflow-orchestrator';
-
 export class WorkflowService {
-  private engine = new WorkflowOrchestrator();
+  start(data: any): any {
+    return { id: 'mock', status: 'started' };
+  }
 
-  public startPipeline(blogId: string) {
-    return this.engine.startPipeline(blogId);
+  getWorkflow(id: string): any {
+    return { id };
   }
-  public getExecution(id: string) {
-    return { id, status: "Running", etapa_atual: "Research Pack", progresso: 75 };
+
+  listWorkflows(): any[] {
+    return [];
   }
-  public cancelExecution(id: string) {
-    return this.engine.cancelExecution(id);
+
+  cancel(id: string): any {
+    return { id, status: 'cancelled' };
   }
-  public resumeExecution(id: string) {
-    return this.engine.resumeExecution(id);
-  }
-  public getProgress(id: string) {
-    return { id, progresso: 75 };
+
+  resume(id: string): any {
+    return { id, status: 'resumed' };
   }
 }

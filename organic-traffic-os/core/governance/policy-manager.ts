@@ -1,0 +1,21 @@
+import { Policy } from './governance.types';
+
+const policies: Policy[] = [
+  { id: 'pol-001', name: 'Publicacao de Conteudo', description: 'Toda publicacao de conteudo requer aprovacao humana', scope: 'publishing', rule: 'content-publish', severity: 'critical', action: 'require-approval', requires_approval: true, status: 'active', created_at: '2026-01-01T00:00:00Z', updated_at: '2026-01-01T00:00:00Z' },
+  { id: 'pol-002', name: 'Envio de Newsletter', description: 'Envio real de e-mail requer aprovacao explicita', scope: 'newsletter', rule: 'newsletter-send', severity: 'critical', action: 'require-approval', requires_approval: true, status: 'active', created_at: '2026-01-01T00:00:00Z', updated_at: '2026-01-01T00:00:00Z' },
+  { id: 'pol-003', name: 'Alteracao de Conteudo Publicado', description: 'Alteracoes em conteudo ja publicado requerem aprovacao', scope: 'content', rule: 'content-edit', severity: 'high', action: 'require-approval', requires_approval: true, status: 'active', created_at: '2026-01-01T00:00:00Z', updated_at: '2026-01-01T00:00:00Z' },
+  { id: 'pol-004', name: 'Exclusao de Conteudo', description: 'Exclusao de conteudo requer aprovacao e justificativa', scope: 'content', rule: 'content-delete', severity: 'critical', action: 'require-approval', requires_approval: true, status: 'active', created_at: '2026-01-01T00:00:00Z', updated_at: '2026-01-01T00:00:00Z' },
+  { id: 'pol-005', name: 'Limite de Custo', description: 'Execucao acima do orcamento requer aprovacao', scope: 'budget', rule: 'cost-limit', severity: 'high', action: 'require-approval', requires_approval: true, status: 'active', created_at: '2026-01-01T00:00:00Z', updated_at: '2026-01-01T00:00:00Z' },
+  { id: 'pol-006', name: 'Limite de Tokens', description: 'Uso de tokens acima do limite requer aprovacao', scope: 'ai', rule: 'token-limit', severity: 'high', action: 'require-approval', requires_approval: true, status: 'active', created_at: '2026-01-01T00:00:00Z', updated_at: '2026-01-01T00:00:00Z' },
+  { id: 'pol-007', name: 'Execucao Automatica', description: 'Apenas workflows pre-aprovados podem executar automaticamente', scope: 'execution', rule: 'auto-execution', severity: 'high', action: 'require-approval', requires_approval: true, status: 'active', created_at: '2026-01-01T00:00:00Z', updated_at: '2026-01-01T00:00:00Z' },
+  { id: 'pol-008', name: 'Alteracao de Estrategia', description: 'Alteracoes em estrategia requerem aprovacao da direcao', scope: 'strategy', rule: 'strategy-change', severity: 'critical', action: 'require-approval', requires_approval: true, status: 'active', created_at: '2026-01-01T00:00:00Z', updated_at: '2026-01-01T00:00:00Z' },
+  { id: 'pol-009', name: 'Acesso a Conectores', description: 'Acesso a novos conectores requer aprovacao', scope: 'connector', rule: 'connector-access', severity: 'medium', action: 'require-approval', requires_approval: true, status: 'active', created_at: '2026-01-01T00:00:00Z', updated_at: '2026-01-01T00:00:00Z' },
+  { id: 'pol-010', name: 'Isolamento entre Workspaces', description: 'Nenhum workspace pode acessar dados privados de outro', scope: 'data', rule: 'workspace-isolation', severity: 'critical', action: 'deny', requires_approval: false, status: 'active', created_at: '2026-01-01T00:00:00Z', updated_at: '2026-01-01T00:00:00Z' },
+  { id: 'pol-011', name: 'Criacao de Missao Grande', description: 'Missoes com mais de 10 tasks requerem aprovacao', scope: 'mission', rule: 'large-mission', severity: 'high', action: 'require-approval', requires_approval: true, status: 'active', created_at: '2026-01-01T00:00:00Z', updated_at: '2026-01-01T00:00:00Z' },
+  { id: 'pol-012', name: 'Uso de IA Generativa', description: 'Uso de IA para conteudo requer revisao antes de publicar', scope: 'ai', rule: 'ai-content', severity: 'high', action: 'require-review', requires_approval: false, status: 'active', created_at: '2026-01-01T00:00:00Z', updated_at: '2026-01-01T00:00:00Z' },
+];
+
+export function getAllPolicies() { return policies; }
+export function getPoliciesByScope(scope: string) { return policies.filter(p => p.scope === scope); }
+export function getPoliciesByWorkspace(workspaceId: string) { return policies.filter(p => !p.workspace_id || p.workspace_id === workspaceId); }
+export function getActivePolicies() { return policies.filter(p => p.status === 'active'); }

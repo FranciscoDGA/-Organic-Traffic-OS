@@ -1,0 +1,10 @@
+{
+  "name": "QA Report",
+  "version": "1.0.0",
+  "template": {
+    "totalReports": 0,
+    "criticalIssues": 0,
+    "highIssues": 0,
+    "avgScore": 0
+  }
+}

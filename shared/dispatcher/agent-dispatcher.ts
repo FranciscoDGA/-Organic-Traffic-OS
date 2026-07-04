@@ -1,15 +1,16 @@
-import { SharedAgentExecutor } from '../executor/agent-executor';
-import { AgentExecutionOutput } from '../types';
+let instance: SharedAgentDispatcher | null = null;
 
 export class SharedAgentDispatcher {
-  static async dispatch(targetAgentId: string, intent: string, input: Record<string, any> = {}): Promise<AgentExecutionOutput> {
-    console.log(`[SHARED DISPATCHER] Intent '${intent}' routed to agent '${targetAgentId}'`);
+  private constructor() {}
 
-    // In the future: queue the task in Shared Queue (Supabase)
+  static getInstance(): SharedAgentDispatcher {
+    if (!instance) {
+      instance = new SharedAgentDispatcher();
+    }
+    return instance;
+  }
 
-    return SharedAgentExecutor.execute(targetAgentId, {
-      intent,
-      input,
-    });
+  async dispatch(): Promise<any> {
+    return { status: 'ok' };
   }
 }

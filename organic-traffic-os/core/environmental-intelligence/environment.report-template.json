@@ -1,0 +1,13 @@
+{
+  "name": "Environmental Intelligence Report",
+  "version": "1.0.0",
+  "template": {
+    "totalEvents": 0,
+    "criticalAlerts": 0,
+    "opportunities": 0,
+    "risks": 0,
+    "events": [],
+    "trends": [],
+    "recommendations": []
+  }
+}

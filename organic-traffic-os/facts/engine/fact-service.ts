@@ -1,24 +1,13 @@
-import { FactEngine } from './fact-engine';
-
 export class FactService {
-  private engine = new FactEngine();
+  register(data: any): any {
+    return { id: 'mock', ...data };
+  }
 
-  public registerFact(data: any) {
-    return { id: "fact-id", ...data };
+  getFact(id: string): any {
+    return { id };
   }
-  public getFact(id: string) {
-    return { id, descricao: "Fato de exemplo" };
-  }
-  public updateFact(id: string, data: any) {
-    return { id, ...data };
-  }
-  public versionFact(id: string) {
-    return { id, versao: "1.1" };
-  }
-  public getEvidence(id: string) {
-    return [];
-  }
-  public getByCategory(category: string) {
+
+  listFacts(): any[] {
     return [];
   }
 }

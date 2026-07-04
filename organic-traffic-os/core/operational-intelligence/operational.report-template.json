@@ -1,0 +1,11 @@
+{
+  "name": "Operational Report",
+  "version": "1.0.0",
+  "template": {
+    "totalReports": 0,
+    "avgOperationalScore": 0,
+    "totalBottlenecks": 0,
+    "totalRecommendations": 0,
+    "totalSavings": 0
+  }
+}

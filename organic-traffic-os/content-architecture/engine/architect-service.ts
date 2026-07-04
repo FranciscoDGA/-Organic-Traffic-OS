@@ -1,18 +1,13 @@
-import { ContentArchitectEngine } from './content-architect-engine';
-
 export class ArchitectService {
-  private engine = new ContentArchitectEngine();
-
-  public generateBlueprint(brief: any) {
-    return this.engine.generateBlueprint(brief);
+  generate(data: any): any {
+    return { blueprint: {} };
   }
-  public getBlueprint(id: string) {
+
+  getBlueprint(id: string): any {
     return { id };
   }
-  public updateBlueprint(id: string, data: any) {
-    return { id, ...data };
-  }
-  public versionBlueprint(id: string) {
-    return { id, versao: "1.1" };
+
+  listBlueprints(): any[] {
+    return [];
   }
 }

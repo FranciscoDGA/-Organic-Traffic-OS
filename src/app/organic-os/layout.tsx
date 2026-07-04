@@ -44,7 +44,9 @@ const menuSections = [
     subtitle: "Publicação & Métricas",
     items: [
       { label: 'Publishing Engine',    path: '/organic-os/publishing',         icon: '🚀' },
-      { label: 'Performance Engine',   path: '/organic-os/performance',        icon: '📈' },
+      { label: 'Universal Publisher',  path: '/organic-os/publisher',          icon: '📡' },
+      { label: 'Performance & AI Costs', path: '/organic-os/performance',      icon: '📈' },
+      { label: 'Business Outcomes',    path: '/organic-os/business',           icon: '📊' },
       { label: 'E2E Validation',       path: '/organic-os/e2e',                icon: '🧪' },
       { label: 'Workflows',            path: '/organic-os/workflows',          icon: '🔄' },
     ]
@@ -69,12 +71,14 @@ const menuSections = [
     subtitle: "Configuracao",
     items: [
       { label: 'Multi-Blog',              path: '/organic-os/workspaces-new',                 icon: '🌐' },
+      { label: 'AI Agency OS',            path: '/organic-os/agency-knowledge',               icon: '🤖' },
+      { label: 'Authority to Lead',       path: '/organic-os/authority',                      icon: '⚖️' },
+      { label: 'Knowledge Playbooks',     path: '/organic-os/playbooks',                      icon: '📚' },
       { label: 'Knowledge Isolation',     path: '/organic-os/workspace-knowledge',            icon: '🔒' },
       { label: 'Onboarding',              path: '/organic-os/workspaces',                     icon: '🏢' },
       { label: 'Editorial Profile',       path: '/organic-os/workspace-editorial',            icon: '✍️' },
       { label: 'AI Intelligence',         path: '/organic-os/ai',                             icon: '🧠' },
       { label: 'Knowledge Base',          path: '/organic-os/knowledge',                      icon: '📚' },
-      { label: 'Executive Dashboard',     path: '/organic-os/executive',                      icon: '📊' },
       { label: 'Daily Operations',        path: '/organic-os/daily-operations',               icon: '📅' },
     ]
   },
@@ -87,8 +91,10 @@ const menuSections = [
       { label: 'Staging & Sandbox',       path: '/organic-os/staging',                        icon: '🔬' },
       { label: 'Database & Storage',      path: '/organic-os/system/database',                icon: '🗄️' },
       { label: 'Setup Wizard',            path: '/organic-os/setup',                          icon: '🧙‍♂️' },
+      { label: 'System Resilience',       path: '/organic-os/system',                         icon: '🛡️' },
       { label: 'Infrastructure',          path: '/organic-os/infrastructure',                 icon: '🔒' },
       { label: 'E2E Validation',          path: '/organic-os/validation',                     icon: '✅' },
+      { label: 'Production Readiness',    path: '/organic-os/production-readiness',           icon: '🚀' },
       { label: 'Autonomous Ops',          path: '/organic-os/autonomous',                     icon: '🤖' },
       { label: 'Go-Live',                path: '/organic-os/go-live',                        icon: '🚀' },
       { label: 'Operations Center',      path: '/organic-os/operations',                     icon: '📡' },
@@ -100,6 +106,9 @@ const menuSections = [
     label: "Executive",
     subtitle: "Visao Estrategica",
     items: [
+      { label: 'Morning Briefing',        path: '/organic-os/briefing',                       icon: '☕' },
+      { label: 'Weekly Review',           path: '/organic-os/review',                         icon: '📅' },
+      { label: 'Executive Spotlight',     path: '/organic-os',                                icon: '📊' },
       { label: 'CEO Dashboard',        path: '/organic-os/ceo',                                icon: '👔' },
     ]
   },
@@ -132,6 +141,12 @@ const menuSections = [
       { label: 'Experiments',           path: '/organic-os/experiments',                     icon: '🧪' },
       { label: 'Growth Engine',         path: '/organic-os/growth',                          icon: '📈' },
       { label: 'Opportunities',        path: '/organic-os/opportunities',                   icon: '🎯' },
+      { label: 'Environment Intel',    path: '/organic-os/environment',                     icon: '🌍' },
+      { label: 'Governance & Safety',  path: '/organic-os/governance',                      icon: '🛡️' },
+      { label: 'Workforce Manager',    path: '/organic-os/workforce',                       icon: '👥' },
+      { label: 'Quality Assurance',    path: '/organic-os/quality',                         icon: '✅' },
+      { label: 'Explainable AI',       path: '/organic-os/xai',                             icon: '🔍' },
+      { label: 'Worker Mode',          path: '/organic-os/workers',                         icon: '🤖' },
       { label: 'Portfolio Intel',      path: '/organic-os/portfolio',                       icon: '📊' },
     ]
   },

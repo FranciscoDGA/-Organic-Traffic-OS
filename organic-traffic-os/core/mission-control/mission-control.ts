@@ -1,8 +1,9 @@
-import { getAllMissions, getMissionsByWorkspace, getMissionById, createMission, updateMission } from './mission-manager';
+import { getAllMissions, getMissionsByWorkspace, getMissionById, createMission, createMissionWithTasks, updateMission } from './mission-manager';
 import { buildExecutionPlan, prioritizeTasks, estimateDuration, estimateCost } from './mission-planner';
-import { startMission, pauseMission, resumeMission, cancelMission, completeMission, updateTaskProgress } from './mission-executor';
+import { startMission, pauseMission, resumeMission, cancelMission, completeMission, updateTaskProgress, getLastExecutionResult } from './mission-executor';
 import { validateMission } from './mission-validator';
 import { getMissionContext } from './mission-context';
+import { executeMissionWorkflow, getWorkflowForMission, getMissionOrchestrator } from './mission-orchestrator';
 import { Mission, MissionPlan } from './mission.types';
 
 export function getMissionControlService() {
@@ -11,6 +12,7 @@ export function getMissionControlService() {
     getByWorkspace: getMissionsByWorkspace,
     getById: getMissionById,
     create: createMission,
+    createWithTasks: createMissionWithTasks,
     update: updateMission,
     validate: validateMission,
     plan: buildExecutionPlan,
@@ -24,5 +26,9 @@ export function getMissionControlService() {
     complete: completeMission,
     updateTask: updateTaskProgress,
     getContext: getMissionContext,
+    executeWorkflow: executeMissionWorkflow,
+    getWorkflow: getWorkflowForMission,
+    orchestrator: getMissionOrchestrator,
+    getLastExecution: getLastExecutionResult,
   };
 }

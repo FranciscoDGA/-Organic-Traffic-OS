@@ -1,9 +1,43 @@
 import { Mission, MissionTask } from './mission.types';
+import { executeMissionWorkflow, MissionExecutionResult } from './mission-orchestrator';
 
-export function startMission(mission: Mission): Mission {
+let lastExecutionResult: MissionExecutionResult | null = null;
+
+export function getLastExecutionResult(): MissionExecutionResult | null {
+  return lastExecutionResult;
+}
+
+export async function startMission(mission: Mission): Promise<Mission> {
   mission.status = 'active';
   mission.history.push({ action: 'started', timestamp: new Date().toISOString(), details: 'Missao iniciada' });
   mission.updatedAt = new Date().toISOString();
+
+  try {
+    const result = await executeMissionWorkflow(mission);
+    if (result) {
+      lastExecutionResult = result;
+      mission.history.push({
+        action: 'workflow_executed',
+        timestamp: new Date().toISOString(),
+        details: `Workflow "${result.workflow_id}" executado: ${result.success ? 'sucesso' : 'falha'} (${result.steps_completed}/${result.steps_total} steps, ${result.duration_ms}ms)`,
+      });
+
+      if (!result.success) {
+        mission.history.push({
+          action: 'workflow_failed',
+          timestamp: new Date().toISOString(),
+          details: `Workflow falhou: ${result.error || 'erro desconhecido'}`,
+        });
+      }
+    }
+  } catch (err: any) {
+    mission.history.push({
+      action: 'workflow_error',
+      timestamp: new Date().toISOString(),
+      details: `Erro ao executar workflow: ${err.message}`,
+    });
+  }
+
   return mission;
 }
 
