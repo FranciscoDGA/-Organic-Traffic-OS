@@ -4,176 +4,41 @@ import { useState, useEffect } from 'react';
 
 const menuSections = [
   {
-    label: "Intelligence",
-    subtitle: "Dados & Mercado",
+    label: "Workspaces",
+    subtitle: "Gestão & Configuração",
     items: [
-      { label: 'Inventory Engine',     path: '/organic-os/inventory',         icon: '📦' },
-      { label: 'Competitors Intel',    path: '/organic-os/competitors',        icon: '⚔️' },
-      { label: 'Keyword Intel',        path: '/organic-os/keywords',           icon: '🔑' },
-      { label: 'Search Intelligence',  path: '/organic-os/search',             icon: '📡' },
-      { label: 'Research Collectors',  path: '/organic-os/collectors',         icon: '🕸️' },
-      { label: 'Opportunity Discovery',path: '/organic-os/opportunities',      icon: '💡' },
+      { label: 'Setup Inicial',            path: '/organic-os/setup',                icon: '🧙‍♂️' },
+      { label: 'Meus Workspaces',          path: '/organic-os/workspaces',           icon: '🏢' },
+      { label: 'Configuração de Site',     path: '/organic-os/site-configuration',   icon: '⚙️' },
+      { label: 'Ajustes Globais',          path: '/organic-os/settings',             icon: '🛠️' },
+    ]
+  },
+  {
+    label: "Intelligence",
+    subtitle: "Dados & Auditoria",
+    items: [
+      { label: 'Inventário SEO',           path: '/organic-os/inventory',            icon: '📦' },
+      { label: 'Keyword Research',         path: '/organic-os/keywords',             icon: '🔑' },
+      { label: 'Análise Concorrência',     path: '/organic-os/competitor-analysis',  icon: '⚔️' },
+      { label: 'Auditoria On-Page',        path: '/organic-os/seo-auditor',          icon: '🔍' },
+      { label: 'Analytics e Tráfego',      path: '/organic-os/analytics',            icon: '📈' },
     ]
   },
   {
     label: "Planning",
-    subtitle: "Estratégia & Escrita",
+    subtitle: "Estratégia & Pautas",
     items: [
-      { label: 'Editorial Planning',   path: '/organic-os/editorial',          icon: '📅' },
-      { label: 'Brief Intelligence',   path: '/organic-os/briefs',             icon: '📝' },
-      { label: 'Blueprints',           path: '/organic-os/blueprints',         icon: '🏗️' },
-      { label: 'Research Packs',       path: '/organic-os/research',           icon: '🔬' },
-      { label: 'Facts & Sources',      path: '/organic-os/facts',              icon: '📚' },
+      { label: 'Topic Clusters',           path: '/organic-os/topic-cluster',        icon: '🕸️' },
+      { label: 'Content Planner',          path: '/organic-os/content-planner',      icon: '📅' },
+      { label: 'Linkagem Interna',         path: '/organic-os/internal-linking',     icon: '🔗' },
     ]
   },
   {
     label: "Production",
-    subtitle: "Criação & Qualidade",
+    subtitle: "Criação & Publicação",
     items: [
-      { label: 'Strategy Engine',      path: '/organic-os/strategy',           icon: '🎯' },
-      { label: 'Draft Writer',         path: '/organic-os/drafts',             icon: '✍️' },
-      { label: 'Quality Review',       path: '/organic-os/quality',            icon: '⚖️' },
-      { label: 'Audience Adaptation',  path: '/organic-os/audience',           icon: '🎭' },
-      { label: 'Natural Language',     path: '/organic-os/natural-language',   icon: '✨' },
-      { label: 'Visibility Engine',    path: '/organic-os/visibility',         icon: '👁️' },
-      { label: 'Asset Library',        path: '/organic-os/assets',             icon: '💎' },
-    ]
-  },
-  {
-    label: "Operations",
-    subtitle: "Publicação & Métricas",
-    items: [
-      { label: 'Publishing Engine',    path: '/organic-os/publishing',         icon: '🚀' },
-      { label: 'Universal Publisher',  path: '/organic-os/publisher',          icon: '📡' },
-      { label: 'Performance & AI Costs', path: '/organic-os/performance',      icon: '📈' },
-      { label: 'Business Outcomes',    path: '/organic-os/business',           icon: '📊' },
-      { label: 'E2E Validation',       path: '/organic-os/e2e',                icon: '🧪' },
-      { label: 'Workflows',            path: '/organic-os/workflows',          icon: '🔄' },
-    ]
-  },
-  {
-    label: "Agents",
-    subtitle: "Automação (Epic 03)",
-    items: [
-      { label: 'Discovery',            path: '/organic-os/agents/discovery',   icon: '🤖' },
-      { label: 'Planning',             path: '/organic-os/agents/planning',    icon: '📋' },
-      { label: 'Research',             path: '/organic-os/agents/research',    icon: '🔬' },
-      { label: 'Fact',                 path: '/organic-os/agents/fact',        icon: '⚖️' },
-      { label: 'Writer',              path: '/organic-os/agents/writer',      icon: '✍️' },
-      { label: 'Review',              path: '/organic-os/agents/review',      icon: '🔍' },
-      { label: 'Visibility',          path: '/organic-os/agents/visibility',  icon: '👁️' },
-      { label: 'Publishing',          path: '/organic-os/agents/publishing',  icon: '🚀' },
-      { label: 'Monitoring',          path: '/organic-os/agents/monitoring',  icon: '📈' },
-    ]
-  },
-  {
-    label: "Workspaces",
-    subtitle: "Configuracao",
-    items: [
-      { label: 'Multi-Blog',              path: '/organic-os/workspaces-new',                 icon: '🌐' },
-      { label: 'AI Agency OS',            path: '/organic-os/agency-knowledge',               icon: '🤖' },
-      { label: 'Authority to Lead',       path: '/organic-os/authority',                      icon: '⚖️' },
-      { label: 'Knowledge Playbooks',     path: '/organic-os/playbooks',                      icon: '📚' },
-      { label: 'Knowledge Isolation',     path: '/organic-os/workspace-knowledge',            icon: '🔒' },
-      { label: 'Onboarding',              path: '/organic-os/workspaces',                     icon: '🏢' },
-      { label: 'Editorial Profile',       path: '/organic-os/workspace-editorial',            icon: '✍️' },
-      { label: 'AI Intelligence',         path: '/organic-os/ai',                             icon: '🧠' },
-      { label: 'Knowledge Base',          path: '/organic-os/knowledge',                      icon: '📚' },
-      { label: 'Daily Operations',        path: '/organic-os/daily-operations',               icon: '📅' },
-    ]
-  },
-  {
-    label: "System",
-    subtitle: "Infraestrutura",
-    items: [
-      { label: 'Architecture',            path: '/organic-os/architecture',                   icon: '🏗️' },
-      { label: 'Health',                  path: '/organic-os/health',                         icon: '💚' },
-      { label: 'Staging & Sandbox',       path: '/organic-os/staging',                        icon: '🔬' },
-      { label: 'Database & Storage',      path: '/organic-os/system/database',                icon: '🗄️' },
-      { label: 'Setup Wizard',            path: '/organic-os/setup',                          icon: '🧙‍♂️' },
-      { label: 'System Resilience',       path: '/organic-os/system',                         icon: '🛡️' },
-      { label: 'Infrastructure',          path: '/organic-os/infrastructure',                 icon: '🔒' },
-      { label: 'E2E Validation',          path: '/organic-os/validation',                     icon: '✅' },
-      { label: 'Production Readiness',    path: '/organic-os/production-readiness',           icon: '🚀' },
-      { label: 'Autonomous Ops',          path: '/organic-os/autonomous',                     icon: '🤖' },
-      { label: 'Go-Live',                path: '/organic-os/go-live',                        icon: '🚀' },
-      { label: 'Operations Center',      path: '/organic-os/operations',                     icon: '📡' },
-      { label: 'Reliability',            path: '/organic-os/reliability',                    icon: '🛡️' },
-      { label: 'Certification',          path: '/organic-os/certification',                  icon: '📋' },
-    ]
-  },
-  {
-    label: "Executive",
-    subtitle: "Visao Estrategica",
-    items: [
-      { label: 'Morning Briefing',        path: '/organic-os/briefing',                       icon: '☕' },
-      { label: 'Weekly Review',           path: '/organic-os/review',                         icon: '📅' },
-      { label: 'Executive Spotlight',     path: '/organic-os',                                icon: '📊' },
-      { label: 'CEO Dashboard',        path: '/organic-os/ceo',                                icon: '👔' },
-    ]
-  },
-  {
-    label: "Integrations",
-    subtitle: "Visão Consolidada",
-    items: [
-      { label: 'Visão Geral',           path: '/organic-os/integrations',                      icon: '🔌' },
-    ]
-  },
-  {
-    label: "Orchestration",
-    subtitle: "Coordenacao (Epic 06)",
-    items: [
-      { label: 'Orchestrator',          path: '/organic-os/orchestrator',                     icon: '⚙️' },
-      { label: 'Mission Control',       path: '/organic-os/missions',                         icon: '🎯' },
-      { label: 'Strategic Director',    path: '/organic-os/strategic',                        icon: '🧭' },
-      { label: 'Mission Progress',      path: '/organic-os/mission-progress',                 icon: '📈' },
-      { label: 'Chief of Staff',        path: '/organic-os/chief',                            icon: '👔' },
-      { label: 'Mission Planner',       path: '/organic-os/mission-planner',                  icon: '📋' },
-      { label: 'Workflow Orchestrator', path: '/organic-os/workflow',                         icon: '🔄' },
-      { label: 'Runtime Engine (ORE)',  path: '/organic-os/runtime',                          icon: '⚡' },
-      { label: 'Scheduler & Jobs',      path: '/organic-os/scheduler',                        icon: '📅' },
-      { label: 'Event Bus',             path: '/organic-os/events',                           icon: '📡' },
-      { label: 'Knowledge Graph',       path: '/organic-os/knowledge-graph',                  icon: '🔗' },
-      { label: 'Memory Engine',         path: '/organic-os/memory',                          icon: '🧠' },
-      { label: 'Context Intelligence',  path: '/organic-os/context',                         icon: '🎯' },
-      { label: 'Execution Intelligence', path: '/organic-os/execution',                      icon: '⚡' },
-      { label: 'Auto Learning',         path: '/organic-os/auto-learning',                   icon: '📚' },
-      { label: 'Experiments',           path: '/organic-os/experiments',                     icon: '🧪' },
-      { label: 'Growth Engine',         path: '/organic-os/growth',                          icon: '📈' },
-      { label: 'Opportunities',        path: '/organic-os/opportunities',                   icon: '🎯' },
-      { label: 'Environment Intel',    path: '/organic-os/environment',                     icon: '🌍' },
-      { label: 'Governance & Safety',  path: '/organic-os/governance',                      icon: '🛡️' },
-      { label: 'Workforce Manager',    path: '/organic-os/workforce',                       icon: '👥' },
-      { label: 'Quality Assurance',    path: '/organic-os/quality',                         icon: '✅' },
-      { label: 'Explainable AI',       path: '/organic-os/xai',                             icon: '🔍' },
-      { label: 'Worker Mode',          path: '/organic-os/workers',                         icon: '🤖' },
-      { label: 'Portfolio Intel',      path: '/organic-os/portfolio',                       icon: '📊' },
-    ]
-  },
-  {
-    label: "Engines",
-    subtitle: "Inteligência (Epic 05)",
-    items: [
-      { label: 'Content Intelligence',     path: '/organic-os/engines/content-intelligence',      icon: '🧠' },
-      { label: 'Semantic Intelligence',     path: '/organic-os/engines/semantic-intelligence',    icon: '🔮' },
-      { label: 'Authority Intelligence',    path: '/organic-os/engines/authority-intelligence',   icon: '👑' },
-      { label: 'Opportunity Intelligence',  path: '/organic-os/engines/opportunity-intelligence', icon: '💎' },
-      { label: 'Predictive Intelligence',   path: '/organic-os/engines/predictive-intelligence',  icon: '📈' },
-    ]
-  },
-  {
-    label: "Connectors",
-    subtitle: "Dados Reais (Epic 04)",
-    items: [
-      { label: 'Connector Hub (OCH)',  path: '/organic-os/connectors',                       icon: '🔗' },
-      { label: 'Google Search Console', path: '/organic-os/connectors/google-search-console', icon: '🔍' },
-      { label: 'Google Analytics 4',    path: '/organic-os/connectors/google-analytics-4',    icon: '📊' },
-      { label: 'Google Trends',         path: '/organic-os/connectors/google-trends',         icon: '📈' },
-      { label: 'Bing Webmaster',        path: '/organic-os/connectors/bing-webmaster',        icon: '🔵' },
-      { label: 'RSS & Sitemap',         path: '/organic-os/connectors/rss-sitemap',           icon: '📡' },
-      { label: 'WordPress',             path: '/organic-os/connectors/wordpress',             icon: '📝' },
-      { label: 'Headless CMS',          path: '/organic-os/connectors/headless-cms',          icon: '⚡' },
-      { label: 'Newsletter',            path: '/organic-os/connectors/newsletter',            icon: '✉️' },
+      { label: 'AI Writer',                path: '/organic-os/ai-writer',            icon: '✍️' },
+      { label: 'Universal Publisher',      path: '/organic-os/publisher',            icon: '🚀' },
     ]
   }
 ];
